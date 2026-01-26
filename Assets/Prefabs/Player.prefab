@@ -175,4 +175,6 @@ MonoBehaviour:
   jumpDistance: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  one: {fileID: 0}
+  oneVolume: 0
