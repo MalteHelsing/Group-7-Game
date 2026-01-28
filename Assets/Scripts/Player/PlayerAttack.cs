@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Cached refrences
     InputAction damageAction;
+    EnemyHealth enemyHealth;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (iDamageable != null)
             {
-                iDamageable.Damage(damageAmount);
+                enemyHealth.Damage(damageAmount);
             }
         }
     }

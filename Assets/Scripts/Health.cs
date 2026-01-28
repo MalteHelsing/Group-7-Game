@@ -4,7 +4,6 @@ public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] int currentHealth = 50;
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
@@ -15,7 +14,7 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
@@ -37,6 +36,6 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
- 
+
     }
 }
