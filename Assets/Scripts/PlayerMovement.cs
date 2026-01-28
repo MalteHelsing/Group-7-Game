@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask layerMask;
 
+    [Header("Music & SFX")]
+    [SerializeField] AudioClip one;
+    [SerializeField, Range(0, 1)] float oneVolume;
+
     bool canControlPlayer = true;
 
     Vector2 moveVector;
