@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
-    [SerializeField] int health = 50;
-
+    [SerializeField] int currentHealth = 50;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,11 +14,11 @@ public class Health : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
 
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -32,6 +31,11 @@ public class Health : MonoBehaviour
 
     public int GetHealth()
     {
-        return health;
+        return currentHealth;
+    }
+
+    public void Damage(float damageAmount)
+    {
+
     }
 }
