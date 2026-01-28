@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] bool isPlayer = false;
-    [SerializeField] int scoreValue = 50;
     [SerializeField] int health = 50;
 
 
@@ -14,7 +12,6 @@ public class Health : MonoBehaviour
         if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
-            damageDealer.Hit();
         }
     }
 
