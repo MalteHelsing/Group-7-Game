@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.layer == layerIndex)
         {
             transform.Rotate(0, 180, 0);
+            Debug.Log("Hit wall");
         }
     }
 
