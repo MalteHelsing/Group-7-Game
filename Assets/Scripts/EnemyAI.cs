@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] bool isIntelligent = false;
-    /// isIntelligent does nothing right now, will add a function later
+    // isIntelligent does nothing right now, will add a function later
     [SerializeField] float moveSpeed = 1f;
 
     private void Start()
