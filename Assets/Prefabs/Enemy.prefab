@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2273482334347412364}
   - component: {fileID: 2463543532315693193}
   - component: {fileID: 4276314316327897842}
-  - component: {fileID: 2065569755948616891}
+  - component: {fileID: 7768167325689307666}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -248,7 +248,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2065569755948616891
+--- !u!114 &7768167325689307666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 7212756944672582229}
   - component: {fileID: 7633997093880076224}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: EnemyVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
