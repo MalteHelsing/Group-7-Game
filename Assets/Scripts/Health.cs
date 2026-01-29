@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] int currentHealth = 50;
+    [SerializeField] bool isEnemy = false;
 
     DamageDealer damageDealer;
 
@@ -15,9 +16,17 @@ public class Health : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (damageDealer != null)
+        if (damageDealer != null && isEnemy)
         {
             TakeDamage(damageDealer.GetDamage());
+        }
+
+        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.IsPressed())
+        {
+            if (damageDealer != null)
+            {
+                damageDealer.GetDamage();
+            }
         }
     }
 
