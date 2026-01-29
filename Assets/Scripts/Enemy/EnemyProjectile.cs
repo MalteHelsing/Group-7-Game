@@ -14,9 +14,30 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField] float minimumFireRate = 0.2f;
     [SerializeField] float fireRateVariance = 0f;
 
+    // colide destroy
+
+    [Header("EnemyProjectilePrefab")]
+    [SerializeField] float enemyProjectilePrefabDelay = 1f;
+
+    bool hasEnemyProjectilePrefab = false;
+
+   
     [HideInInspector] public bool isFiring;
 
     Coroutine fireCoroutine;
+
+    // collide destroy
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (CompareTag("Ground"))
+        {
+            Destroy(other.gameObject, enemyProjectilePrefabDelay);
+
+            Debug.Log("Hello");
+        }
+    }
+
 
     void Start()
     {
