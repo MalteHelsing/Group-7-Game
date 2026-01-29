@@ -4,12 +4,10 @@ using UnityEngine.InputSystem;
 public class EnemyTakeDamage : MonoBehaviour
 {
     DamageDealer damageDealer;
-    Health health;
 
     void Start()
     {
         damageDealer = GetComponent<DamageDealer>();
-        health = GetComponent<Health>();
     }
 
     void Update()
@@ -23,7 +21,7 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             if (damageDealer != null)
             {
-                health.TakeDamage(damageDealer.GetDamage());
+                damageDealer.GetDamage();
             }   
         }
     }

@@ -14,16 +14,18 @@ public class PlayerAttack : MonoBehaviour
         damageDealer = FindFirstObjectByType<DamageDealer>();
         attackAction = InputSystem.actions.FindAction("Attack");
     }
+
     void Update()
     {
-        Attacking();
+        if (Mouse.current.leftButton.isPressed && damageDealer != null)
+        {
+            Damage();
+            Debug.Log("OW");
+        }
     }
 
-    void Attacking()
+    public int Damage()
     {
-        if (attackAction.IsPressed())
-        {
-            damageDealer.GetDamage();
-        }
+        return damageDealer.GetDamage();
     }
 }
