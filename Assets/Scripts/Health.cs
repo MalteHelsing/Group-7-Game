@@ -1,5 +1,6 @@
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour, IDamageable
 {
@@ -22,7 +23,7 @@ public class Health : MonoBehaviour, IDamageable
             TakeDamage(damageDealer.GetDamage());
         }
 
-        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.IsPressed())
+        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.isPressed)
         {
             if (damageDealer != null)
             {
