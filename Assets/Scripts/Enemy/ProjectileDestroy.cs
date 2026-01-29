@@ -1,11 +1,23 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ProjectileDestroy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] float enemyProjectilePrefabDelay = 1f;
+
     void Start()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (CompareTag("Ground"))
+        {
+            Destroy(other.gameObject, enemyProjectilePrefabDelay);
+
+            Debug.Log("Hello");
+        }
     }
 
     // Update is called once per frame

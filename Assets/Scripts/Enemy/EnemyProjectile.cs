@@ -17,7 +17,6 @@ public class EnemyProjectile : MonoBehaviour
     // colide destroy
 
     [Header("EnemyProjectilePrefab")]
-    [SerializeField] float enemyProjectilePrefabDelay = 1f;
 
     bool hasEnemyProjectilePrefab = false;
 
@@ -28,20 +27,8 @@ public class EnemyProjectile : MonoBehaviour
 
     // collide destroy
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (CompareTag("Ground"))
-        {
-            Destroy(other.gameObject, enemyProjectilePrefabDelay);
-
-            Debug.Log("Hello");
-        }
-    }
-
-
     void Start()
     {
-
         if (useAI)
         {
             isFiring = true;
@@ -83,7 +70,7 @@ public class EnemyProjectile : MonoBehaviour
 
             waitTime = Mathf.Clamp(waitTime, minimumFireRate, float.MaxValue);
 
-           
+
 
             yield return new WaitForSeconds(waitTime);
         }
