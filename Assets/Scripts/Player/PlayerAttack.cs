@@ -1,45 +1,25 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [SerializeField] bool isPlayer;
 
-    public GameObject Spear;
-    bool isAttacking = false;
-    float atkDuration = 0.3f;
-    float atkTimer = 0f;
+    DamageDealer damageDealer;
 
+    private void Start()
+    {
+        damageDealer = FindFirstObjectByType<DamageDealer>();
+    }
     private void Update()
     {
-        CheckSpearTimer();
-
-        if (Keyboard.current.eKey.isPressed)
+        if (isPlayer == true)
         {
-            OnAttack();
-        }
-    }
-
-    void OnAttack()
-    {
-        if (isAttacking)
-        {
-            Spear.SetActive(true);
-            isAttacking = true;
-        }
-    }
-
-    void CheckSpearTimer()
-    {
-        if (isAttacking)
-        {
-            atkTimer += Time.deltaTime;
-            if(atkTimer >= atkDuration)
+            if (Keyboard.current.eKey.isPressed == true)
             {
-                atkTimer = 0;
-                isAttacking = false;
-                Spear.SetActive(false);
+                
             }
-
         }
     }
 }
