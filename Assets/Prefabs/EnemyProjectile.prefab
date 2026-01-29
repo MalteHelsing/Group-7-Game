@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3441156867224410871}
   - component: {fileID: 3579161026901277612}
   - component: {fileID: 483522222298196965}
-  - component: {fileID: 5840970705970452607}
   - component: {fileID: 4015221925184755018}
   m_Layer: 0
   m_Name: EnemyProjectile
@@ -121,26 +120,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5840970705970452607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8575191587924576709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bdd7af9902570949ba3f44572df34e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
-  projectilePrefab: {fileID: 0}
-  projectileSpeed: 10
-  projectileLifetime: 5
-  baseFireRate: 0.2
-  useAI: 0
-  minimumFireRate: 0.2
-  fireRateVariance: 0
-  isFiring: 0
 --- !u!61 &4015221925184755018
 BoxCollider2D:
   m_ObjectHideFlags: 0
