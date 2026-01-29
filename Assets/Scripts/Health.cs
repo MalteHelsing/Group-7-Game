@@ -8,20 +8,22 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] bool isEnemy = false;
 
     DamageDealer damageDealer;
+    PlayerMovement playerMovement;
 
-    private void Start()
+    void Start()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         damageDealer = GetComponent<DamageDealer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (damageDealer != null && isEnemy)
         {
             TakeDamage(damageDealer.GetDamage());
         }
 
-        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.IsPressed())
+        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.isPressed)
         {
             if (damageDealer != null)
             {
@@ -30,12 +32,13 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damage)
+    void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
+            playerMovement.Death();
             Die();
         }
     }

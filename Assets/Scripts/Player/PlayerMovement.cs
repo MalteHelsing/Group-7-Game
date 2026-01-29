@@ -60,12 +60,20 @@ public class PlayerMovement : MonoBehaviour
         if (crouchAction.IsPressed())
         {
             moveSpeed = crouchSpeed;
+            rb.rotation = 90;
 
             Debug.Log("Crouch");
         }
-        else if (crouchAction.IsPressed())
+        else
         {
+            rb.rotation = 0;
+            
             //Here the player will go back to moveSpeed
         }
+    }
+
+    public void Death()
+    {
+        canControlPlayer = false;
     }
 }

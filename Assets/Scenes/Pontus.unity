@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 829058573}
   - component: {fileID: 829058572}
   - component: {fileID: 829058574}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,6 +276,10 @@ PrefabInstance:
     - target: {fileID: 2340829297785344329, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: projectileSpeed
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340829297785344329, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
+      propertyPath: projectileLifetime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3729891178054591521, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_GravityScale

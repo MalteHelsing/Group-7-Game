@@ -8,10 +8,14 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] int damage = 10;
 
     InputAction attackAction;
+    DamageDealer damageDealer;
+    Health health;
 
     void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
+        damageDealer = GetComponent<DamageDealer>();
+        health = GetComponent<Health>();
     }
 
     void Update()
@@ -19,12 +23,9 @@ public class PlayerAttack : MonoBehaviour
         if (Mouse.current.leftButton.isPressed)
         {
             Debug.Log("OW");
-            GetDamage();
+            
         }
     }
 
-    public int GetDamage()
-    {
-        return damage;
-    }
+    
 }

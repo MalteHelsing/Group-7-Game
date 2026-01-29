@@ -14,18 +14,14 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField] float minimumFireRate = 0.2f;
     [SerializeField] float fireRateVariance = 0f;
 
-    // colide destroy
-
-    [Header("EnemyProjectilePrefab")]
-
-    bool hasEnemyProjectilePrefab = false;
+    
 
    
     [HideInInspector] public bool isFiring;
 
     Coroutine fireCoroutine;
 
-    // collide destroy
+   
 
     void Start()
     {
