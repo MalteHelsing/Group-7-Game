@@ -3,48 +3,43 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private Transform attackTransform;
-    [SerializeField] private float attackRange = 1.5f;
-    [SerializeField] private LayerMask attackableLayer;
-    [SerializeField] private float damageAmount = 10f;
 
-    private RaycastHit2D[] hits;
-
-    //Cached refrences
-    InputAction damageAction;
-    EnemyHealth enemyHealth;
-
-    void Start()
-    {
-        damageAction = InputSystem.actions.FindAction("Attack");
-    }
+    public GameObject Spear;
+    bool isAttacking = false;
+    float atkDuration = 0.3f;
+    float atkTimer = 0f;
 
     private void Update()
     {
-        if (damageAction.WasPressedThisFrame())
+        CheckSpearTimer();
+
+        if (Keyboard.current.eKey.isPressed)
         {
-            Attack();
-            Debug.Log("Hit");
+            OnAttack();
         }
     }
 
-    private void Attack()
+    void OnAttack()
     {
-        hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
-
-        for (int i = 0; i < hits.Length; i++)
+        if (isAttacking)
         {
-            IDamageable iDamageable = hits[i].collider.gameObject.GetComponent<IDamageable>();
+            Spear.SetActive(true);
+            isAttacking = true;
+        }
+    }
 
-            if (iDamageable != null)
+    void CheckSpearTimer()
+    {
+        if (isAttacking)
+        {
+            atkTimer += Time.deltaTime;
+            if(atkTimer >= atkDuration)
             {
-                enemyHealth.Damage(damageAmount);
+                atkTimer = 0;
+                isAttacking = false;
+                Spear.SetActive(false);
             }
-        }
-    }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(attackTransform.position, attackRange);
+        }
     }
 }
