@@ -18,10 +18,30 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+        float distToPlayer = Vector2.Distance(transform.position, player.position);
 
+        if(distToPlayer < agroRange)
+        {
+            // Start chasing player
+            ChasePlayer();
+        }
+
+        transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
     }
 
+    void ChasePlayer()
+    {
+        //rotate towards player
+        if(transform.position.x < player.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         int layerIndex = LayerMask.NameToLayer("Wall");
@@ -32,10 +52,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Hit wall");
         }
     }
+    
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
 
 }

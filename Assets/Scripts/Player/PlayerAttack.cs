@@ -5,21 +5,27 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] bool isPlayer;
-
+    
     DamageDealer damageDealer;
+    InputAction attackAction;
 
-    private void Start()
+    void Start()
     {
         damageDealer = FindFirstObjectByType<DamageDealer>();
+        attackAction = InputSystem.actions.FindAction("Attack");
     }
-    private void Update()
+
+    void Update()
     {
-        if (isPlayer == true)
+        if (Mouse.current.leftButton.isPressed && damageDealer != null)
         {
-            if (Keyboard.current.eKey.isPressed == true)
-            {
-                
-            }
+            Damage();
+            Debug.Log("OW");
         }
+    }
+
+    public int Damage()
+    {
+        return damageDealer.GetDamage();
     }
 }

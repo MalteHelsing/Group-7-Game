@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] float crouchSpeed = 1f;
 
     [Header("Music & SFX")]
     [SerializeField] AudioClip one;
@@ -19,12 +20,14 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     InputAction moveAction;
     InputAction jumpAction;
+    InputAction crouchAction;
 
 
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Player/Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        crouchAction = InputSystem.actions.FindAction("Crouch");
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
         if (canControlPlayer == true)
         {
             Move();
+            Crouch();
+            
         }
     }
 
@@ -42,12 +47,25 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocityX = moveVector.x * moveSpeed;
 
-       
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, layerMask);
 
         if (jumpAction.IsPressed() && ground.collider)
         {
             rb.linearVelocityY = jumpHeight;
+        }
+    }
+
+    void Crouch()
+    {
+        if (crouchAction.IsPressed())
+        {
+            moveSpeed = crouchSpeed;
+
+            Debug.Log("Crouch");
+        }
+        else if (crouchAction.IsPressed())
+        {
+            //Here the player will go back to moveSpeed
         }
     }
 }

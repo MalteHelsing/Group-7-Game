@@ -1,13 +1,20 @@
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] int currentHealth = 50;
 
+    DamageDealer damageDealer;
+
+    private void Start()
+    {
+        damageDealer = GetComponent<DamageDealer>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-
         if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
@@ -36,6 +43,6 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
-
+        
     }
 }
