@@ -4,21 +4,15 @@
 TagManager:
   serializedVersion: 3
   tags:
-<<<<<<< HEAD
-  - Enemy
-=======
   - Spear
->>>>>>> 22ebe3a8934bb28d531958dd9e0f32fffc0d1503
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - Ground
-  - Player
-  - Attackable
   - 
   - 
   - 
@@ -41,6 +35,9 @@ TagManager:
   - 
   - 
   - 
+  - 
+  - 
+  - Enemy
   - Wall
   m_SortingLayers:
   - name: Default
