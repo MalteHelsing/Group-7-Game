@@ -1,32 +1,43 @@
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] int currentHealth = 50;
+    [SerializeField] bool isEnemy = false;
 
     DamageDealer damageDealer;
+    PlayerMovement playerMovement;
 
-    private void Start()
+    void Start()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         damageDealer = GetComponent<DamageDealer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (damageDealer != null)
+        if (damageDealer != null && isEnemy)
         {
             TakeDamage(damageDealer.GetDamage());
         }
+
+        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.IsPressed())
+        {
+            if (damageDealer != null)
+            {
+                damageDealer.GetDamage();
+            }
+        }
     }
 
-    public void TakeDamage(int damage)
+    void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
+            playerMovement.Death();
             Die();
         }
     }

@@ -5,27 +5,26 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] bool isPlayer;
-    
-    DamageDealer damageDealer;
+    [SerializeField] int damage = 10;
+
     InputAction attackAction;
 
     void Start()
     {
-        damageDealer = FindFirstObjectByType<DamageDealer>();
         attackAction = InputSystem.actions.FindAction("Attack");
     }
 
     void Update()
     {
-        if (Mouse.current.leftButton.isPressed && damageDealer != null)
+        if (Mouse.current.leftButton.isPressed)
         {
-            Damage();
             Debug.Log("OW");
+            GetDamage();
         }
     }
 
-    public int Damage()
+    public int GetDamage()
     {
-        return damageDealer.GetDamage();
+        return damage;
     }
 }
