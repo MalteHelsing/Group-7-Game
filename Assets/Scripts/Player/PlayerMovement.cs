@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
             Debug.Log("Crouch");
         }
-        else if (crouchAction.IsPressed() = false)
+        else
         {
             rb.rotation = 0;
             
