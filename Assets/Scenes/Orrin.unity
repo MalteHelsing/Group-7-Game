@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 659221215}
   - component: {fileID: 659221216}
   - component: {fileID: 659221217}
-  m_Layer: 31
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,6 +432,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  crouchSpeed: 1
   one: {fileID: 0}
   oneVolume: 0
 --- !u!50 &1009504293
@@ -765,7 +766,7 @@ GameObject:
   - component: {fileID: 1188634821}
   - component: {fileID: 1188634822}
   - component: {fileID: 1188634823}
-  m_Layer: 31
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +969,7 @@ GameObject:
   - component: {fileID: 2017744123}
   - component: {fileID: 2017744124}
   - component: {fileID: 2017744125}
-  m_Layer: 31
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
