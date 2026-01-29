@@ -3,13 +3,17 @@ using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] Transform player;
     [SerializeField] bool isIntelligent = false;
     // isIntelligent does nothing right now, will add a function later
     [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float agroRange;
+
+    Rigidbody2D EnemyRigidbody;
 
     private void Start()
     {
-        
+        EnemyRigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -27,6 +31,11 @@ public class EnemyAI : MonoBehaviour
             transform.Rotate(0, 180, 0);
             Debug.Log("Hit wall");
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 
 }
