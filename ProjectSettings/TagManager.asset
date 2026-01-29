@@ -3,14 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Spear
-  - Enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
@@ -37,8 +35,8 @@ TagManager:
   - 
   - 
   - 
-  - Enemy
-  - Wall
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
