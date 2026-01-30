@@ -60,9 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if (crouchAction.IsPressed())
         {
             moveSpeed = crouchSpeed;
-            rb.rotation = 90;
-
-            Debug.Log("Crouch");
+            rb.rotation = 90; // temporary
         }
         else
         {
