@@ -64,9 +64,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            moveSpeed = 
             rb.rotation = 0;
-            
-            //Here the player will go back to moveSpeed
         }
     }
 
