@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] bool isIntelligent = false;
     // isIntelligent does nothing right now, will add a function later
     [SerializeField] float moveSpeed = 1f;
-    [SerializeField] float agroRange;
+    [SerializeField] float agroRange = 5f;
 
     
 
@@ -58,8 +58,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Instantiate(Hitbox, new Vector2(2, 0), Quaternion.identity);
-            Destroy(Hitbox);
+            
         }
     }
 

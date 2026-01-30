@@ -2556,6 +2556,10 @@ PrefabInstance:
       value: 0.54989624
       objectReference: {fileID: 0}
     - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: Hitbox
+      value: 
+      objectReference: {fileID: 2992584256093003265, guid: 70062f0105168dd4a9be50cc476614e1, type: 3}
+    - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 4044943988271876669}
