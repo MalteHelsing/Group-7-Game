@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 1750835664}
   - component: {fileID: 1750835668}
   - component: {fileID: 1750835667}
-  - component: {fileID: 1750835666}
+  - component: {fileID: 1750835669}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -573,26 +573,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1750835666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750835663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e4f86613f87d3479683173f0549655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
-  projectilePrefab: {fileID: 8575191587924576709, guid: a6e234e06332bd04bb713368f136cb18, type: 3}
-  projectileSpeed: 10
-  projectileLifetime: 5
-  baseFireRate: 0.2
-  useAI: 1
-  minimumFireRate: 0.2
-  fireRateVariance: 0
-  isFiring: 0
 --- !u!50 &1750835667
 Rigidbody2D:
   serializedVersion: 5
@@ -666,6 +646,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1750835669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750835663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bcd1201f6956248849a8cbc17925bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkeletonProjectile
+  projectilePrefab: {fileID: 8858527653907250281, guid: bba0b18ee45e9a54b86533eed22b78cc, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  baseFireRate: 0.2
+  useAI: 1
+  minimumFireRate: 2
+  fireRateVariance: 0
+  isFiring: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
