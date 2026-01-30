@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0, 1)] float oneVolume;
 
     bool canControlPlayer = true;
+    float currentSpeed;
 
     Vector2 moveVector;
     Rigidbody2D rb;
@@ -31,13 +33,18 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    private void Awake()
+    {
+        currentSpeed = moveSpeed;
+    }
+
+    void Update()
     {
         if (canControlPlayer == true)
         {
             Move();
             Crouch();
-            
+
         }
     }
 
@@ -59,13 +66,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (crouchAction.IsPressed())
         {
-            moveSpeed = crouchSpeed;
+            currentSpeed = crouchSpeed;
             rb.rotation = 90; // temporary
         }
         else
         {
-            moveSpeed = 
-            rb.rotation = 0;
+            currentSpeed = moveSpeed;
+            rb.rotation = 0; // temporary
         }
     }
 
