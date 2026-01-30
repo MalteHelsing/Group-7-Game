@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 50
+  isEnemy: 0
 --- !u!114 &7768167325689307666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,10 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f3bfc1b5e9b0049a5543dc1325958a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  player: {fileID: 0}
+  Hitbox: {fileID: 0}
+  player: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   isIntelligent: 0
   moveSpeed: 1
-  agroRange: 0
+  agroRange: 5
 --- !u!1 &3825194335217446513
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 50
+  isEnemy: 0
 --- !u!1 &4341760663408516037
 GameObject:
   m_ObjectHideFlags: 0
