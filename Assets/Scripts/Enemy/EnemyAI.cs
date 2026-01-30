@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] bool isIntelligent = false;
     // isIntelligent does nothing right now, will add a function later
     [SerializeField] float moveSpeed = 1f;
-    [SerializeField] float agroRange;
+    [SerializeField] float agroRange = 5f;
 
     
 
