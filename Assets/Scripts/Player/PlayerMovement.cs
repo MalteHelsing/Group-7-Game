@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 2f;
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask layerMask;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0, 1)] float oneVolume;
 
     bool canControlPlayer = true;
+    float currentSpeed;
 
     Vector2 moveVector;
     Rigidbody2D rb;
@@ -31,13 +33,18 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    private void Awake()
+    {
+        currentSpeed = moveSpeed;
+    }
+
+    void Update()
     {
         if (canControlPlayer == true)
         {
             Move();
             Crouch();
-            
+
         }
     }
 
@@ -59,14 +66,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (crouchAction.IsPressed())
         {
-            moveSpeed = crouchSpeed;
+            currentSpeed = crouchSpeed;
             rb.rotation = 90; // temporary
         }
         else
         {
-            rb.rotation = 0;
-            
-            //Here the player will go back to moveSpeed
+            currentSpeed = moveSpeed;
+            rb.rotation = 0; // temporary
         }
     }
 
