@@ -190,7 +190,7 @@ MonoBehaviour:
   jumpDistance: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   crouchSpeed: 1
   one: {fileID: 0}
   oneVolume: 0
