@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyProjectile : MonoBehaviour
+public class BatProjectile : MonoBehaviour
 {
     [Header("Base Variables")]
     [SerializeField] GameObject projectilePrefab;
