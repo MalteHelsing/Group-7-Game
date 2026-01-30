@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 2f;
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask layerMask;
