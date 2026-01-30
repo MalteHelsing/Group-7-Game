@@ -58,8 +58,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Instantiate(Hitbox, new Vector2(2, 0), Quaternion.identity);
-            Destroy(Hitbox);
+            
         }
     }
 
