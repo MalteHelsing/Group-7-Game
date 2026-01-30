@@ -1,44 +1,30 @@
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour
 {
-    [SerializeField] int currentHealth = 50;
-    [SerializeField] bool isEnemy = false;
+    [SerializeField] int health = 50;
 
     DamageDealer damageDealer;
-    PlayerMovement playerMovement;
 
     void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
         damageDealer = GetComponent<DamageDealer>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (damageDealer != null && isEnemy)
+        if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
-        }
-
-        else if (other.CompareTag("Enemy") && Mouse.current.leftButton.isPressed)
-        {
-            if (damageDealer != null)
-            {
-                damageDealer.GetDamage();
-            }
         }
     }
 
     void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        health -= damage;
 
-        if (currentHealth <= 0)
+        if (health <= 0)
         {
-            playerMovement.Death();
             Die();
         }
     }
@@ -50,11 +36,6 @@ public class Health : MonoBehaviour, IDamageable
 
     public int GetHealth()
     {
-        return currentHealth;
-    }
-
-    public void Damage(float damageAmount)
-    {
-        
+        return health;
     }
 }
