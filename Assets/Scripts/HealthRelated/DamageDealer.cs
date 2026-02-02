@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    [SerializeField] int damage = 10;
+   [SerializeField] int damageAmount = 10;
 
     public int GetDamage()
     {
-        return damage;
+        return damageAmount;
     }
 }
