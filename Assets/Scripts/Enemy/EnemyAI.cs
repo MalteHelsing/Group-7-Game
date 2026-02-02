@@ -12,11 +12,6 @@ public class EnemyAI : MonoBehaviour
 
     
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
