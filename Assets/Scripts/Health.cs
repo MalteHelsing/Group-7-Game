@@ -1,41 +1,24 @@
+using Unity.Hierarchy;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int health = 50;
+    [SerializeField] float currentHealth = 10f;
+    [SerializeField] float maxHealth = 10f;
+    [SerializeField] float damage = 2f;
 
-    DamageDealer damageDealer;
-
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        damageDealer = GetComponent<DamageDealer>();
+        currentHealth = currentHealth - damage;
+
+        Die();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Die()
     {
-        if (damageDealer != null)
+        if (currentHealth <= 0)
         {
-            TakeDamage(damageDealer.GetDamage());
+            DestroyObject(gameObject);
         }
-    }
-
-    void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
-    }
-
-    public int GetHealth()
-    {
-        return health;
     }
 }
