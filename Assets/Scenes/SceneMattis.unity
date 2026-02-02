@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1157396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  m_PrefabInstance: {fileID: 1149638965}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &65979691
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +716,7 @@ GameObject:
   - component: {fileID: 369356243}
   - component: {fileID: 369356242}
   - component: {fileID: 369356245}
+  - component: {fileID: 369356246}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -846,6 +842,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &369356246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369356241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828884b123999c64d87d2aedc7a815f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  targetToFollow: {fileID: 1972197180}
+  smoothing: 0.6
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &468556811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,7 +2642,11 @@ PrefabInstance:
     - target: {fileID: 630197778505084147, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1157396}
+      objectReference: {fileID: 369356241}
+    - target: {fileID: 630197778505084147, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 835036350414512952, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_Name
       value: ParallaxBackground
@@ -2639,15 +2654,27 @@ PrefabInstance:
     - target: {fileID: 1475732423957938260, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1157396}
+      objectReference: {fileID: 369356241}
+    - target: {fileID: 1475732423957938260, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2123934334504945874, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1157396}
+      objectReference: {fileID: 369356241}
+    - target: {fileID: 2123934334504945874, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6751686952278915670, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1157396}
+      objectReference: {fileID: 369356241}
+    - target: {fileID: 6751686952278915670, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 7129363526440771727, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2688,10 +2715,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7265115285250991598, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 369356241}
+    - target: {fileID: 7265115285250991598, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8768334378126640684, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1157396}
+      objectReference: {fileID: 369356241}
+    - target: {fileID: 8768334378126640684, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
