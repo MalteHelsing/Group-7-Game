@@ -1,22 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] float moveSpeed = 2f;
+    [SerializeField] float crouchSpeed = 1f;
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] float crouchSpeed = 1f;
 
     [Header("Music & SFX")]
     [SerializeField] AudioClip one;
     [SerializeField, Range(0, 1)] float oneVolume;
 
     bool canControlPlayer = true;
-    float currentSpeed;
+    private float currentSpeed;
+    private bool isCrouching;
 
     Vector2 moveVector;
     Rigidbody2D rb;
@@ -31,10 +31,7 @@ public class PlayerMovement : MonoBehaviour
         jumpAction = InputSystem.actions.FindAction("Jump");
         crouchAction = InputSystem.actions.FindAction("Crouch");
         rb = GetComponent<Rigidbody2D>();
-    }
 
-    private void Awake()
-    {
         currentSpeed = moveSpeed;
     }
 
@@ -43,16 +40,17 @@ public class PlayerMovement : MonoBehaviour
         if (canControlPlayer == true)
         {
             Move();
-            Crouch();
 
         }
+        
+        currentSpeed = isCrouching ? crouchSpeed : moveSpeed;
     }
 
     void Move()
     {
         moveVector = moveAction.ReadValue<Vector2>();
 
-        rb.linearVelocityX = moveVector.x * moveSpeed;
+        rb.linearVelocityX = moveVector.x * currentSpeed;
 
         RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, layerMask);
 
@@ -60,17 +58,16 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocityY = jumpHeight;
         }
-    }
 
-    void Crouch()
-    {
         if (crouchAction.IsPressed())
         {
+            isCrouching = true;
             currentSpeed = crouchSpeed;
             rb.rotation = 90; // temporary
         }
         else
         {
+            isCrouching = false;
             currentSpeed = moveSpeed;
             rb.rotation = 0; // temporary
         }
