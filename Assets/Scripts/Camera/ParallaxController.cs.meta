@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: d9f3bfc1b5e9b0049a5543dc1325958a
+guid: 2d77c27ebed04b74bb658cb5f8c261c1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Hitbox: {instanceID: 0}
-  - player: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  - cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
