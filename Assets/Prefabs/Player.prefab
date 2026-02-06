@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 10
-  maxHealth: 10
+  health: 10
   damage: 0
 --- !u!114 &871496285287441359
 MonoBehaviour:
@@ -194,6 +194,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
+  coyoteTime: 0.2
   one: {fileID: 0}
   oneVolume: 0
 --- !u!1 &7557556427594967543
@@ -208,7 +209,6 @@ GameObject:
   - component: {fileID: 4258261828541021975}
   - component: {fileID: 2175445744239706049}
   - component: {fileID: 2701625482767068143}
-  - component: {fileID: 806432663074215020}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Untagged
@@ -363,16 +363,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &806432663074215020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7557556427594967543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c68e90bf72aad41989c21756b5787d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
-  damageAmount: 10
