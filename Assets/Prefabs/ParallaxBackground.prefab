@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0.125
 --- !u!212 &1980848343683401628
 SpriteRenderer:
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0.175
 --- !u!212 &1636740021125588246
 SpriteRenderer:
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0.15
 --- !u!212 &4686362719062935418
 SpriteRenderer:
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0
 --- !u!212 &5461171652883274829
 SpriteRenderer:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0.2
 --- !u!212 &8491530229721723914
 SpriteRenderer:
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0.05
 --- !u!212 &4214526117518790697
 SpriteRenderer:
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 0}
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   parallaxEffect: 0.1
 --- !u!212 &4730430367886507187
 SpriteRenderer:
