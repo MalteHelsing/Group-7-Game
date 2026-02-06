@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   gameObject: {fileID: 722141784}
   isActive: 0
-  TimeSpearDoesDamage: 1
+  TimeSpearDoesDamage: 10
 --- !u!1 &2013975683
 GameObject:
   m_ObjectHideFlags: 0
