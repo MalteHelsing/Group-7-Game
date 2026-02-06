@@ -12,12 +12,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.eKey.isPressed)
+        if (Mouse.current.leftButton.isPressed)
         {
             StartCoroutine (TimeHitbox());
         }
         else
         {
+
             gameObject.SetActive(isActive);
         }
     }
@@ -26,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
     {
         gameObject.SetActive(!isActive);
         yield return new WaitForSeconds(TimeSpearDoesDamage);
+        gameObject.SetActive(isActive);
     }
 
 }
