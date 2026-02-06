@@ -1420,7 +1420,7 @@ GameObject:
   - component: {fileID: 759007271}
   - component: {fileID: 759007273}
   - component: {fileID: 759007272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2789,8 +2789,8 @@ Transform:
   m_GameObject: {fileID: 1619737129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.08, y: 5, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalPosition: {x: -26.56, y: 9.79, z: 0}
+  m_LocalScale: {x: 20, y: 0.9353, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1810116584}
@@ -4200,7 +4200,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 369356244}
-  - {fileID: 986944793}
   - {fileID: 1149638965}
+  - {fileID: 986944793}
   - {fileID: 171152086}
   - {fileID: 1702544873919464695}
