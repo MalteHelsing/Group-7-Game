@@ -8,9 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float crouchSpeed = 1f;
     [SerializeField] float jumpHeight = 1f;
     [SerializeField] float jumpDistance = 2f;
-    [SerializeField] LayerMask layerMask;
+    [SerializeField] LayerMask groundLayer;
     [SerializeField] float coyoteTime = 0.2f;
-    float lastGroundedTime;
 
     [Header("Music & SFX")]
     [SerializeField] AudioClip one;
@@ -18,14 +17,14 @@ public class PlayerMovement : MonoBehaviour
 
     bool canControlPlayer = true;
     private float currentSpeed;
-    private bool isCrouching;   
-    
+    public float groundRadius = 0.2f;
+    float coyoteTimeCounter;
+
     Vector2 moveVector;
     Rigidbody2D rb;
     InputAction moveAction;
     InputAction jumpAction;
     InputAction crouchAction;
-
 
     void Start()
     {
@@ -34,18 +33,15 @@ public class PlayerMovement : MonoBehaviour
         crouchAction = InputSystem.actions.FindAction("Crouch");
         rb = GetComponent<Rigidbody2D>();
 
-        jumpAction.performed += _ => JumpActionStarted();
+        //jumpAction.performed += _ => JumpActionStarted();
 
         currentSpeed = moveSpeed;
     }
 
-    void JumpActionStarted()
-    {
-        lastGroundedTime = Time.time;
-    }
-
     void Update()
     {
+        //CoyoteTime();
+
         if (canControlPlayer == true)
         {
             Move();
@@ -59,11 +55,12 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocityX = moveVector.x * currentSpeed;
 
-        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, layerMask);
+        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, groundLayer);
 
         if (jumpAction.IsPressed() && ground.collider)
         {
             rb.linearVelocityY = jumpHeight;
+            coyoteTimeCounter = 0f;
         }
     }
 
@@ -72,15 +69,14 @@ public class PlayerMovement : MonoBehaviour
         if (crouchAction.IsPressed())
         {
             currentSpeed = crouchSpeed;
-            rb.rotation = 90; // temporary
+            rb.rotation = 90; // temporary, remove later
         }
         else
         {
             currentSpeed = moveSpeed;
-            rb.rotation = 0; // temporary
+            rb.rotation = 0; // temporary, remove later
         }
     }
-
     public void Death()
     {
         canControlPlayer = false;
