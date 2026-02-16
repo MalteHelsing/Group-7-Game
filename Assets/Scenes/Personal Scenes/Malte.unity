@@ -809,6 +809,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1964616164}
+    - target: {fileID: 1475732423957938260, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: parallaxEffect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2123934334504945874, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: cam
       value: 
