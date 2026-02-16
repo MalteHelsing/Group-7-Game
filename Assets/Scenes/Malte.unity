@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6632649238711734394, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1441,7 +1445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   gameObject: {fileID: 722141784}
   isActive: 0
-  TimeSpearDoesDamage: 10
+  SpearDeActiveDelay: 1
 --- !u!1 &2013975683
 GameObject:
   m_ObjectHideFlags: 0
