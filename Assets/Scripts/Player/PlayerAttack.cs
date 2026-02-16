@@ -7,27 +7,20 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject gameObject;
     [SerializeField] bool isActive = false;
-
-    [SerializeField] float TimeSpearDoesDamage = 1f;
+    [SerializeField] float SpearDeActiveDelay = 1.0f;
 
     private void Update()
     {
         if (Mouse.current.leftButton.isPressed)
         {
-            StartCoroutine (TimeHitbox());
-        }
-        else
-        {
-
-            gameObject.SetActive(isActive);
+            StartCoroutine(DelayAction(SpearDeActiveDelay));
         }
     }
 
-    private IEnumerator TimeHitbox()
+    IEnumerator DelayAction(float SpearDeActiveDelay)
     {
         gameObject.SetActive(!isActive);
-        yield return new WaitForSeconds(TimeSpearDoesDamage);
+        yield return new WaitForSeconds(SpearDeActiveDelay);
         gameObject.SetActive(isActive);
     }
-
 }
