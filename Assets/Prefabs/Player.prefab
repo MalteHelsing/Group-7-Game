@@ -191,12 +191,13 @@ MonoBehaviour:
   crouchSpeed: 1
   jumpHeight: 10
   jumpDistance: 1
-  layerMask:
+  groundLayer:
     serializedVersion: 2
     m_Bits: 128
   coyoteTime: 0.2
   one: {fileID: 0}
   oneVolume: 0
+  groundRadius: 0.2
 --- !u!1 &7557556427594967543
 GameObject:
   m_ObjectHideFlags: 0

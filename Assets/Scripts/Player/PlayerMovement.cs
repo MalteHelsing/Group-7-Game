@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float coyoteTime = 0.2f;
 
     [Header("Music & SFX")]
-    [SerializeField] AudioClip one;
-    [SerializeField, Range(0, 1)] float oneVolume;
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField, Range(0, 1)] float jumpVolume;
 
     bool canControlPlayer = true;
     private float currentSpeed;
@@ -55,7 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocityX = moveVector.x * currentSpeed;
 
-        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, groundLayer);
+
+
+            RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, groundLayer);
 
         if (jumpAction.IsPressed() && ground.collider)
         {
