@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7242244665568236673}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.44, y: -0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bcd1201f6956248849a8cbc17925bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonProjectile
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 8858527653907250281, guid: bba0b18ee45e9a54b86533eed22b78cc, type: 3}
   projectileSpeed: 10
   projectileLifetime: 5
   baseFireRate: 0.2
