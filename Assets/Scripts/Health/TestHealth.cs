@@ -1,5 +1,6 @@
 using UnityEditor.Rendering.LookDev;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
@@ -11,51 +12,26 @@ public class TestHealth : MonoBehaviour
     [SerializeField] bool applyCameraShake = false;
 
     float damageDealer;
+
+    Slider healthSlider;
+    
     
     
 
     void Start()
     {
+        healthSlider.value = health;
+        healthSlider = GetComponent<Slider>();
+    }
+
+    void Update()
+    {
        
-        
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void HealthSlider()
     {
-        
+        healthSlider.value -= 10f;
     }
-
-    void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        if (!isPlayer)
-        {
-            
-        }
-
-        Destroy(gameObject);
-    }
-
-    void PlayHitParticles()
-    {
-        if (hitParticlePrefab != null)
-        {
-            ParticleSystem particles = Instantiate(hitParticlePrefab, transform.position, Quaternion.identity);
-            Destroy(particles.gameObject, particles.main.duration + particles.main.startLifetime.constantMax);
-        }
-    }
-
-    public int GetHealth()
-    {
-        return health;
-    }
+ 
 }

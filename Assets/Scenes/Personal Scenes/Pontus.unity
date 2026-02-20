@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128265538}
   - component: {fileID: 128265539}
+  - component: {fileID: 128265540}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -202,12 +203,29 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &128265540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128265537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHealth
+  isPlayer: 0
+  scoreValue: 50
+  health: 50
+  hitParticlePrefab: {fileID: 0}
+  applyCameraShake: 0
 --- !u!1 &146849595
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +450,6 @@ GameObject:
   - component: {fileID: 1310197839}
   - component: {fileID: 1310197841}
   - component: {fileID: 1310197840}
-  - component: {fileID: 1310197842}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -497,18 +514,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310197838}
   m_CullTransparentMesh: 1
---- !u!114 &1310197842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310197838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestHealth
 --- !u!1 &1322626441
 GameObject:
   m_ObjectHideFlags: 0
