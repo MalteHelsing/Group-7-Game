@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dd3714ec4b154ed4fa448a3f21d511a7
+guid: 48bb9c35403afa947a54a327d6a34aa9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4376529351027246628
-    second: options_0
+      213: 3947713080538177643
+    second: nya_Play_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,11 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: options_0
+      name: nya_Play_0
       rect:
         serializedVersion: 2
-        x: 757
-        y: 453
+        x: 453
+        y: 460
         width: 306
         height: 160
       alignment: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd933fa3eb17343c0800000000000000
-      internalID: -4376529351027246628
+      spriteID: b6024a0812819c630800000000000000
+      internalID: 3947713080538177643
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      options_0: -4376529351027246628
+      nya_Play_0: 3947713080538177643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
