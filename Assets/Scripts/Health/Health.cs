@@ -9,9 +9,9 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        currentHealth = currentHealth - damage;
+         currentHealth = currentHealth - damage;
 
-        Die();
+         Die();
     }
 
     public void Die()

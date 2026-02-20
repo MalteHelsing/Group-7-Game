@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: coyoteTime
       value: 0.1
@@ -252,9 +256,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3825194335217446513, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825194335217446513, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341760663408516037, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341760663408516037, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6632649238711734394, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: damage
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632649238711734394, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632649238711734394, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: currentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1513,7 +1545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   gameObject: {fileID: 722141784}
   isActive: 0
-  SpearDeActiveDelay: 1
+  SpearDeActiveDelay: 0.8
 --- !u!1 &2013975683
 GameObject:
   m_ObjectHideFlags: 0
