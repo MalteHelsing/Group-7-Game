@@ -1,32 +1,30 @@
 using UnityEditor.Rendering.LookDev;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
-    [SerializeField] bool isPlayer = false;
-    [SerializeField] int scoreValue = 50;
     [SerializeField] int health = 50;
-    [SerializeField] ParticleSystem hitParticlePrefab;
-
-    [SerializeField] bool applyCameraShake = false;
-
-    float damageDealer;
 
     Slider healthSlider;
-    
-    
+
+    InputAction jumpAction;
     
 
     void Start()
     {
         healthSlider.value = health;
         healthSlider = GetComponent<Slider>();
+        jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
     void Update()
     {
-       
+       if (jumpAction.IsPressed())
+       {
+            HealthSlider();
+       }
     }
 
     void HealthSlider()

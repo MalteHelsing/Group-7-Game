@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.49, y: 9.809}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 450.982, y: 89.619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128265539
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1310197839}
-  m_HandleRect: {fileID: 0}
+  m_HandleRect: {fileID: 146849596}
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
@@ -221,11 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestHealth
-  isPlayer: 0
-  scoreValue: 50
   health: 50
-  hitParticlePrefab: {fileID: 0}
-  applyCameraShake: 0
 --- !u!1 &146849595
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,9 +255,9 @@ RectTransform:
   m_Father: {fileID: 128265538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.7100067, y: -0.8379936}
-  m_SizeDelta: {x: 46.582, y: 29.715}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -225.49, y: -0.24496841}
+  m_SizeDelta: {x: 500, y: 27.847748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146849597
 MonoBehaviour:
