@@ -6,10 +6,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float crouchSpeed = 1f;
-    [SerializeField] float jumpHeight = 1f;
+    [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] float coyoteTime = 0.2f;
+
+    [Header("Jump Assist")]
+    [SerializeField] float coyoteTime = 0.1f;
+    [SerializeField] float jumpBufferTime = 0.1f;
 
     [Header("Music & SFX")]
     [SerializeField] AudioClip jumpSound;
@@ -17,8 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     bool canControlPlayer = true;
     private float currentSpeed;
-    public float groundRadius = 0.2f;
-    float coyoteTimeCounter;
+
+    private float coyoteTimeCounter;
+    private float jumpBufferCounter;
 
     Vector2 moveVector;
     Rigidbody2D rb;
@@ -33,36 +37,64 @@ public class PlayerMovement : MonoBehaviour
         crouchAction = InputSystem.actions.FindAction("Crouch");
         rb = GetComponent<Rigidbody2D>();
 
-        //jumpAction.performed += _ => JumpActionStarted();
-
         currentSpeed = moveSpeed;
     }
 
     void Update()
     {
-        //CoyoteTime();
-
         if (canControlPlayer == true)
         {
             Move();
             Crouch();
+            Jump();
+            JumpTimer();
         }
     }
 
     void Move()
     {
         moveVector = moveAction.ReadValue<Vector2>();
-
         rb.linearVelocityX = moveVector.x * currentSpeed;
+    }
 
+    void JumpTimer()
+    {
+        RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, groundLayer);
 
+        // Ground check
+        if (ground.collider != null)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
 
-            RaycastHit2D ground = Physics2D.Raycast(transform.position, Vector2.down, jumpDistance, groundLayer);
+        // Jump buffer
+        if (jumpAction.WasPressedThisFrame())
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+    }
 
-        if (jumpAction.IsPressed() && ground.collider)
+    void Jump()
+    {
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
             rb.linearVelocityY = jumpHeight;
+
             coyoteTimeCounter = 0f;
+            jumpBufferCounter = 0f;
+
+            if (jumpSound != null)
+            {
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position, jumpVolume);
+            }
         }
     }
 
@@ -71,14 +103,15 @@ public class PlayerMovement : MonoBehaviour
         if (crouchAction.IsPressed())
         {
             currentSpeed = crouchSpeed;
-            rb.rotation = 90; // temporary, remove later
+            rb.rotation = 90; // temporary
         }
         else
         {
             currentSpeed = moveSpeed;
-            rb.rotation = 0; // temporary, remove later
+            rb.rotation = 0; // temporary
         }
     }
+
     public void Death()
     {
         canControlPlayer = false;
