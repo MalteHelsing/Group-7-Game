@@ -10,6 +10,7 @@ public class TestHealth : MonoBehaviour
 
     [SerializeField] bool applyCameraShake = false;
 
+    float damageDealer;
     
     
 
@@ -21,17 +22,7 @@ public class TestHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-
-        if (damageDealer != null)
-        {
-            TakeDamage(damageDealer.GetDamage());
-            PlayHitParticles();
-            damageDealer.Hit();
-            
-
-            
-        }
+        
     }
 
     void TakeDamage(int damage)
