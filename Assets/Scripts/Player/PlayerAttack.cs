@@ -8,6 +8,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
 
+
+    private void Start()
+    {
+        gameObject.SetActive(isActive);
+    }
+
     private void Update()
     {
         if (Mouse.current.leftButton.isPressed)
