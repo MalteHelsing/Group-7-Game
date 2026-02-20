@@ -4,10 +4,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] GameObject gameObject;
+    [SerializeField] new GameObject gameObject;
     [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
-
 
     private void Start()
     {

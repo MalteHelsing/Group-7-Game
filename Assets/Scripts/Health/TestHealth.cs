@@ -4,19 +4,9 @@ using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
-    [SerializeField] bool isPlayer = false;
-    [SerializeField] int scoreValue = 50;
     [SerializeField] int health = 50;
-    [SerializeField] ParticleSystem hitParticlePrefab;
-
-    [SerializeField] bool applyCameraShake = false;
-
-    float damageDealer;
 
     Slider healthSlider;
-    
-    
-    
 
     void Start()
     {
@@ -33,5 +23,4 @@ public class TestHealth : MonoBehaviour
     {
         healthSlider.value -= 10f;
     }
- 
 }

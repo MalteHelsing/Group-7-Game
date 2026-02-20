@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class SpearLooker : MonoBehaviour
 {
-    private Camera camera;
+    private new Camera camera;
 
 
     void Start()
