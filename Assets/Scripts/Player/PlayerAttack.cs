@@ -1,13 +1,18 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject gameObject;
-    [SerializeField] bool isActive = false;
+    [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
+
+
+    private void Start()
+    {
+        gameObject.SetActive(isActive);
+    }
 
     private void Update()
     {
