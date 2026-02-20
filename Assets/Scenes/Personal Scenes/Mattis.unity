@@ -6618,6 +6618,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f8a24b5ff9b1848469fdae2cf01053c6, type: 3}
     - target: {fileID: 1636740021125588246, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636740021125588246, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -6634,6 +6638,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d43a0f74232ad174898d004ed3e1e87a, type: 3}
     - target: {fileID: 1980848343683401628, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980848343683401628, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -6641,6 +6649,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 369356241}
+    - target: {fileID: 4214526117518790697, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 4686362719062935418, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_Size.x
       value: 19.2
@@ -6653,6 +6665,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ad5541e6ffae31a4d8669265c607bce8, type: 3}
+    - target: {fileID: 4686362719062935418, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 4686362719062935418, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -6777,6 +6793,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2c00ad3e6c27fbc4ba2eb1e9576e7124, type: 3}
+    - target: {fileID: 8491530229721723914, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8491530229721723914, guid: 5b543583af0262644aea6546ce178cfd, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
