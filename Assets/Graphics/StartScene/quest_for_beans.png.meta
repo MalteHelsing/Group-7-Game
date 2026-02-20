@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: d43a0f74232ad174898d004ed3e1e87a
+guid: d4120bfb599518f4f8280a03cc741cb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 584374925798354339
-    second: houses_0
+      213: -7002336862092277697
+    second: quest_for_beans_0
   - first:
-      213: -3298002869832431796
-    second: houses_1
+      213: -3712667177780296412
+    second: quest_for_beans_1
   - first:
-      213: -1538702627613937882
-    second: houses_2
+      213: -4497937711442194418
+    second: quest_for_beans_2
+  - first:
+      213: 7690824700908378033
+    second: quest_for_beans_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,67 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: houses_0
+      name: quest_for_beans_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 55
-        width: 376
-        height: 553
+        x: 475
+        y: 479
+        width: 302
+        height: 158
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ad2bdb16ed1c1800800000000000000
-      internalID: 584374925798354339
+      spriteID: f38cd5159b3b2de90800000000000000
+      internalID: -7002336862092277697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: houses_1
+      name: quest_for_beans_1
       rect:
         serializedVersion: 2
-        x: 572
-        y: 86
-        width: 434
-        height: 539
+        x: 675
+        y: 480
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c474b6b0dd32b32d0800000000000000
-      internalID: -3298002869832431796
+      spriteID: 42547235fd4f97cc0800000000000000
+      internalID: -3712667177780296412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: houses_2
+      name: quest_for_beans_2
       rect:
         serializedVersion: 2
-        x: 1234
-        y: 34
-        width: 566
-        height: 767
+        x: 723
+        y: 479
+        width: 7
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62f6c12dc1e65aae0800000000000000
-      internalID: -1538702627613937882
+      spriteID: e0097a78b7d1491c0800000000000000
+      internalID: -4497937711442194418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quest_for_beans_3
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 479
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b79177515c4bba60800000000000000
+      internalID: 7690824700908378033
       vertices: []
       indices: 
       edges: []
@@ -175,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2c0fdea887047d34f9563c5ad8d01f24
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -183,13 +208,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      houses_0: 584374925798354339
-      houses_1: -3298002869832431796
-      houses_2: -1538702627613937882
+      quest_for_beans_0: -7002336862092277697
+      quest_for_beans_1: -3712667177780296412
+      quest_for_beans_2: -4497937711442194418
+      quest_for_beans_3: 7690824700908378033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
