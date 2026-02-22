@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7774686748435713292}
-  - component: {fileID: 6751686952278915670}
   - component: {fileID: 1980848343683401628}
+  - component: {fileID: 6751686952278915670}
   m_Layer: 0
   m_Name: ParallaxBG1
   m_TagString: Untagged
@@ -33,20 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6751686952278915670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766171160944650707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: 0.125
 --- !u!212 &1980848343683401628
 SpriteRenderer:
   serializedVersion: 2
@@ -106,6 +92,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6751686952278915670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766171160944650707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: 0.125
 --- !u!1 &835036350414512952
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +153,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5873865319672639166}
-  - component: {fileID: 630197778505084147}
   - component: {fileID: 1636740021125588246}
+  - component: {fileID: 630197778505084147}
   m_Layer: 0
   m_Name: ParallaxBG3
   m_TagString: Untagged
@@ -177,20 +177,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &630197778505084147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625910771084334563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: 0.175
 --- !u!212 &1636740021125588246
 SpriteRenderer:
   serializedVersion: 2
@@ -250,6 +236,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &630197778505084147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625910771084334563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: 0.175
 --- !u!1 &2030714568486399549
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,8 +259,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9133925696309970469}
-  - component: {fileID: 2123934334504945874}
   - component: {fileID: 4686362719062935418}
+  - component: {fileID: 2123934334504945874}
   m_Layer: 0
   m_Name: ParallaxBG2
   m_TagString: Untagged
@@ -283,20 +283,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2123934334504945874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030714568486399549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: 0.15
 --- !u!212 &4686362719062935418
 SpriteRenderer:
   serializedVersion: 2
@@ -356,6 +342,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2123934334504945874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030714568486399549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: 0.15
 --- !u!1 &2122608030177175806
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,8 +365,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5119294810569725840}
-  - component: {fileID: 8783164748877040599}
   - component: {fileID: 5461171652883274829}
+  - component: {fileID: 8783164748877040599}
   m_Layer: 0
   m_Name: UnparallaxForeground
   m_TagString: Untagged
@@ -389,20 +389,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8783164748877040599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122608030177175806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: -0.15
 --- !u!212 &5461171652883274829
 SpriteRenderer:
   serializedVersion: 2
@@ -462,6 +448,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8783164748877040599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122608030177175806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: -0.15
 --- !u!1 &7158046916173347731
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,8 +471,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7850400524934599346}
-  - component: {fileID: 8768334378126640684}
   - component: {fileID: 8491530229721723914}
+  - component: {fileID: 8768334378126640684}
   m_Layer: 0
   m_Name: ParallaxBG4
   m_TagString: Untagged
@@ -495,20 +495,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8768334378126640684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7158046916173347731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: 0.2
 --- !u!212 &8491530229721723914
 SpriteRenderer:
   serializedVersion: 2
@@ -568,6 +554,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8768334378126640684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158046916173347731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: 0.2
 --- !u!1 &7297709621014589464
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,8 +577,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5637426356802662968}
-  - component: {fileID: 7265115285250991598}
   - component: {fileID: 4214526117518790697}
+  - component: {fileID: 7265115285250991598}
   m_Layer: 0
   m_Name: ParallaxBackgroundBackground
   m_TagString: Untagged
@@ -601,20 +601,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7265115285250991598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7297709621014589464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: 0.05
 --- !u!212 &4214526117518790697
 SpriteRenderer:
   serializedVersion: 2
@@ -674,6 +660,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7265115285250991598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297709621014589464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: 0.05
 --- !u!1 &8983942708392213780
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,8 +683,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1332597271749090761}
-  - component: {fileID: 1475732423957938260}
   - component: {fileID: 4730430367886507187}
+  - component: {fileID: 1475732423957938260}
   m_Layer: 0
   m_Name: ParallaxGround
   m_TagString: Untagged
@@ -707,20 +707,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7129363526440771727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1475732423957938260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8983942708392213780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
-  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  parallaxEffect: 0
 --- !u!212 &4730430367886507187
 SpriteRenderer:
   serializedVersion: 2
@@ -780,3 +766,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1475732423957938260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8983942708392213780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d77c27ebed04b74bb658cb5f8c261c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParallaxController
+  cam: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  parallaxEffect: 0
