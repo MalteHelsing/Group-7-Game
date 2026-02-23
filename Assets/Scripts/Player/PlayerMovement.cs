@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float crouchSpeed = 1f;
+    [SerializeField] float dashSpeed = 4f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
@@ -29,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
     InputAction moveAction;
     InputAction jumpAction;
     InputAction crouchAction;
+    InputAction dashAction;
 
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Player/Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         crouchAction = InputSystem.actions.FindAction("Crouch");
+        dashAction = InputSystem.actions.FindAction("Sprint");
         rb = GetComponent<Rigidbody2D>();
 
         currentSpeed = moveSpeed;
@@ -44,17 +47,40 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canControlPlayer == true)
         {
-            Move();
-            Crouch();
+            Movement();
             Jump();
             JumpTimer();
         }
     }
 
-    void Move()
+    void Movement()
     {
+        // Movement
         moveVector = moveAction.ReadValue<Vector2>();
         rb.linearVelocityX = moveVector.x * currentSpeed;
+
+        // Crouch
+        if (crouchAction.IsPressed())
+        {
+            currentSpeed = crouchSpeed;
+            rb.rotation = 90; // temporary
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+            rb.rotation = 0; // temporary
+        }
+
+        // Dash
+        if (dashAction.IsPressed())
+        {
+            currentSpeed = dashSpeed;
+            Debug.Log("Dash!");
+        }
+        else
+        {
+            currentSpeed = moveSpeed;
+        }
     }
 
     void JumpTimer()
@@ -95,20 +121,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(jumpSound, transform.position, jumpVolume);
             }
-        }
-    }
-
-    void Crouch()
-    {
-        if (crouchAction.IsPressed())
-        {
-            currentSpeed = crouchSpeed;
-            rb.rotation = 90; // temporary
-        }
-        else
-        {
-            currentSpeed = moveSpeed;
-            rb.rotation = 0; // temporary
         }
     }
 
