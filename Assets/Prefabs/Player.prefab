@@ -190,14 +190,14 @@ MonoBehaviour:
   moveSpeed: 6
   crouchSpeed: 1
   jumpHeight: 10
-  jumpDistance: 1
+  jumpDistance: 0.8
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  coyoteTime: 0.2
-  one: {fileID: 0}
-  oneVolume: 0
-  groundRadius: 0.2
+  coyoteTime: 0.12
+  jumpBufferTime: 0.1
+  jumpSound: {fileID: 0}
+  jumpVolume: 0
 --- !u!1 &7557556427594967543
 GameObject:
   m_ObjectHideFlags: 0

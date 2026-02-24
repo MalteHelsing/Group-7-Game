@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] new GameObject gameObject;
+    [SerializeField] GameObject spear;
     [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
 
     private void Start()
     {
-        gameObject.SetActive(isActive);
+        spear.SetActive(isActive);
     }
 
     private void Update()
@@ -23,8 +23,8 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator DelayAction(float SpearDeActiveDelay)
     {
-        gameObject.SetActive(!isActive);
+        spear.SetActive(!isActive);
         yield return new WaitForSeconds(SpearDeActiveDelay);
-        gameObject.SetActive(isActive);
+        spear.SetActive(isActive);
     }
 }
