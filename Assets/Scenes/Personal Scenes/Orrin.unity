@@ -394,6 +394,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1027202543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7557556427594967543, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  m_PrefabInstance: {fileID: 1670979231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027202548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027202543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d10064e537cc740baf334729467e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpearLooker
 --- !u!1 &1029173961
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +851,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7557556427594967543, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1027202548}
   m_SourcePrefab: {fileID: 100100000, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
 --- !u!1 &2017744122
 GameObject:
