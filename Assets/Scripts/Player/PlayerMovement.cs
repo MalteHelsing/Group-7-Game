@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
 
+    [Header("Dash")]
+    [SerializeField] float dashDuration = 5f;
+    [SerializeField] float dashCooldown = 5f;
+
     [Header("Music & SFX")]
     [SerializeField] AudioClip jumpSound;
     [SerializeField, Range(0, 1)] float jumpVolume;
@@ -24,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
+
+    private bool isDashing = false;
+    private bool canDash = true;
 
     Vector2 moveVector;
     Rigidbody2D rb;
@@ -37,9 +45,9 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Player/Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         crouchAction = InputSystem.actions.FindAction("Crouch");
-        dashAction = InputSystem.actions.FindAction("Sprint");
+        dashAction = InputSystem.actions.FindAction("Dash");
+        
         rb = GetComponent<Rigidbody2D>();
-
         currentSpeed = moveSpeed;
     }
 
@@ -57,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Movement
         moveVector = moveAction.ReadValue<Vector2>();
-        rb.linearVelocityX = moveVector.x * currentSpeed;
+        rb.linearVelocityX = moveVector.x * moveSpeed;
 
         // Crouch
         if (crouchAction.IsPressed())
@@ -70,16 +78,21 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = moveSpeed;
             rb.rotation = 0; // temporary
         }
+    }
 
-        // Dash
-        if (dashAction.IsPressed())
+    void Jump()
+    {
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
-            currentSpeed = dashSpeed;
-            Debug.Log("Dash!");
-        }
-        else
-        {
-            currentSpeed = moveSpeed;
+            rb.linearVelocityY = jumpHeight;
+
+            coyoteTimeCounter = 0f;
+            jumpBufferCounter = 0f;
+
+            if (jumpSound != null)
+            {
+                AudioSource.PlayClipAtPoint(jumpSound, transform.position, jumpVolume);
+            }
         }
     }
 
@@ -105,22 +118,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             jumpBufferCounter -= Time.deltaTime;
-        }
-    }
-
-    void Jump()
-    {
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
-        {
-            rb.linearVelocityY = jumpHeight;
-
-            coyoteTimeCounter = 0f;
-            jumpBufferCounter = 0f;
-
-            if (jumpSound != null)
-            {
-                AudioSource.PlayClipAtPoint(jumpSound, transform.position, jumpVolume);
-            }
         }
     }
 

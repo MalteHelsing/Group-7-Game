@@ -478,7 +478,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 10
   health: 10
-  damage: 0
 --- !u!114 &1908900261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,7 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 8
   crouchSpeed: 1
-  dashSpeed: 12
+  dashSpeed: 1
   jumpHeight: 6
   jumpDistance: 1.5
   groundLayer:
@@ -501,6 +500,8 @@ MonoBehaviour:
     m_Bits: 128
   coyoteTime: 0.1
   jumpBufferTime: 0.1
+  dashDuration: 0.15
+  dashCooldown: 0.5
   jumpSound: {fileID: 0}
   jumpVolume: 0
 --- !u!50 &1908900262
