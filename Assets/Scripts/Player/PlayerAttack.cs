@@ -15,15 +15,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current.leftButton.isPressed)
+        if (isActive == false)
         {
-            StartCoroutine(DelayAction(SpearDeActiveDelay));
+            if (Mouse.current.leftButton.isPressed)
+            {
+                spear.SetActive(!isActive);
+                StartCoroutine(DelayAction(SpearDeActiveDelay));
+            }
         }
     }
 
     IEnumerator DelayAction(float SpearDeActiveDelay)
     {
-        spear.SetActive(!isActive);
         yield return new WaitForSeconds(SpearDeActiveDelay);
         spear.SetActive(isActive);
     }
