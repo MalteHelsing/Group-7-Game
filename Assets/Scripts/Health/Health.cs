@@ -1,17 +1,25 @@
 using Unity.Hierarchy;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
     [SerializeField] int health = 10;
-    [SerializeField] float damage = 2f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    DamageDealer damageDealer;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-         currentHealth = currentHealth - damage;
+         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
-         Die();
+        if (damageDealer != null)
+        {
+            TakeDamage(damageDealer.DoDamage());
+        }
+
+        Die();
     }
 
     public void Die()
@@ -19,6 +27,16 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
         }
     }
 
