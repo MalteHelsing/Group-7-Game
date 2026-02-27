@@ -1,22 +1,27 @@
-using Unity.Hierarchy;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
-using UnityEngine.VFX;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
-    [SerializeField] int health = 10;
+    [SerializeField] bool isEnemy = false;
 
     DamageDealer damageDealer;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
+        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
         if (damageDealer != null)
         {
-            TakeDamage(damageDealer.DoDamage());
+            if (isEnemy != false)
+            {
+                int layerIndexC = LayerMask.NameToLayer("HitBox");
+
+                if (other.gameObject.layer == layerIndexC)
+                {
+                    TakeDamage(damageDealer.DoDamage());
+                }
+            }
         }
 
         Die();
@@ -38,10 +43,5 @@ public class Health : MonoBehaviour
         {
             Die();
         }
-    }
-
-    public int GetHealth()
-    {
-        return health;
     }
 }
