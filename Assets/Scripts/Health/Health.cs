@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
 
         if (damageDealer != null)
         {
-            TakeDamage(damageDealer.DoDamage());
+            TakeDamage(damageDealer.GetDamage());
         }
 
         Die();
