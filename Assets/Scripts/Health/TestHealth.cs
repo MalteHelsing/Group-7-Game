@@ -43,17 +43,17 @@ public class TestHealth : MonoBehaviour
         health -= damage;
     }
 
-    private void OnTriggerEnter2D(PlayerMovement other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
         if (damageDealer != null)
         {
-            
-            
-            
+            TakeDamage(damageDealer.GetDamage());
 
-           
+
+
+
         }
     }
 
