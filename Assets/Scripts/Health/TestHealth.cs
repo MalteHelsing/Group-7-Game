@@ -49,9 +49,9 @@ public class TestHealth : MonoBehaviour
 
         if (damageDealer != null)
         {
-            TakeDamage(damageDealer.GetDamage());
             
-            damageDealer.Hit();
+            
+            
 
            
         }
