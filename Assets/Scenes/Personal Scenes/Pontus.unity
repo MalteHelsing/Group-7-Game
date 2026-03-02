@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1310197839}
-  m_HandleRect: {fileID: 0}
+  m_HandleRect: {fileID: 146849596}
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 10
@@ -208,19 +208,7 @@ MonoBehaviour:
   m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &128265540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,9 +255,9 @@ RectTransform:
   m_Father: {fileID: 128265538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.7100067, y: -0.8379936}
-  m_SizeDelta: {x: 46.582, y: 29.715}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -226.87, y: -0.8379936}
+  m_SizeDelta: {x: 500, y: 29.715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146849597
 MonoBehaviour:
@@ -355,6 +343,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662373743610568515, guid: 63264c1a8b41f3040a039171be1466b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738929764695688838, guid: 63264c1a8b41f3040a039171be1466b5, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7242244665568236673, guid: 63264c1a8b41f3040a039171be1466b5, type: 3}
@@ -951,6 +943,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 283651817252127084, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_Name
       value: Player

@@ -1,11 +1,11 @@
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
-    [SerializeField] int health = 50;
+    [SerializeField] int health = 100;
+    
 
     InputAction damageAction;
 
@@ -22,8 +22,13 @@ public class TestHealth : MonoBehaviour
     void Update()
     {
       if (damageAction.IsPressed())
-        {
+      {
             HealthSlider();
+      }
+
+      if (damageAction.IsPressed())
+        {
+            TakeDamage(2);
         }
     }
 
@@ -41,21 +46,5 @@ public class TestHealth : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-
-        if (damageDealer != null)
-        {
-            TakeDamage(damageDealer.GetDamage());
-
-
-
-
-        }
-    }
-
-    
+    }    
 }
