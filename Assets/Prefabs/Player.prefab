@@ -36,7 +36,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3677736546728135006}
+  - {fileID: 3055344205845103301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4518652125115464846
@@ -176,7 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
   crouchSpeed: 1
-  dashSpeed: 4
   jumpHeight: 10
   jumpDistance: 0.8
   groundLayer:
@@ -184,10 +183,9 @@ MonoBehaviour:
     m_Bits: 128
   coyoteTime: 0.1
   jumpBufferTime: 0.1
-  dashDuration: 5
-  dashCooldown: 5
   jumpSound: {fileID: 0}
   jumpVolume: 0
+  currentSpeed: 0
 --- !u!114 &1373724256941580795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +228,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyForDoor
   KeyPickUpDelay: 0.1
+--- !u!1 &2084048991716981578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3055344205845103301}
+  m_Layer: 0
+  m_Name: SpearLooker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3055344205845103301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084048991716981578}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.8447711, y: 4.5341144, z: 0}
+  m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3677736546728135006}
+  m_Father: {fileID: 4044943988259190465}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7557556427594967543
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,12 +288,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7557556427594967543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6581, y: 0.0344, z: 0}
-  m_LocalScale: {x: 2.1837018, y: 0.94171554, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.15201, y: -3.1498003, z: 0}
+  m_LocalScale: {x: 1.5285914, y: 0.6592009, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4044943988259190465}
+  m_Father: {fileID: 3055344205845103301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4258261828541021975
 SpriteRenderer:
