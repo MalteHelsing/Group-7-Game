@@ -17,6 +17,7 @@ public class KeyForDoor : MonoBehaviour
         else if (other.CompareTag("Door") && HasKey)
         {
             HasKey = false;
+            Debug.Log("Door OPEN");
         }
     }
 }

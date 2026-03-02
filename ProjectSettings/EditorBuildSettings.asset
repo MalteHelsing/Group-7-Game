@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Ingame scenes/StartMenu.unity
+    path: Assets/Scenes/Ingame scenes/Start/StartMenu.unity
     guid: bc68d2174f8bcfd4288a18099d9b0c34
   - enabled: 1
-    path: Assets/Scenes/Ingame scenes/Options.unity
+    path: Assets/Scenes/Ingame scenes/Start/Options.unity
     guid: a1c92fffe62900b4999953548cb7d89f
   - enabled: 1
     path: Assets/Scenes/Ingame scenes/Stages/Stage 1, Spear and block introduction
