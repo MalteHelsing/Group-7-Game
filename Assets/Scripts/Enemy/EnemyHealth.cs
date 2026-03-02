@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
 
                 if (other.gameObject.layer == layerIndexC)
                 {
-                    TakeDamage(damageDealer.DoDamage());
+                    TakeDamage(damageDealer.GetDamage());
                 }
             }
         }
