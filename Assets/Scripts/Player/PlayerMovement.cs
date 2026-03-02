@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float crouchSpeed = 1f;
-    [SerializeField] float dashSpeed = 4f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
@@ -16,22 +15,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
 
-    [Header("Dash")]
-    [SerializeField] float dashDuration = 5f;
-    [SerializeField] float dashCooldown = 5f;
-
     [Header("Music & SFX")]
     [SerializeField] AudioClip jumpSound;
     [SerializeField, Range(0, 1)] float jumpVolume;
 
     bool canControlPlayer = true;
-    private float currentSpeed;
+    public float currentSpeed;
 
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
-
-    private bool isDashing = false;
-    private bool canDash = true;
 
     Vector2 moveVector;
     Rigidbody2D rb;
