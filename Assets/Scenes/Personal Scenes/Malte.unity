@@ -359,6 +359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd1be4d8eafed244ac7cd9cdf67d722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpearLooker
+  cam: {fileID: 724385261}
+  axis: 0
+  inverted: 0
 --- !u!1 &534958945
 GameObject:
   m_ObjectHideFlags: 0
