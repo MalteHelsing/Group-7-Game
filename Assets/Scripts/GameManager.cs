@@ -40,10 +40,12 @@ public class GameManager : MonoBehaviour
             if (pauseScreen.activeInHierarchy)
             {
                 PausGame(false);
+                Time.timeScale = 1;
             }
             else
             {
                 PausGame(true);
+                Time.timeScale = 0;
             }
         }
     }

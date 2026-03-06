@@ -24,7 +24,7 @@ public class SelectionArrow : MonoBehaviour
         
         if (Keyboard.current.sKey.wasPressedThisFrame || Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
-            ChangePosition(+1);
+            ChangePosition(1);
         }
     }
 

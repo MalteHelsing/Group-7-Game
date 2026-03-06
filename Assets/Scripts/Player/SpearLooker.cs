@@ -1,15 +1,14 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class SpearLooker : MonoBehaviour
 {
-    private void Update()
+    public void SpearLookLeft()
     {
-        Vector3 mousePosition = Mouse.current.position.ReadValue();
-        mousePosition = Camera.main.transform.InverseTransformPoint(mousePosition);
+        transform.position += new Vector3(-3, 0, 0);
+    }
 
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-
-        transform.up = direction;
+    public void SpearLookRight()
+    {
+        transform.position += new Vector3(3, 0, 0);
     }
 }

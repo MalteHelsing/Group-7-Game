@@ -5,11 +5,19 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] GameObject Hitbox;
     [SerializeField] Transform player;
+    [SerializeField] ParticleSystem backWheelParticles;
+    [SerializeField] ParticleSystem frontWheelParticles;
 
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float agroRange = 5f;
 
-    
+    private void Start()
+    {
+        backWheelParticles.Play();
+        frontWheelParticles.Play();
+    }
+
+
 
     private void Update()
     {

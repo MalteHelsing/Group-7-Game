@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     InputAction crouchAction;
     InputAction dashAction;
 
+    SpearLooker spearLooker;
+
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Player/Move");
@@ -50,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             JumpTimer();
         }
+
+        Spearturn();
     }
 
     void Movement()
@@ -115,5 +119,17 @@ public class PlayerMovement : MonoBehaviour
     public void Death()
     {
         canControlPlayer = false;
+    }
+
+    void Spearturn()
+    {
+        if (moveVector.x == 2)
+        {
+            spearLooker.SpearLookRight();
+        }
+        else if (moveVector.x == -2)
+        {
+            spearLooker.SpearLookLeft();
+        }
     }
 }
