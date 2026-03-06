@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 353297209}
   - component: {fileID: 353297208}
   - component: {fileID: 353297210}
+  - component: {fileID: 353297211}
   m_Layer: 7
   m_Name: Platform5
   m_TagString: Untagged
@@ -649,6 +650,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &353297211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353297206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
 --- !u!1 &377535912
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +674,7 @@ GameObject:
   - component: {fileID: 377535915}
   - component: {fileID: 377535914}
   - component: {fileID: 377535916}
+  - component: {fileID: 377535917}
   m_Layer: 7
   m_Name: Platform2
   m_TagString: Untagged
@@ -807,6 +821,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &377535917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377535912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
 --- !u!1 &445650641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1197,7 @@ GameObject:
   - component: {fileID: 1182783000}
   - component: {fileID: 1182782999}
   - component: {fileID: 1182783001}
+  - component: {fileID: 1182783002}
   m_Layer: 7
   m_Name: Platform4
   m_TagString: Untagged
@@ -1317,6 +1344,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1182783002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182782997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
 --- !u!1 &1227980201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1815,7 @@ GameObject:
   - component: {fileID: 1838476399}
   - component: {fileID: 1838476398}
   - component: {fileID: 1838476400}
+  - component: {fileID: 1838476401}
   m_Layer: 7
   m_Name: Platform3
   m_TagString: Untagged
@@ -1922,6 +1962,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1838476401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838476396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
 --- !u!1 &1892367472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2158,7 @@ GameObject:
   - component: {fileID: 2143182572}
   - component: {fileID: 2143182573}
   - component: {fileID: 2143182574}
+  - component: {fileID: 2143182575}
   m_Layer: 7
   m_Name: Platform1
   m_TagString: Untagged
@@ -2252,6 +2305,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &2143182575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143182570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
