@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KeyForDoor : MonoBehaviour
 {
     [Header("Key")]
     [SerializeField] float KeyPickUpDelay = 0.1f;
 
-    bool HasKey = false;
+    public bool HasKey = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +18,18 @@ public class KeyForDoor : MonoBehaviour
         else if (other.CompareTag("Door") && HasKey)
         {
             HasKey = false;
-            Debug.Log("Door OPEN");
+            LoadNextScene();
+        }
+    }
+
+    void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }

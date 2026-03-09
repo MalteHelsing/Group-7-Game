@@ -57,8 +57,6 @@ public class PlayerMovement : MonoBehaviour
             JumpTimer();
             FallThrough();
         }
-
-        Spearturn();
     }
 
     void Movement()
@@ -67,6 +65,16 @@ public class PlayerMovement : MonoBehaviour
         moveVector = moveAction.ReadValue<Vector2>();
         rb.linearVelocityX = moveVector.x * moveSpeed;
 
+        // Spearturn
+        if (moveVector.x == 2)
+        {
+            spearLooker.SpearLookRight();
+        }
+        else if (moveVector.x == -2)
+        {
+            spearLooker.SpearLookLeft();
+        }
+        
         // Crouch
         if (crouchAction.IsPressed())
         {
@@ -124,18 +132,6 @@ public class PlayerMovement : MonoBehaviour
     public void Death()
     {
         canControlPlayer = false;
-    }
-
-    void Spearturn()
-    {
-        if (moveVector.x == 2)
-        {
-            spearLooker.SpearLookRight();
-        }
-        else if (moveVector.x == -2)
-        {
-            spearLooker.SpearLookLeft();
-        }
     }
 
     void FallThrough()
