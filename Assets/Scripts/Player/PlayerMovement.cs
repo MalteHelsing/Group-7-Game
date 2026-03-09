@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
 
+    [Header("Fall speeds")]
+    [SerializeField] float FallSpeed = -10f;
+    [SerializeField] float PlatformFallSpeed = -20f;
+
     [Header("Jump Assist")]
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
@@ -51,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
             Movement();
             Jump();
             JumpTimer();
+            FallThrough();
         }
 
         Spearturn();
@@ -130,6 +135,18 @@ public class PlayerMovement : MonoBehaviour
         else if (moveVector.x == -2)
         {
             spearLooker.SpearLookLeft();
+        }
+    }
+
+    void FallThrough()
+    {
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+        {
+            Physics2D.gravity = new Vector3(0, PlatformFallSpeed, 0);
+        }
+        else if (Keyboard.current.sKey.wasReleasedThisFrame)
+        {
+            Physics2D.gravity = new Vector3(0, FallSpeed, 0);
         }
     }
 }
