@@ -1,12 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class SkeletonProjectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     [Header("Base Variables")]
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] float leftSpeed = 10f;
-    [SerializeField] float rightSpeed = 10f;
+    [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileLifetime = 5f;
     [SerializeField] float baseFireRate = 0.2f;
 
@@ -17,12 +16,11 @@ public class SkeletonProjectile : MonoBehaviour
 
     [HideInInspector] public bool isFiring;
 
-    float direction;
-
     Coroutine fireCoroutine;
 
     void Start()
     {
+
         if (useAI)
         {
             isFiring = true;
@@ -32,18 +30,6 @@ public class SkeletonProjectile : MonoBehaviour
     void Update()
     {
         Fire();
-    }
-
-    void Way ()
-    {
-        if ()
-        {
-            direction = leftSpeed;
-        }
-        else if ()
-        {
-            direction = rightSpeed;
-        }
     }
 
     void Fire()
@@ -66,7 +52,7 @@ public class SkeletonProjectile : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
             Rigidbody2D projectileRB = projectile.GetComponent<Rigidbody2D>();
-            projectileRB.linearVelocityX = projectileSpeed;
+            projectileRB.linearVelocityY = projectileSpeed;
 
             Destroy(projectile, projectileLifetime);
 
@@ -76,7 +62,7 @@ public class SkeletonProjectile : MonoBehaviour
 
             waitTime = Mathf.Clamp(waitTime, minimumFireRate, float.MaxValue);
 
-
+           
 
             yield return new WaitForSeconds(waitTime);
         }
