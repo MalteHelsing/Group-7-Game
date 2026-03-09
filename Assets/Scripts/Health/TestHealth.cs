@@ -4,47 +4,32 @@ using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
-    [SerializeField] int health = 100;
-    
+    TestHealth instance;
 
-    InputAction damageAction;
+    public int maxHealth;
+    int health;
 
-    Slider healthSlider;
-
-    void Start()
+    void Awake()
     {
-        damageAction = InputSystem.actions.FindAction("Crouch");
-        
-        healthSlider.value = health;
-        healthSlider = GetComponent<Slider>();
-    }
-
-    void Update()
-    {
-      if (damageAction.IsPressed())
-      {
-            HealthSlider();
-      }
-
-      if (damageAction.IsPressed())
+        if(instance == null)
         {
-            TakeDamage(2);
+            
         }
     }
 
-    void HealthSlider()
+    private void Start()
     {
-        healthSlider.value -= 10f;
+        health = maxHealth;
     }
 
-    public void SetHealth (float currentHealth, float maxHealth)
+    public void TakeDamage()
     {
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth;
+        if (health < -0)
+        {
+            return;
+        }
+        health -= 1;
     }
-    // test health
-    void TakeDamage(int damage)
-    {
-        health -= damage;
-    }    
+      
+
 }
