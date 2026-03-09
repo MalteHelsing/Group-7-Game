@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   targetToFollow: {fileID: 300839893}
   regularSmoothing: 0.6
-  sKeySmoothing: 0.25
+  sKeySmoothing: 0.2
   offset: {x: 0, y: 5, z: 0}
 --- !u!114 &1379006234
 MonoBehaviour:
