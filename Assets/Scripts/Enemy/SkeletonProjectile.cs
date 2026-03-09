@@ -17,9 +17,11 @@ public class SkeletonProjectile : MonoBehaviour
 
     [HideInInspector] public bool isFiring;
 
+    Coroutine fireCoroutine;
+
     float direction;
 
-    Coroutine fireCoroutine;
+    
 
     void Start()
     {
@@ -34,16 +36,9 @@ public class SkeletonProjectile : MonoBehaviour
         Fire();
     }
 
-    void Way ()
+    void Direction()
     {
-        if ()
-        {
-            direction = leftSpeed;
-        }
-        else if ()
-        {
-            direction = rightSpeed;
-        }
+        
     }
 
     void Fire()
@@ -66,7 +61,7 @@ public class SkeletonProjectile : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
             Rigidbody2D projectileRB = projectile.GetComponent<Rigidbody2D>();
-            projectileRB.linearVelocityX = projectileSpeed;
+            projectileRB.linearVelocityX = direction;
 
             Destroy(projectile, projectileLifetime);
 
