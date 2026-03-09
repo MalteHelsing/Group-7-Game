@@ -9,6 +9,9 @@ public class SkeletonAI : MonoBehaviour
     [SerializeField] float runRange = 2.5f;
 
     bool isFacingRight = true;
+    bool isFacingLeft = true;
+    public bool GetFacingRight() { return isFacingRight; }
+    public bool GetFacingLeft() { return isFacingLeft; }
 
     private void Update()
     {
@@ -38,11 +41,13 @@ public class SkeletonAI : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacingRight = true;
+            isFacingLeft = false;
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             isFacingRight = false;
+            isFacingLeft = true;
         }
     }
 

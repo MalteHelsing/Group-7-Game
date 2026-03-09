@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 
 public class SkeletonProjectile : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SkeletonProjectile : MonoBehaviour
 
     float direction;
 
-    
+    SkeletonAI skeletonAI;
 
     void Start()
     {
@@ -34,11 +35,19 @@ public class SkeletonProjectile : MonoBehaviour
     void Update()
     {
         Fire();
+        Direction();
     }
 
     void Direction()
     {
-        
+        if (skeletonAI.GetFacingRight())
+        {
+            direction = leftSpeed;
+        }
+        else if (skeletonAI.GetFacingLeft())
+        {
+            direction = rightSpeed;
+        }
     }
 
     void Fire()
