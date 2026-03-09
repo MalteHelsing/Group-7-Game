@@ -275,7 +275,8 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: -10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7654140221739138256, guid: 63264c1a8b41f3040a039171be1466b5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
