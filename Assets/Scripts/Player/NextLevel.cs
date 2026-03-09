@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class KeyForDoor : MonoBehaviour
+public class NextLevel : MonoBehaviour
 {
     [Header("Key")]
     [SerializeField] float KeyPickUpDelay = 0.1f;

@@ -14,8 +14,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
 
+    [Header("Fall Through")]
+    [SerializeField] float fallSpeed = 1f;
+    [SerializeField] float platformFallSpeed = 1f;
+
     [Header("Music & SFX")]
-    [SerializeField] AudioClip jumpSound;
+    [SerializeField] private AudioClip jumpSound;
     [SerializeField, Range(0, 1)] float jumpVolume;
 
     bool canControlPlayer = true;
@@ -51,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
             Movement();
             Jump();
             JumpTimer();
+            FallThrough();
         }
     }
 
@@ -77,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
+            SoundManager.instance.PlaySound(jumpSound);
+
             rb.linearVelocityY = jumpHeight;
 
             coyoteTimeCounter = 0f;
@@ -111,6 +118,18 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             jumpBufferCounter -= Time.deltaTime;
+        }
+    }
+
+    void FallThrough()
+    {
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+        {
+            Physics2D.gravity = new Vector3(0, platformFallSpeed, 0);
+        }
+        else if (Keyboard.current.sKey.wasReleasedThisFrame)
+        {
+            Physics2D.gravity = new Vector3(0, fallSpeed, 0);
         }
     }
 

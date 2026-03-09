@@ -12,12 +12,16 @@ public class GameManager : MonoBehaviour
     private float timeElapsed = 0f;
 
     InputAction pauseMenu;
-    
+
+    private void Awake()
+    {
+        pauseScreen.SetActive(false);
+    }
+
     void Start()
     {
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
     }
-
     
     void Update()
     {
@@ -40,19 +44,25 @@ public class GameManager : MonoBehaviour
             if (pauseScreen.activeInHierarchy)
             {
                 PausGame(false);
-                Time.timeScale = 1;
             }
             else
             {
                 PausGame(true);
-                Time.timeScale = 0;
             }
         }
     }
 
     public void PausGame(bool staus)
     {
-
         pauseScreen.SetActive(staus);
+
+        if (staus)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 }

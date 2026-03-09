@@ -22,4 +22,14 @@ public class ButtonBehavior : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void VolumeSlider()
+    {
+
+    }
+
+    public void Brightness()
+    {
+
+    }
 }
