@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         {
             spearLooker.SpearLookRight();
         }
-        else if (moveVector.x == -2)
+        else if (moveVector.x )
         {
             spearLooker.SpearLookLeft();
         }
