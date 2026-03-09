@@ -18,6 +18,11 @@ public class CameraFollow : MonoBehaviour
         FindTargetPosition();
     }
 
+    private void Update()
+    {
+        FollowFaster();
+    }
+
     void LateUpdate()
     {
         FindTargetPosition();
