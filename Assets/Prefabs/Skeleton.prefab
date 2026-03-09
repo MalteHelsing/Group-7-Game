@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8675281728872273109}
   - component: {fileID: 5738929764695688838}
   - component: {fileID: 2447285677993431372}
+  - component: {fileID: 7654140221739138256}
   - component: {fileID: 8453223080776181699}
   - component: {fileID: 5559018471424575553}
   m_Layer: 0
@@ -200,6 +201,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &7654140221739138256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242244665568236673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e987e1be303000d4da22f183a480357a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkeletonAI
+  player: {fileID: 0}
+  moveSpeed: 1
+  agroRange: 5
+  runRange: 2.5
 --- !u!114 &8453223080776181699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,4 +251,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 25
   health: 25
-  damage: 0
