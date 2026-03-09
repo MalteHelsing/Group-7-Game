@@ -8,6 +8,8 @@ public class SkeletonAI : MonoBehaviour
     [SerializeField] float agroRange = 5f;
     [SerializeField] float runRange = 2.5f;
 
+    bool isFacingRight = true;
+
     private void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
@@ -35,10 +37,12 @@ public class SkeletonAI : MonoBehaviour
         if (transform.position.x < player.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            isFacingRight = true;
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            isFacingRight = false;
         }
     }
 
