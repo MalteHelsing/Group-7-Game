@@ -8,7 +8,7 @@ public class SkeletonAI : MonoBehaviour
     [SerializeField] float agroRange = 5f;
     [SerializeField] float runRange = 2.5f;
 
-    bool isFacingRight = true;
+    [SerializeField] bool isFacingRight = true;
 
     private void Update()
     {
