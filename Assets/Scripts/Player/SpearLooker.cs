@@ -1,14 +1,18 @@
+using System;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 public class SpearLooker : MonoBehaviour
 {
-    public void SpearLookLeft()
+    private void Update()
     {
-        transform.position += new Vector3(-3, 0, 0);
-    }
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        mousePos.z = Camera.main.nearClipPlane;
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
-    public void SpearLookRight()
-    {
-        transform.position += new Vector3(3, 0, 0);
+        if (Mouse.current.leftButton.isPressed)
+        {
+            transform.LookAt(worldPos);
+        }
     }
 }

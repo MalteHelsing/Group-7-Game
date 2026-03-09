@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
         if (isActive == false)
         {
             if (Mouse.current.leftButton.isPressed)
-            {
+            { 
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
             }
