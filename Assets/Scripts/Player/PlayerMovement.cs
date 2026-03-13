@@ -15,12 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpBufferTime = 0.1f;
 
     [Header("Fall Through")]
-    [SerializeField] float fallSpeed = 1f;
-    [SerializeField] float platformFallSpeed = 1f;
+    [SerializeField] float fallSpeed = -10f;
+    [SerializeField] float platformFallSpeed = -20f;
 
     [Header("Music & SFX")]
     [SerializeField] private AudioClip jumpSound;
-    [SerializeField, Range(0, 1)] float jumpVolume;
 
     bool canControlPlayer = true;
     private float currentSpeed;
@@ -34,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
     InputAction crouchAction;
     InputAction dashAction;
-
-    SpearLooker spearLooker;
 
     void Start()
     {
@@ -82,9 +79,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
-            SoundManager.instance.PlaySound(jumpSound);
-
             rb.linearVelocityY = jumpHeight;
+            
+            SoundManager.Instance.PlaySound(jumpSound);
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;

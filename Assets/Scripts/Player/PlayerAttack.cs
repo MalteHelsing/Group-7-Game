@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject spear;
     [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
+    [SerializeField] float AttackDelay = 1.0f;
 
     private void Start()
     {
@@ -15,10 +16,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (isActive == false)
+        if (Mouse.current.leftButton.isPressed)
         {
-            if (Mouse.current.leftButton.isPressed)
-            { 
+            WaitForAttack();
+            if (isActive == false)
+            {
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
             }
@@ -29,5 +31,15 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(SpearDeActiveDelay);
         spear.SetActive(isActive);
+    }
+
+    IEnumerator AttackWait(float AttackDelay)
+    {
+        yield return new WaitForSeconds(AttackDelay);
+    }
+
+    void WaitForAttack()
+    {
+        StartCoroutine(AttackWait(AttackDelay));
     }
 }

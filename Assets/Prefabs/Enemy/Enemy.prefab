@@ -4848,9 +4848,9 @@ GameObject:
   - component: {fileID: 4276314316327897842}
   - component: {fileID: 7768167325689307666}
   - component: {fileID: 4387905767843405854}
-  - component: {fileID: 7428560022822470394}
   - component: {fileID: 1553242804401363205}
   - component: {fileID: 8855792691663402464}
+  - component: {fileID: 3089854359872365977}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -4918,6 +4918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   Hitbox: {fileID: 0}
   player: {fileID: 0}
+  backWheelParticles: {fileID: 0}
+  frontWheelParticles: {fileID: 0}
   moveSpeed: 1
   agroRange: 3
 --- !u!114 &4387905767843405854
@@ -4934,19 +4936,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
   isEnemy: 1
---- !u!114 &7428560022822470394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3491951853567492799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8c0202236033345b0cab0891ec3871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
-  damage: 10
 --- !u!60 &1553242804401363205
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5063,6 +5052,19 @@ PolygonCollider2D:
       - {x: 0.7492528, y: -0.3832035}
       - {x: 0.8366513, y: 0.07596916}
   m_UseDelaunayMesh: 1
+--- !u!114 &3089854359872365977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491951853567492799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
+  damage: 2
 --- !u!1 &3825194335217446513
 GameObject:
   m_ObjectHideFlags: 0
