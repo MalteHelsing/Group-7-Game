@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1395276653438855483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395276653438855483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_TagString
+      value: Spear
+      objectReference: {fileID: 0}
     - target: {fileID: 3055344205845103301, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
