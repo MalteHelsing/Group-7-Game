@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpBufferTime = 0.1f;
 
     [Header("Fall Through")]
-    [SerializeField] float fallSpeed = 1f;
-    [SerializeField] float platformFallSpeed = 1f;
+    [SerializeField] float fallSpeed = -10f;
+    [SerializeField] float platformFallSpeed = -20f;
 
     [Header("Music & SFX")]
     [SerializeField] private AudioClip jumpSound;
