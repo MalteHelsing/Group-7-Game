@@ -13,7 +13,7 @@ public class TestHealth : MonoBehaviour
     {
         if(instance == null)
         {
-            
+            instance = this;
         }
     }
 
