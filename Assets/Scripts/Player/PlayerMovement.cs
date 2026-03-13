@@ -35,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
     InputAction crouchAction;
     InputAction dashAction;
 
-    SpearLooker spearLooker;
-
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Player/Move");
@@ -82,9 +80,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
-            SoundManager.instance.PlaySound(jumpSound);
-
             rb.linearVelocityY = jumpHeight;
+            
+            SoundManager.instance.PlaySound(jumpSound);
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
