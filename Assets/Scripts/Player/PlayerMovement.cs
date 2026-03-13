@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0, 1)] float jumpVolume;
 
     bool canControlPlayer = true;
-    public float currentSpeed;
+    private float currentSpeed;
 
     private float coyoteTimeCounter;
     private float jumpBufferCounter;
@@ -88,11 +88,6 @@ public class PlayerMovement : MonoBehaviour
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
-
-            if (jumpSound != null)
-            {
-                AudioSource.PlayClipAtPoint(jumpSound, transform.position, jumpVolume);
-            }
         }
     }
 
