@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Music & SFX")]
     [SerializeField] private AudioClip jumpSound;
-    [SerializeField, Range(0, 1)] float jumpVolume;
 
     bool canControlPlayer = true;
     private float currentSpeed;
@@ -82,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocityY = jumpHeight;
             
-            //SoundManager.instance.PlaySound(jumpSound);
+            SoundManager.Instance.PlaySound(jumpSound);
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
