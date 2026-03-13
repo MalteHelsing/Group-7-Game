@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocityY = jumpHeight;
             
-            SoundManager.instance.PlaySound(jumpSound);
+            //SoundManager.instance.PlaySound(jumpSound);
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
