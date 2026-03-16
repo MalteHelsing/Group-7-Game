@@ -1546,8 +1546,8 @@ Transform:
   m_GameObject: {fileID: 1793681668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.6, y: -0.099999964, z: 0}
-  m_LocalScale: {x: 3, y: 4, z: 1}
+  m_LocalPosition: {x: -12.5604, y: -0.099999964, z: 0}
+  m_LocalScale: {x: 2.0792, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 80310264}
@@ -1564,7 +1564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0912639da971781468ec71f930e26c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossMovement
-  waypoints: []
 --- !u!114 &1793681672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,6 +1576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e6ff24f23973248bf49c74b72d3af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
+  waveConfigs: []
+  timeBetweenWaves: 1
+  isLooping: 1
 --- !u!1 &1842577875
 GameObject:
   m_ObjectHideFlags: 0
