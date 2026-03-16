@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 940621931c4bb3149badbb7f0434987c, type: 3}
     - target: {fileID: 1373724256941580795, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: currentHealth
       value: 10
@@ -174,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226815492579507455, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Layer
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
