@@ -6,6 +6,19 @@ public class BossMovement : MonoBehaviour
     int waypointIndex = 0;
     float w;
 
+    WaveConfig waveConfig;
+
+    void Start()
+    {
+        //waypoints =
+        //transform.position =
+    }
+
+    void Update()
+    {
+        FollowPath();
+    }
+
     void FollowPath()
     {
         if (waypointIndex < waypoints.Length)
@@ -20,9 +33,6 @@ public class BossMovement : MonoBehaviour
                 waypointIndex++;
             }
         }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
+
 }
