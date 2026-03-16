@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float crouchSpeed = 1f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
+    [SerializeField] float dashSpeed = 2f;
     [SerializeField] LayerMask groundLayer;
 
     [Header("Jump Assist")]
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
     InputAction crouchAction;
     InputAction dashAction;
+    DashScript dashScript;
 
     void Start()
     {
@@ -135,8 +137,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (dashAction.IsPressed() && jumpBufferCounter > 0f)
         {
-            float move = Input.GetAxis("Horizontal");
-            rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector3(dashSpeed, 0);
         }
     }
 }
