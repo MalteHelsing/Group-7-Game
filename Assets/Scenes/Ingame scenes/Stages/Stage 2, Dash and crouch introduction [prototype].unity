@@ -132,12 +132,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: fallSpeed
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: jumpHeight
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: jumpDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: platformFallSpeed
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalScale.x
@@ -212,9 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64af80ba2161e7b45933a35fba4cd32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  spear: {fileID: 894765304}
+  spear: {fileID: 0}
   isActive: 0
   SpearDeActiveDelay: 1
+  AttackDelay: 1
 --- !u!1 &137351547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,11 +1051,6 @@ Transform:
   - {fileID: 353297207}
   m_Father: {fileID: 1653031242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &894765304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7557556427594967543, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  m_PrefabInstance: {fileID: 111976021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &962467592
 GameObject:
   m_ObjectHideFlags: 0
