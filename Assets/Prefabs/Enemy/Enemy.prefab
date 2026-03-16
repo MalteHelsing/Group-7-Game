@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3293140751925704445}
   - component: {fileID: 7868448040657943430}
   m_Layer: 8
-  m_Name: Particle System
+  m_Name: BackParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4918,8 +4918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   Hitbox: {fileID: 0}
   player: {fileID: 0}
-  backWheelParticles: {fileID: 0}
-  frontWheelParticles: {fileID: 0}
+  backWheelParticles: {fileID: 3293140751925704445}
+  frontWheelParticles: {fileID: 8985367609073495909}
   moveSpeed: 1
   agroRange: 3
 --- !u!114 &4387905767843405854
@@ -5306,7 +5306,7 @@ GameObject:
   - component: {fileID: 8985367609073495909}
   - component: {fileID: 2170377576187671817}
   m_Layer: 8
-  m_Name: Particle System (1)
+  m_Name: FrontParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
