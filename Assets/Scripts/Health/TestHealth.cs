@@ -11,9 +11,9 @@ public class TestHealth : MonoBehaviour
 
     void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
-            instance = this;
+            
         }
     }
 
@@ -24,12 +24,22 @@ public class TestHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        if (health < -0)
+        if (health <= 0)
         {
             return;
         }
         health -= 1;
-    }
-      
 
+        Debug.Log("TakeDamage");
+    }
+
+    void Update()
+    {
+        TakeDamage();
+    }
+
+    void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
 }
