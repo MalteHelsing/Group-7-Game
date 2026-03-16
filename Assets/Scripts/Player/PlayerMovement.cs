@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             JumpTimer();
             FallThrough();
+            DoDash();
         }
     }
 
@@ -128,5 +129,14 @@ public class PlayerMovement : MonoBehaviour
     public void Death()
     {
         canControlPlayer = false;
+    }
+
+    void DoDash()
+    {
+        if (dashAction.IsPressed() && jumpBufferCounter > 0f)
+        {
+            float move = Input.GetAxis("Horizontal");
+            rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
+        }
     }
 }
