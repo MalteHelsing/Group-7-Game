@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class DashScript : MonoBehaviour
 {
     private Camera mainCam;
-    private Vector3 mousePos;
+    public Vector3 mousePos;
 
     Rigidbody2D rb2d;
 
@@ -12,7 +12,7 @@ public class DashScript : MonoBehaviour
     {
         mainCam = Camera.main;
     }
-    private void Update()
+    public void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
