@@ -2593,7 +2593,7 @@ GameObject:
   - component: {fileID: 1824581334}
   - component: {fileID: 1824581335}
   - component: {fileID: 1824581336}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pedistal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
