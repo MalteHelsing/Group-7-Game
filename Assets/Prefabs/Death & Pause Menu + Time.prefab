@@ -877,7 +877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1429110823734475179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1094,7 +1094,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 1151113767462308935}
   - component: {fileID: 4827905976831686727}
   m_Layer: 5
-  m_Name: Options Button
+  m_Name: Restart Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,8 +1200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: -150}
-  m_SizeDelta: {x: 229.5, y: 120}
+  m_AnchoredPosition: {x: -348.1402, y: -150}
+  m_SizeDelta: {x: 316, y: 136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7158659832787541657
 CanvasRenderer:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4376529351027246628, guid: dd3714ec4b154ed4fa448a3f21d511a7, type: 3}
+  m_Sprite: {fileID: -9009641426861971402, guid: 71ff4097789dde7468986f7043c9d554, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
