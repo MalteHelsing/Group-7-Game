@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] float currentHealth = 10f;
     [SerializeField] int health = 10;
 
-    EnemyDamageDealer énemyDamageDealer;
+    EnemyDamageDealer enemyDamageDealer;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
