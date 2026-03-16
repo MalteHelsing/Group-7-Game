@@ -183,10 +183,9 @@ MonoBehaviour:
     m_Bits: 128
   coyoteTime: 0.1
   jumpBufferTime: 0.1
-  fallSpeed: 1
-  platformFallSpeed: 1
+  fallSpeed: -10
+  platformFallSpeed: -20
   jumpSound: {fileID: 0}
-  jumpVolume: 0
 --- !u!114 &1373724256941580795
 MonoBehaviour:
   m_ObjectHideFlags: 0
