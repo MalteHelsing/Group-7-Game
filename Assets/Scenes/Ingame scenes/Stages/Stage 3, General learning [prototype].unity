@@ -2543,8 +2543,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: fallSpeed
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: jumpHeight
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: platformFallSpeed
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1373724256941580795, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: currentHealth
