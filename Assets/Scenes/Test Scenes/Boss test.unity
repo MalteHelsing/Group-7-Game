@@ -928,7 +928,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9450981, g: 0.4431373, b: 0.4431373, a: 1}
+  m_Color: {r: 0.66666657, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -968,8 +968,8 @@ MonoBehaviour:
   - {fileID: 7198714984058452607}
   - {fileID: 8705380657010693324}
   - {fileID: 43110980606410879}
-  moveSpeed: 0.1
-  stopDuration: 2
+  moveSpeed: 20
+  stopDuration: 1.5
   sweepDistance: 10.5
 --- !u!1 &1842577875
 GameObject:

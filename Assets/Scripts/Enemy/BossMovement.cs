@@ -4,11 +4,12 @@ using UnityEngine;
 public class BossMovement : MonoBehaviour
 {
     [SerializeField] Transform[] targetPoints;
-    [SerializeField] public float moveSpeed = 2f;
-    [SerializeField] public float stopDuration = 2f;
-    [SerializeField] public float sweepDistance = 10f;
+    [SerializeField] float moveSpeed = 20f;
+    [SerializeField] float stopDuration = 1.5f;
+    [SerializeField] float sweepDistance = 10.5f;
+    [SerializeField] private float hitTimeWindow = 5f;
 
-    private bool hasBeenHit = false;
+    private bool wasHitThisCycle = false;
     private BossState currentState = BossState.Wave1;
 
     private void Start()
@@ -42,6 +43,7 @@ public class BossMovement : MonoBehaviour
 
     IEnumerator Wave1()
     {
+        wasHitThisCycle = false;
         for (int i = 0; i < 3; i++)
         {
             Transform target = targetPoints[Random.Range(0, targetPoints.Length)];
@@ -58,9 +60,21 @@ public class BossMovement : MonoBehaviour
             yield return new WaitForSeconds(stopDuration);
         }
 
-        yield return new WaitForSeconds(2f);
+        float timer = 0f;
 
-        currentState = hasBeenHit ? BossState.Wave2 : BossState.Wave1;
+        while (timer < hitTimeWindow)
+        {
+            if (wasHitThisCycle)
+            {
+                currentState = BossState.Wave2;
+                yield break;
+            }
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        currentState = BossState.Wave1;
     }
 
     IEnumerator Wave2()
@@ -75,12 +89,16 @@ public class BossMovement : MonoBehaviour
     IEnumerator MoveToPosition(Vector2 target)
     {
         Vector2 start = transform.position;
-        float duration = 0.5f;
+
+        float distance = Vector2.Distance(start, target);
+        float duration = distance / moveSpeed;
+
         float time = 0;
 
         while (time < duration)
         {
             float t = time / duration;
+
             t = 1 - Mathf.Pow(1 - t, 3);
 
             transform.position = Vector2.Lerp(start, target, t);
@@ -95,6 +113,6 @@ public class BossMovement : MonoBehaviour
 
     public void TakeHit()
     {
-        hasBeenHit = true;
+        wasHitThisCycle = true;
     }
 }
