@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,8 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float crouchSpeed = 1f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
-    [SerializeField] float dashSpeed = 2f;
     [SerializeField] LayerMask groundLayer;
+
+    [Header("Dash")]
+    [SerializeField] float dashSpeed = 10f;
+    [SerializeField] float dashDuration = 1f;
+    [SerializeField] float dashCoolDown = 1f;
+    bool isDashing;
 
     [Header("Jump Assist")]
     [SerializeField] float coyoteTime = 0.1f;
@@ -34,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
     InputAction crouchAction;
     InputAction dashAction;
-    DashScript dashScript;
+    SpearLooker spearLooker;
 
     void Start()
     {
@@ -42,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         jumpAction = InputSystem.actions.FindAction("Jump");
         crouchAction = InputSystem.actions.FindAction("Crouch");
         dashAction = InputSystem.actions.FindAction("Dash");
-        
+
         rb = GetComponent<Rigidbody2D>();
         currentSpeed = moveSpeed;
     }
@@ -83,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
             rb.linearVelocityY = jumpHeight;
-            
+
             //SoundManager.Instance.PlaySound(jumpSound);
 
             coyoteTimeCounter = 0f;
@@ -135,9 +141,17 @@ public class PlayerMovement : MonoBehaviour
 
     void DoDash()
     {
-        if (dashAction.IsPressed() && jumpBufferCounter > 0f)
+        if(dashAction.IsPressed())
         {
-            rb.linearVelocity = new Vector3(dashSpeed, 0);
+            StartCoroutine(Dash(dashDuration));
         }
+    }
+
+    IEnumerator Dash(float dashDuration)
+    {
+        isDashing = true;
+        rb.linearVelocity = new Vector3(spearLooker.mousePos.x * dashSpeed, spearLooker.mousePos.y * dashSpeed, 0);
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
     }
 }
