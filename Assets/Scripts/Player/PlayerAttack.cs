@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         if (attackAction.WasPressedThisFrame())
-        {
+        { 
             if (isActive == false)
             {
                 spear.SetActive(!isActive);

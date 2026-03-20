@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float crouchSpeed = 1f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
-    [SerializeField] float dashSpeed = 2f;
     [SerializeField] LayerMask groundLayer;
 
     [Header("Jump Assist")]
@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
     InputAction crouchAction;
     InputAction dashAction;
-    DashScript dashScript;
 
     void Start()
     {
@@ -42,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         jumpAction = InputSystem.actions.FindAction("Jump");
         crouchAction = InputSystem.actions.FindAction("Crouch");
         dashAction = InputSystem.actions.FindAction("Dash");
-        
+
         rb = GetComponent<Rigidbody2D>();
         currentSpeed = moveSpeed;
     }
@@ -55,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             JumpTimer();
             FallThrough();
-            DoDash();
         }
     }
 
@@ -83,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
             rb.linearVelocityY = jumpHeight;
-            
+
             //SoundManager.Instance.PlaySound(jumpSound);
 
             coyoteTimeCounter = 0f;
@@ -131,13 +129,5 @@ public class PlayerMovement : MonoBehaviour
     public void Death()
     {
         canControlPlayer = false;
-    }
-
-    void DoDash()
-    {
-        if (dashAction.IsPressed() && jumpBufferCounter > 0f)
-        {
-            rb.linearVelocity = new Vector3(dashSpeed, 0);
-        }
     }
 }

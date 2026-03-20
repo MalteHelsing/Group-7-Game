@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class SpearLooker : MonoBehaviour
 {
-    private Camera mainCam;
-    private Vector3 mousePos;
+    public Camera mainCam;
+    public Vector3 mousePos;
 
-    private void Start()
+    public void Start()
     {
         mainCam = Camera.main;
     }
-    private void Update()
+    public void Update()
     {
         if (Mouse.current.leftButton.isPressed)
         {
