@@ -11,12 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
 
-    [Header("Dash")]
-    [SerializeField] float dashSpeed = 10f;
-    [SerializeField] float dashDuration = 1f;
-    [SerializeField] float dashCoolDown = 1f;
-    bool isDashing;
-
     [Header("Jump Assist")]
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
@@ -40,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
     InputAction crouchAction;
     InputAction dashAction;
-    SpearLooker spearLooker;
 
     void Start()
     {
@@ -61,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             JumpTimer();
             FallThrough();
-            DoDash();
         }
     }
 
@@ -137,21 +129,5 @@ public class PlayerMovement : MonoBehaviour
     public void Death()
     {
         canControlPlayer = false;
-    }
-
-    void DoDash()
-    {
-        if(dashAction.IsPressed())
-        {
-            StartCoroutine(Dash(dashDuration));
-        }
-    }
-
-    IEnumerator Dash(float dashDuration)
-    {
-        isDashing = true;
-        rb.linearVelocity = new Vector3(spearLooker.mousePos.x * dashSpeed, spearLooker.mousePos.y * dashSpeed, 0);
-        yield return new WaitForSeconds(dashDuration);
-        isDashing = false;
     }
 }
