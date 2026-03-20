@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,9 +17,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Fall Through")]
     [SerializeField] float fallSpeed = -10f;
     [SerializeField] float platformFallSpeed = -20f;
-
-    [Header("Music & SFX")]
-    [SerializeField] private AudioClip jumpSound;
 
     bool canControlPlayer = true;
     private float currentSpeed;
@@ -82,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocityY = jumpHeight;
 
-            //SoundManager.Instance.PlaySound(jumpSound);
+            SoundManager.PlaySound(SoundType.Jump);
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
