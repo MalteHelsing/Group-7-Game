@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4044943988259190465}
   - component: {fileID: 4518652125115464846}
   - component: {fileID: 283651817252127084}
+  - component: {fileID: 1253673684548137088}
   - component: {fileID: 871496285287441359}
   - component: {fileID: 1373724256941580795}
   - component: {fileID: 8702507599314169858}
@@ -124,6 +125,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &1253673684548137088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760012303881788695}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.06345421, y: 0.007294774}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.47, y: 2.46}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.1737372, y: 2.4454105}
+  m_EdgeRadius: 0
 --- !u!114 &871496285287441359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +194,6 @@ MonoBehaviour:
   jumpBufferTime: 0.1
   fallSpeed: -10
   platformFallSpeed: -20
-  jumpSound: {fileID: 8300000, guid: 940621931c4bb3149badbb7f0434987c, type: 3}
 --- !u!114 &1373724256941580795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +223,6 @@ MonoBehaviour:
   spear: {fileID: 4226815492579507455}
   isActive: 0
   SpearDeActiveDelay: 0.8
-  AttackDelay: 1
 --- !u!114 &6032365202887254488
 MonoBehaviour:
   m_ObjectHideFlags: 0
