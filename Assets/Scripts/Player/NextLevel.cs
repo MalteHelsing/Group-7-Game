@@ -14,11 +14,13 @@ public class NextLevel : MonoBehaviour
         {
             HasKey = true;
             Destroy(other.gameObject, KeyPickUpDelay);
+            Debug.Log("Key");
         }
         else if (other.CompareTag("Door") && HasKey)
         {
             HasKey = false;
             LoadNextScene();
+            Debug.Log("Next Level");
         }
     }
 

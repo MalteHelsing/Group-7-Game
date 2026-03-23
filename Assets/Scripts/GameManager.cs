@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Menu()
     {
-        if (pauseMenu.IsPressed())
+        if (pauseMenu.WasPressedThisFrame())
         {
             if (pauseScreen.activeInHierarchy)
             {
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Next Level
-    void NextLevel()
+    private void NextLevel()
     {
         if (!keySpawned && transform.childCount == 0)
         {
