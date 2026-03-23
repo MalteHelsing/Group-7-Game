@@ -299,7 +299,7 @@ MonoBehaviour:
   moveSpeed: 6
   crouchSpeed: 1
   jumpHeight: 10
-  jumpDistance: 0.8
+  jumpDistance: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
