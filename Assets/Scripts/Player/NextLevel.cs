@@ -10,13 +10,13 @@ public class NextLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Key") && !HasKey)
+        if (other.CompareTag("Key") && HasKey == false)
         {
             HasKey = true;
             Destroy(other.gameObject, KeyPickUpDelay);
             Debug.Log("Key");
         }
-        else if (other.CompareTag("Door") && HasKey)
+        else if (other.CompareTag("Door") && HasKey == true)
         {
             HasKey = false;
             LoadNextScene();
