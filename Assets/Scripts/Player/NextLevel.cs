@@ -19,7 +19,7 @@ public class NextLevel : MonoBehaviour
         else if (other.CompareTag("Door") && HasKey == true)
         {
             HasKey = false;
-            LoadNextScene();
+            SceneManager.LoadScene(0);
             Debug.Log("Next Level");
         }
     }
