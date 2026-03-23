@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,6 +9,16 @@ public class TestHealth : MonoBehaviour
 
     public int maxHealth;
     float currentHealth;
+
+    public event Action DamageTaken;
+
+    public int Health
+    {
+        get
+        {
+            return Health;
+        }
+    }
 
     void Awake()
     {
@@ -29,6 +40,10 @@ public class TestHealth : MonoBehaviour
             return;
         }
         currentHealth -= 1;
+        if(DamageTaken != null)
+        {
+            DamageTaken();
+        }
 
         Debug.Log("TakeDamage");
     }
@@ -46,5 +61,6 @@ public class TestHealth : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        maxHealth -= damage;
     }
 }
