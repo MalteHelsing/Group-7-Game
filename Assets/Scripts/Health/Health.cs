@@ -1,7 +1,4 @@
-using Unity.Hierarchy;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class Health : MonoBehaviour
 {
@@ -12,11 +9,11 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
+         EnemyDamageDealer enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
 
-        if (damageDealer != null)
+        if (enemyDamageDealer != null)
         {
-            TakeDamage(damageDealer.GetDamage());
+            TakeDamage(enemyDamageDealer.GetDamage());
         }
 
         Die();
