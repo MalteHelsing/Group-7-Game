@@ -7,28 +7,28 @@ public class TestHealth : MonoBehaviour
     TestHealth instance;
 
     public int maxHealth;
-    int health;
+    float currentHealth;
 
     void Awake()
     {
         if (instance == null)
         {
-            
+            instance = this;
         }
     }
 
     private void Start()
     {
-        health = maxHealth;
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             return;
         }
-        health -= 1;
+        currentHealth -= 1;
 
         Debug.Log("TakeDamage");
     }
@@ -38,8 +38,13 @@ public class TestHealth : MonoBehaviour
         TakeDamage();
     }
 
+    public void MaxHealth()
+    {
+        currentHealth = 1;
+    }
+
     void TakeDamage(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
     }
 }

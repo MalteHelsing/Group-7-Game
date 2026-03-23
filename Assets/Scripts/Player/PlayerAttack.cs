@@ -7,7 +7,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject spear;
     [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
-    [SerializeField] float AttackDelay = 1.0f;
 
     InputAction attackAction;
 

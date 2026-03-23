@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,23 +9,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
+    private float currentSpeed;
 
     [Header("Jump Assist")]
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
+    private float coyoteTimeCounter;
+    private float jumpBufferCounter;
 
     [Header("Fall Through")]
     [SerializeField] float fallSpeed = -10f;
     [SerializeField] float platformFallSpeed = -20f;
 
-    [Header("Music & SFX")]
-    [SerializeField] private AudioClip jumpSound;
-
     bool canControlPlayer = true;
-    private float currentSpeed;
-
-    private float coyoteTimeCounter;
-    private float jumpBufferCounter;
 
     Vector2 moveVector;
     Rigidbody2D rb;
@@ -56,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             FallThrough();
         }
     }
-
+    #region Movement
     void Movement()
     {
         // Movement
@@ -82,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocityY = jumpHeight;
 
-            //SoundManager.Instance.PlaySound(jumpSound);
+            SoundManager.PlaySound(SoundType.Jump);
 
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
@@ -125,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.gravity = new Vector3(0, fallSpeed, 0);
         }
     }
+    #endregion
 
     public void Death()
     {

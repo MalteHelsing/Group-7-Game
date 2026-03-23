@@ -300,6 +300,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1295680964396208679, guid: d6945e0140864154f81a05a1872c6ac3, type: 3}
   m_PrefabInstance: {fileID: 599881977}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &600971896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600971898}
+  - component: {fileID: 600971897}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &600971897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600971896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHealth
+  maxHealth: 5
+--- !u!4 &600971898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600971896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 513.53235, y: 284.41364, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &676925047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,9 +909,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1322626446}
+      - m_Target: {fileID: 600971897}
         m_TargetAssemblyTypeName: TestHealth, Assembly-CSharp
-        m_MethodName: TakeDamage
+        m_MethodName: MaxHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1309,6 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 825297699762235587}
   - component: {fileID: 4489397490646869296}
+  - component: {fileID: 4489397490646869297}
   m_Layer: 5
   m_Name: HeartContainer
   m_TagString: Untagged
@@ -1455,6 +1501,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4489397490646869297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417401798371266876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e186df3d1e128942814b5de608a630d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManagerTest
+  heart: {fileID: 0}
+  hearts: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1463,3 +1523,4 @@ SceneRoots:
   - {fileID: 829058573}
   - {fileID: 1266343186}
   - {fileID: 230835360}
+  - {fileID: 600971898}

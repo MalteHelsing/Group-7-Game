@@ -45,11 +45,11 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 7cc094f15d3f9374598c0b326baab791
-    name: MyExposedParam
+    name: Background
   - guid: aba3d860b4725e545abf7552cdfb98fc
-    name: MyExposedParam 1
+    name: Jump
   - guid: d7816145f5a0e3e48bf7cd55f874d3a0
-    name: MyExposedParam 2
+    name: Master
   m_AudioMixerGroupViews:
   - guids:
     - 9ad6e37eb6318ff4388f6dcbdec3e58b
@@ -103,8 +103,8 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: b1f79b2b9ca7d9a4f93caa4fa298a1bf
   m_FloatValues:
-    aba3d860b4725e545abf7552cdfb98fc: -0.012938246
-    d7816145f5a0e3e48bf7cd55f874d3a0: 0
+    aba3d860b4725e545abf7552cdfb98fc: -21.768883
+    d7816145f5a0e3e48bf7cd55f874d3a0: -0.08374828
   m_TransitionOverrides: {}
 --- !u!243 &3946421696468372675
 AudioMixerGroupController:
@@ -112,7 +112,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpSound
+  m_Name: JumpVolume
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 9ffc3c8b134ab5b47841f0b119bb9ddf
   m_Children: []
@@ -131,7 +131,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BackgroundMusic
+  m_Name: BackgroundVolume
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 94451736f3375c44c8eb3e31503af842
   m_Children: []

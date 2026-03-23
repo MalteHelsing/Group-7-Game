@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] GameObject key;
 
     private float timeElapsed = 0f;
+    bool keySpawned = false;
 
     InputAction pauseMenu;
 
@@ -21,14 +23,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
+        key.SetActive(false);
     }
     
     void Update()
     {
         TimeCounter();
         Menu();
+        NextLevel();
     }
 
+    #region UI
     void TimeCounter()
     {
         timeElapsed += Time.deltaTime;
@@ -39,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Menu()
     {
-        if (pauseMenu.IsPressed())
+        if (pauseMenu.WasPressedThisFrame())
         {
             if (pauseScreen.activeInHierarchy)
             {
@@ -64,5 +69,23 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+ 
     }
+    #endregion
+    #region Next Level
+    private void NextLevel()
+    {
+        if (!keySpawned && transform.childCount == 0)
+        {
+            keySpawned = true;
+            SpawnKey();
+        }
+    }
+
+    void SpawnKey()
+    {
+        key.SetActive(true);
+    }
+    #endregion
+
 }

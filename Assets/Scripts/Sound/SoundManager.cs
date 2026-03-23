@@ -1,18 +1,30 @@
 using UnityEngine;
 
+public enum SoundType
+{
+    Jump,
+    Background
+}
+
+[RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance {  get; private set; }
-    private AudioSource source;
+    [SerializeField] private AudioClip[] soundList;
+    private static SoundManager Instance;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         Instance = this;
-        source = GetComponent<AudioSource>();
     }
 
-    public void PlaySound(AudioClip _sound)
+    private void Start()
     {
-        source.PlayOneShot(_sound);
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public static void PlaySound(SoundType sound, float volume = 1)
+    {
+        Instance.audioSource.PlayOneShot(Instance.soundList[(int)sound], volume);
     }
 }
