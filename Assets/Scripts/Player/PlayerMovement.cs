@@ -13,12 +13,12 @@ public class PlayerMovement : MonoBehaviour
     private float currentSpeed;
 
     [Header("Dash")]
-    private bool canDash = true;
-    private bool isDashing;
     [SerializeField] private float dashingPower = 24f;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
     [SerializeField] private TrailRenderer trailRenderer;
+    private bool canDash = true;
+    private bool isDashing;
 
 
     [Header("Jump Assist")]
