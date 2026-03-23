@@ -1272,7 +1272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3015926238640264804}
         m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
-        m_MethodName: Options
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4376529351027246628, guid: dd3714ec4b154ed4fa448a3f21d511a7, type: 3}
+  m_Sprite: {fileID: 5205035986499374683, guid: 6962f8f6a773648468726584b5706048, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -13,6 +13,12 @@ public class ButtonBehavior : MonoBehaviour
         SceneManager.LoadSceneAsync(1);
     }
 
+    public void Retry()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadSceneAsync(currentSceneIndex);
+    }
+
     public void StartMenu()
     {
         SceneManager.LoadSceneAsync(0);
