@@ -369,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
   crouchSpeed: 1
-  jumpHeight: 9
+  jumpHeight: 10
   jumpDistance: 1
   groundLayer:
     serializedVersion: 2
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30010dfdc8d6aa64aaaf4ee2ddb25a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  currentHealth: 10
+  currentHealth: 30
   health: 10
   spriteRenderer: {fileID: 4518652125115464846}
   deathMenu: {fileID: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyForDoor
   KeyPickUpDelay: 0.1
-  HasKey: 1
+  HasKey: 0
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8c0202236033345b0cab0891ec3871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
-  damage: 10
+  damage: 2
 --- !u!1 &5308510615412129281
 GameObject:
   m_ObjectHideFlags: 0
