@@ -3,7 +3,6 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
-    [SerializeField] bool isEnemy = false;
 
     DamageDealer damageDealer;
 
@@ -13,15 +12,12 @@ public class EnemyHealth : MonoBehaviour
 
         if (damageDealer != null)
         {
-            if (isEnemy != false)
-            {
                 int layerIndexC = LayerMask.NameToLayer("HitBox");
 
                 if (other.gameObject.layer == layerIndexC)
                 {
                     TakeDamage(damageDealer.GetDamage());
                 }
-            }
         }
 
         Die();
