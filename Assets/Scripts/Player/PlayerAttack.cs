@@ -5,14 +5,12 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject spear;
-    [SerializeField] GameManager spearLooker;
     [SerializeField] bool isActive = true;
-    [SerializeField] bool isSpear = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
 
 
     InputAction attackAction;
-    Rigidbody2D rb2d;
+    Health health;
 
     private void Start()
     {
@@ -23,9 +21,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        SpearAttack();
+    }
+    public void PlayerDied()
+    {
+
+    }
+
+    public void SpearAttack()
+    {
         if (attackAction.WasPressedThisFrame())
-        { 
-            if (isActive == false && isSpear == true)
+        {
+            if (isActive == false)
             {
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
