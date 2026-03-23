@@ -1,22 +1,33 @@
-using Unity.Hierarchy;
-using UnityEditor.Rendering.LookDev;
+using System;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
     [SerializeField] int health = 10;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] GameObject deathMenu;
 
     EnemyDamageDealer enemyDamageDealer;
+    PlayerMovement playerMovement;
+    PlayerAttack playerAttack;
+
+
+    private void Start()
+    {
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
+        playerAttack = FindFirstObjectByType<PlayerAttack>();
+
+        deathMenu.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
+         EnemyDamageDealer enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
 
-        if (damageDealer != null)
+        if (enemyDamageDealer != null)
         {
-            TakeDamage(damageDealer.GetDamage());
+            TakeDamage(enemyDamageDealer.GetDamage());
         }
 
         Die();
@@ -26,7 +37,10 @@ public class Health : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            playerMovement.Death();
+            playerAttack.SpearAttack();
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+            deathMenu.SetActive(true);
         }
     }
 

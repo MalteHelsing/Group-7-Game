@@ -8,7 +8,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] bool isActive = true;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
 
+
     InputAction attackAction;
+    Health health;
 
     private void Start()
     {
@@ -19,13 +21,23 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        SpearAttack();
+    }
+    public void PlayerDied()
+    {
+
+    }
+
+    public void SpearAttack()
+    {
         if (attackAction.WasPressedThisFrame())
-        { 
+        {
             if (isActive == false)
             {
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
             }
+
         }
     }
 

@@ -12,8 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ingame scenes/Start/Options.unity
     guid: a1c92fffe62900b4999953548cb7d89f
   - enabled: 1
-    path: Assets/Scenes/Ingame scenes/Stages/Stage 1, Spear and block introduction
-      [prototype].unity
+    path: Assets/Scenes/Ingame scenes/Stages/Stage 1, Spear and block introduction.unity
     guid: 7a8081068cfcff445a16c8557e0d478f
   - enabled: 1
     path: Assets/Scenes/Ingame scenes/Stages/Stage 2, Dash and crouch introduction
