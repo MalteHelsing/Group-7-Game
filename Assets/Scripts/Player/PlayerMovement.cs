@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpDistance = 2f;
     [SerializeField] LayerMask groundLayer;
     private float currentSpeed;
+
+    [Header("Dash")]
+    private bool canDash = true;
+    private bool isDashing;
+    [SerializeField] private float dashingPower = 24f;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] private float dashingCooldown = 1f;
+    [SerializeField] private TrailRenderer trailRenderer;
+
 
     [Header("Jump Assist")]
     [SerializeField] float coyoteTime = 0.1f;
@@ -44,11 +54,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (canControlPlayer == true)
-        {
+        { 
+            if (isDashing)
+            {
+                return;
+            }
+
             Movement();
             Jump();
             JumpTimer();
             FallThrough();
+            Dash();
         }
     }
     #region Movement
@@ -120,6 +136,31 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.gravity = new Vector3(0, fallSpeed, 0);
         }
     }
+
+    private IEnumerator DashCoroutine()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        trailRenderer.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        trailRenderer.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+
+    private void Dash()
+    {
+        if (dashAction.WasPressedThisFrame())
+        {
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
     #endregion
 
     public void Death()
