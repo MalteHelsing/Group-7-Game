@@ -29,8 +29,6 @@ public class Health : MonoBehaviour
         {
             TakeDamage(enemyDamageDealer.GetDamage());
         }
-
-        Die();
     }
 
     public void Die()

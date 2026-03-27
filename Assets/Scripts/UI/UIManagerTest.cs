@@ -15,6 +15,8 @@ public class UIManagerTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+       
+        testHealth.DamageTaken += UpdateHearts;
         for(int i = 0; i < testHealth.maxHealth; i++)
         {
             GameObject h = Instantiate(heart, this.transform);
@@ -22,9 +24,14 @@ public class UIManagerTest : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+   void UpdateHearts()
     {
-        
+        int heartContainer = testHealth.Health; 
+
+        foreach(Image i in hearts)
+        {
+            i.fillAmount = heartContainer;
+            heartContainer -= 1;
+        }
     }
 }
