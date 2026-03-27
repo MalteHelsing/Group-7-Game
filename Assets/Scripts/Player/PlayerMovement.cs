@@ -155,9 +155,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash()
     {
-        if (dashAction.WasPressedThisFrame())
+        if (canDash == true)
         {
-            StartCoroutine(DashCoroutine());
+            if (dashAction.WasPressedThisFrame())
+            {
+                StartCoroutine(DashCoroutine());
+            }
         }
     }
 
