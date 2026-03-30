@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject spear;
     [SerializeField] bool isActive = true;
+    [SerializeField] bool hasSpear = false;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
 
 
@@ -22,14 +23,20 @@ public class PlayerAttack : MonoBehaviour
     {
         SpearAttack();
     }
-    public void PlayerDied()
-    {
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        int layerIndex = LayerMask.NameToLayer("Spear");
+
+        if (other.gameObject.layer == layerIndex)
+        {
+            hasSpear = true;
+        }
     }
 
     public void SpearAttack()
     {
-        if (attackAction.WasPressedThisFrame())
+        if (attackAction.WasPressedThisFrame() && hasSpear == true)
         {
             if (isActive == false)
             {
