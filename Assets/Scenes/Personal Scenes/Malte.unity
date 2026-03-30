@@ -1267,6 +1267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1518749720}
   - component: {fileID: 1518749719}
+  - component: {fileID: 1518749721}
   m_Layer: 8
   m_Name: BatEnemy
   m_TagString: Enemy
@@ -1323,7 +1324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7002336862092277697, guid: d4120bfb599518f4f8280a03cc741cb5, type: 3}
+  m_Sprite: {fileID: 8957324059118975939, guid: a737ab87dc8fb4940bb12c790310d395, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1341,13 +1342,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518749718}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.16, y: 4.18, z: 0}
+  m_LocalRotation: {x: 0.04809143, y: 0.019027036, z: -0.9986613, w: 0.00091626396}
+  m_LocalPosition: {x: 4.41, y: 4.12, z: 0}
   m_LocalScale: {x: 0.2355825, y: 0.5763042, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.183, y: -5.514, z: -180}
+--- !u!114 &1518749721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518749718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ca39b125027ea41a11de1e90db8503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BatAttack
 --- !u!1 &1577408845
 GameObject:
   m_ObjectHideFlags: 0
