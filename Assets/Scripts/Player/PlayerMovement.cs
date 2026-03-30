@@ -87,11 +87,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Rotation
-        if (Keyboard.current.aKey.IsPressed() || Keyboard.current.leftArrowKey.IsPressed())
+        if (Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (Keyboard.current.dKey.IsPressed() || Keyboard.current.rightArrowKey.IsPressed())
+        else if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
