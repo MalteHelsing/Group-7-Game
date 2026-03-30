@@ -369,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
   crouchSpeed: 1
-  jumpHeight: 10
+  jumpHeight: 15
   jumpDistance: 1
   groundLayer:
     serializedVersion: 2
