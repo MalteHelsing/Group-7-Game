@@ -15,7 +15,6 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
-
         spear.SetActive(isActive);
     }
 
