@@ -153,7 +153,14 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0;
-        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        if (Keyboard.current.dKey.wasPressedThisFrame)
+        {
+            rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        }
+        else if (Keyboard.current.aKey.wasPressedThisFrame)
+        {
+            rb.linearVelocity = new Vector2(transform.localScale.x * -dashingPower, 0f);
+        }
         trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         trailRenderer.emitting = false;
