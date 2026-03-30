@@ -85,6 +85,16 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = moveSpeed;
             rb.rotation = 0; // temporary
         }
+
+        //Rotation
+        if (Keyboard.current.aKey.IsPressed() || Keyboard.current.leftArrowKey.IsPressed())
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (Keyboard.current.dKey.IsPressed() || Keyboard.current.rightArrowKey.IsPressed())
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     void Jump()
