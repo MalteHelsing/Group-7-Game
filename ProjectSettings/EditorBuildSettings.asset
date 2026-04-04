@@ -5,20 +5,20 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ingame scenes/Start/StartMenu.unity
     guid: bc68d2174f8bcfd4288a18099d9b0c34
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ingame scenes/Start/Options.unity
     guid: a1c92fffe62900b4999953548cb7d89f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ingame scenes/Stages/Stage 1, Spear and block introduction.unity
     guid: 7a8081068cfcff445a16c8557e0d478f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ingame scenes/Stages/Stage 2, Dash and crouch introduction
       [prototype].unity
     guid: c9570f12c0865534c94f86afc25c9e46
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ingame scenes/Stages/Stage 3, General learning [prototype].unity
     guid: 96dcef2ad3bc9ff44bf440dd02b55b76
   - enabled: 1

@@ -37,18 +37,6 @@ public class BossMovement : MonoBehaviour
         hand.SetActive(true);
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)
-            SetWave(BossState.Wave1);
-
-        if (Keyboard.current.digit2Key.wasPressedThisFrame)
-            SetWave(BossState.Wave2);
-
-        if (Keyboard.current.digit3Key.wasPressedThisFrame)
-            SetWave(BossState.Wave3);
-    }
-
     public enum BossState
     {
         Wave1,
@@ -216,6 +204,18 @@ public class BossMovement : MonoBehaviour
     }
 
     #endregion
+    #region Remove this before making a build
+    private void Update()
+    {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
+            SetWave(BossState.Wave1);
+
+        if (Keyboard.current.digit2Key.wasPressedThisFrame)
+            SetWave(BossState.Wave2);
+
+        if (Keyboard.current.digit3Key.wasPressedThisFrame)
+            SetWave(BossState.Wave3);
+    }
 
     void SetHandActive(bool active)
     {
@@ -231,6 +231,7 @@ public class BossMovement : MonoBehaviour
         currentState = newState;
         StartCoroutine(BossLoop());
     }
+    #endregion
 
     public void TakeHit()
     {
