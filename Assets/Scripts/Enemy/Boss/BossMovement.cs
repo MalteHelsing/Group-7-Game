@@ -217,14 +217,6 @@ public class BossMovement : MonoBehaviour
             SetWave(BossState.Wave3);
     }
 
-    void SetHandActive(bool active)
-    {
-        hand.SetActive(active);
-
-        if (armLine != null)
-            armLine.enabled = active;
-    }
-
     public void SetWave(BossState newState)
     {
         StopAllCoroutines();
@@ -232,6 +224,14 @@ public class BossMovement : MonoBehaviour
         StartCoroutine(BossLoop());
     }
     #endregion
+
+    void SetHandActive(bool active)
+    {
+        hand.SetActive(active);
+
+        if (armLine != null)
+            armLine.enabled = active;
+    }
 
     public void TakeHit()
     {
