@@ -88,4 +88,12 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public void Finish()
+    {
+        //if (boss.Healht > 0)
+        {
+            //Hide the boss and open up a menu for completing the game 
+            Time.timeScale = 0;
+        }
+    }
 }

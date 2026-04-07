@@ -27,6 +27,8 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private int wave2Repetitions = 3;
     [SerializeField] private float wave2WaitTime = 1.5f;
 
+    [Header("Wave 3")]
+
     private bool damageWindowActive = false;
     private bool wasHitThisCycle = false;
     [SerializeField] private BossState currentState = BossState.Wave1;
@@ -204,7 +206,7 @@ public class BossMovement : MonoBehaviour
     }
 
     #endregion
-    #region Remove this before making a build
+    #region Remove this before making a build!
     private void Update()
     {
         if (Keyboard.current.digit1Key.wasPressedThisFrame)

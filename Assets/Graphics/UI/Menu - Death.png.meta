@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu 1_0
+      name: Menu - Death
       rect:
         serializedVersion: 2
         x: 17
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Menu 1_0: -2136733623990294904
+      Menu - Death: -2136733623990294904
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

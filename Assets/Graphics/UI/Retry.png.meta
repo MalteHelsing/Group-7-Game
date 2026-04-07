@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Retry_0
+      name: Retry
       rect:
         serializedVersion: 2
         x: 17
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Retry_0: 5207804079435638006
+      Retry: 5207804079435638006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Exit_0
+      name: Exit
       rect:
         serializedVersion: 2
         x: 17
-        y: 990
+        y: 989
         width: 135
-        height: 66
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Exit_0: -1922979618149193216
+      Exit: -1922979618149193216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

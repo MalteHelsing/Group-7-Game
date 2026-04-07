@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: quest_for_beans_0
+      name: Quest For Beans
       rect:
         serializedVersion: 2
         x: 476
@@ -130,72 +130,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: quest_for_beans_1
-      rect:
-        serializedVersion: 2
-        x: 675
-        y: 480
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42547235fd4f97cc0800000000000000
-      internalID: -3712667177780296412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quest_for_beans_2
-      rect:
-        serializedVersion: 2
-        x: 723
-        y: 479
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0097a78b7d1491c0800000000000000
-      internalID: -4497937711442194418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quest_for_beans_3
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 479
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b79177515c4bba60800000000000000
-      internalID: 7690824700908378033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -210,7 +144,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      quest_for_beans_0: -7002336862092277697
+      Quest For Beans: -7002336862092277697
       quest_for_beans_1: -3712667177780296412
       quest_for_beans_2: -4497937711442194418
       quest_for_beans_3: 7690824700908378033
