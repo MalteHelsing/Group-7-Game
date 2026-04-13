@@ -2141,8 +2141,8 @@ Transform:
   m_GameObject: {fileID: 1455169344}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5333332, z: 0}
-  m_LocalScale: {x: 1, y: 0.06666667, z: 1}
+  m_LocalPosition: {x: 0.0011, y: 1.09, z: 0}
+  m_LocalScale: {x: 3.027027, y: 0.06666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824581334}
@@ -3248,8 +3248,8 @@ Transform:
   m_GameObject: {fileID: 1824581333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.35, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0.0609, y: -5.3296, z: 0}
+  m_LocalScale: {x: 0.36104074, y: 0.7364521, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1455169345}
@@ -3304,7 +3304,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -5212000074663769135, guid: 3d3561dc2388c004992611be6e722914, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3348,17 +3348,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.002763629, y: -0.0072915554}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.03, y: 2.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.028834, y: 2.195827}
   m_EdgeRadius: 0
 --- !u!1 &1927877790
 GameObject:
@@ -19099,6 +19099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   Hitbox: {fileID: 0}
   player: {fileID: 994740081}
+  particles: 0
   backWheelParticles: {fileID: 3088062846293184082}
   frontWheelParticles: {fileID: 8924699492199405514}
   moveSpeed: 1
@@ -24084,6 +24085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   Hitbox: {fileID: 0}
   player: {fileID: 994740081}
+  particles: 0
   backWheelParticles: {fileID: 4206938284000377783}
   frontWheelParticles: {fileID: 7738286142987035183}
   moveSpeed: 1
