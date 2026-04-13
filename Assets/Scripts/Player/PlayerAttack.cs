@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject spear;
+    [SerializeField] GameObject PlacedSpear;
     [SerializeField] bool isActive = true;
     [SerializeField] bool hasSpear = false;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
@@ -31,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
         if (other.gameObject.layer == layerIndex)
         {
             hasSpear = true;
+            GameObject.Destroy(PlacedSpear);
         }
     }
 
