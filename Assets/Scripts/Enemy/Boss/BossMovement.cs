@@ -13,7 +13,9 @@ public class BossMovement : MonoBehaviour
     [Header("Wave 1")]
     [SerializeField] private GameObject hand;
     [SerializeField] private LineRenderer armLine;
+    [SerializeField] private GameObject Wave1Platforms;
     [SerializeField] private Transform[] wave1TargetPos;
+    [SerializeField] private int wave1Repetitons = 3;
     [SerializeField] float stopDuration = 1.5f;
     [SerializeField] float sweepDistance = 10.5f;
 
@@ -24,6 +26,7 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private Transform[] leftPositions;
     [SerializeField] private Transform[] rightPositions;
 
+    [SerializeField] private GameObject Wave2Platforms;
     [SerializeField] private int wave2Repetitions = 3;
     [SerializeField] private float wave2WaitTime = 1.5f;
 
@@ -37,6 +40,8 @@ public class BossMovement : MonoBehaviour
     {
         StartCoroutine(BossLoop());
         hand.SetActive(true);
+        Wave1Platforms.SetActive(true);
+        Wave2Platforms.SetActive(false);
     }
 
     public enum BossState
@@ -72,9 +77,11 @@ public class BossMovement : MonoBehaviour
     #region Wave 1
     IEnumerator Wave1()
     {
+        SetWave1PlatformActive(false);
+        SetWave2PlatformActive(true);
         SetHandActive(true);
         wasHitThisCycle = false;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < wave1Repetitons; i++)
         {
             Transform target = wave1TargetPos[Random.Range(0, wave1TargetPos.Length)];
 
@@ -138,6 +145,8 @@ public class BossMovement : MonoBehaviour
     #region Wave 2
     IEnumerator Wave2()
     {
+        SetWave1PlatformActive(false);
+        SetWave2PlatformActive(true);
         SetHandActive(false);
         wasHitThisCycle = false;
 
@@ -233,6 +242,16 @@ public class BossMovement : MonoBehaviour
 
         if (armLine != null)
             armLine.enabled = active;
+    }
+
+    void SetWave1PlatformActive(bool active)
+    {
+        Wave1Platforms.SetActive(active);
+    }
+
+    void SetWave2PlatformActive(bool active)
+    {
+        Wave2Platforms.SetActive(active);
     }
 
     public void TakeHit()
