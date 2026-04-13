@@ -5,6 +5,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] GameObject Hitbox;
     [SerializeField] Transform player;
+    [SerializeField] bool particles;
     [SerializeField] ParticleSystem backWheelParticles;
     [SerializeField] ParticleSystem frontWheelParticles;
 
@@ -13,8 +14,10 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        if (particles == true) { 
         backWheelParticles.Play();
         frontWheelParticles.Play();
+        }
     }
 
 
