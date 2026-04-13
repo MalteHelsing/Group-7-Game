@@ -369,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
   crouchSpeed: 1
-  jumpHeight: 15
+  jumpHeight: 11
   jumpDistance: 1
   groundLayer:
     serializedVersion: 2
@@ -411,7 +411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   spear: {fileID: 4226815492579507455}
+  PlacedSpear: {fileID: 0}
   isActive: 0
+  hasSpear: 0
   SpearDeActiveDelay: 0.8
 --- !u!114 &6032365202887254488
 MonoBehaviour:

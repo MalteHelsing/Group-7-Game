@@ -2939,26 +2939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: fallSpeed
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: jumpHeight
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: platformFallSpeed
-      value: -20
-      objectReference: {fileID: 0}
     - target: {fileID: 1373724256941580795, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: deathMenu
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373724256941580795, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: currentHealth
-      value: 30
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5351272049003422810}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16
@@ -2999,6 +2983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: PlacedSpear
+      value: 
+      objectReference: {fileID: 5351272049003422810}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4445,6 +4433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
@@ -4470,6 +4462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &5351272049003422810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4469265081703217106, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 5351272049003422807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6204271018861664714
 MonoBehaviour:
   m_ObjectHideFlags: 0
