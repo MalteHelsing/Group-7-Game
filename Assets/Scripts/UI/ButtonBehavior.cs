@@ -3,12 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
-    [SerializeField] private GameObject optionsScreen;
-    private void Start()
-    {
-        optionsScreen.SetActive(false);
-    }
-
     #region Buttons
     public void PlayGame()
     {
@@ -36,22 +30,25 @@ public class ButtonBehavior : MonoBehaviour
         Application.Quit();
     }
     #endregion
+    #region Controls Menu
+    [SerializeField] private GameObject ControlsMenu;
 
-    public void ControlMenu()
+    public void ControlMenuOn()
     {
-        if (optionsScreen.activeInHierarchy == true)
-        {
-            PausGame(false);
-        }
+        ControlsMenu.SetActive(true);
+    }
 
-        if (optionsScreen.activeInHierarchy == false)
-        {
-            PausGame(true);
-        }
+    public void ControlMenuOff()
+    {
+        ControlsMenu.SetActive(false);
     }
 
     public void PausGame(bool staus)
     {
-        optionsScreen.SetActive(staus);
+        ControlsMenu.SetActive(staus);
     }
+    #endregion
+    #region Diffculty Level
+
+    #endregion
 }
