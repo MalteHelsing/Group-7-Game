@@ -5,62 +5,33 @@ using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
-    TestHealth instance;
+    public int health = 5;
 
-    public int maxHealth;
-    float currentHealth;
-
-    public event Action DamageTaken;
-
-    public int Health
-    {
-        get
-        {
-            return Health;
-        }
-    }
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-
-    private void Start()
-    {
-        currentHealth = maxHealth;
-    }
-
-    public void TakeDamage()
-    {
-        if (currentHealth <= 0)
-        {
-            return;
-        }
-        currentHealth -= 1;
-        if(DamageTaken != null)
-        {
-            DamageTaken();
-        }
-
-        Debug.Log("TakeDamage");
-    }
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    public GameObject heart4;
+    public GameObject heart5; 
 
     void Update()
     {
-        TakeDamage();
+        if (health >= 3)
+        {
+
+        }
+        else if (health == 2)
+        {
+
+        }
+        else if (health == 1)
+        {
+
+        }
+        else if (health <= 0)
+        {
+
+        }
     }
 
-    public void MaxHealth()
-    {
-        currentHealth = 1;
-    }
 
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        maxHealth -= damage;
-    }
 }

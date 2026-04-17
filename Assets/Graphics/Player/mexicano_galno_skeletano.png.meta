@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2de925eb6ebcf604e9978f2091c37804
+guid: aa2324db9f3e2d64eb554e62fdeb4c4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7380946057593842415
-    second: kartman_goomba_0
+      213: 2350638845555423165
+    second: mexicano_galno_skeletano_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kartman_goomba_0
+      name: mexicano_galno_skeletano_0
       rect:
         serializedVersion: 2
-        x: 697
-        y: 0
-        width: 154
-        height: 133
+        x: 4
+        y: 25
+        width: 137
+        height: 259
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fea633d55536e6660800000000000000
-      internalID: 7380946057593842415
+      spriteID: db7b09863952f9020800000000000000
+      internalID: 2350638845555423165
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6713d25e593a3bd4683d0122c771fd85
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kartman_goomba_0: 7380946057593842415
+      mexicano_galno_skeletano_0: 2350638845555423165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

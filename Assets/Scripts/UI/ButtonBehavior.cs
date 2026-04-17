@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
+    #region Buttons
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(2);
@@ -28,4 +29,23 @@ public class ButtonBehavior : MonoBehaviour
     {
         Application.Quit();
     }
+    #endregion
+    #region Controls Menu
+    [SerializeField] private GameObject ControlsMenu;
+
+    public void ControlMenuOn()
+    {
+        ControlsMenu.SetActive(true);
+    }
+
+    public void ControlMenuOff()
+    {
+        ControlsMenu.SetActive(false);
+    }
+
+    public void PausGame(bool staus)
+    {
+        ControlsMenu.SetActive(staus);
+    }
+    #endregion
 }
