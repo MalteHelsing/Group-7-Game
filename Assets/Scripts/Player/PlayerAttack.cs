@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         SpearAttack();
+        CheckScene();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,6 +38,16 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    void CheckScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex >= 3)
+        {
+            hasSpear = true;
+        }
+    }
+
     public void SpearAttack()
     {
         if (attackAction.WasPressedThisFrame() && hasSpear == true)
@@ -45,7 +57,6 @@ public class PlayerAttack : MonoBehaviour
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
             }
-
         }
     }
 
