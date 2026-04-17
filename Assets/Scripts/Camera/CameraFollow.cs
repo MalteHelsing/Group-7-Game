@@ -53,4 +53,5 @@ public class CameraFollow : MonoBehaviour
             smoothing = regularSmoothing;
         }
     }
+
 }

@@ -388,6 +388,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2a93baae-79bb-4e56-8c2c-d0e5d34f0f4f",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "eb40bb66-4559-4dfa-9a2f-820438abb426",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -488,7 +499,7 @@
                 {
                     "name": "",
                     "id": "287cb809-6960-46d3-a668-1c3c835c06fc",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",

@@ -3044,14 +3044,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4276314316327897842, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: Hitbox
-      value: 
-      objectReference: {fileID: 1824655917}
     - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: player
       value: 
@@ -3763,11 +3755,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1824655917 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4341760663408516037, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-  m_PrefabInstance: {fileID: 1547945801}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1890521102 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8985367609073495909, guid: 89c37650ded8d6143a13c70331081941, type: 3}
