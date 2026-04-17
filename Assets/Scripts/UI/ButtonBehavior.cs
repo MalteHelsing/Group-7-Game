@@ -48,7 +48,4 @@ public class ButtonBehavior : MonoBehaviour
         ControlsMenu.SetActive(staus);
     }
     #endregion
-    #region Diffculty Level
-
-    #endregion
 }

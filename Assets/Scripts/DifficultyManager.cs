@@ -1,15 +1,18 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DifficultyManager : MonoBehaviour
 {
     public static DifficultyManager instance;
 
+    public TMP_Dropdown dropdown;
     public Difficulty currentDiffculty;
 
-    public float enemyHealth;
-    public float enemySkeletDamage;
-    public float enemyGumbaDamage;
-    public float enemyBatDamage;
+    [HideInInspector] public float enemyHealth;
+    [HideInInspector] public float enemySkeletDamage;
+    [HideInInspector] public float enemyGumbaDamage;
+    [HideInInspector] public float enemyBatDamage;
     public enum Difficulty
     {
         Easy,
@@ -19,11 +22,36 @@ public class DifficultyManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("Difficulty"))
+        {
+            int savedIndex = PlayerPrefs.GetInt("Difficulty");
+            currentDiffculty = (Difficulty)savedIndex;
+            dropdown.value = savedIndex;
+        }
+
+        ApplyDiffculty();
+    }
+
+    public void SetDifficulty(int index)
+    {
+        currentDiffculty = (Difficulty)index;
+
+        PlayerPrefs.SetInt("Difficulty", index);
+        PlayerPrefs.Save();
+
         ApplyDiffculty();
     }
 
@@ -55,5 +83,5 @@ public class DifficultyManager : MonoBehaviour
     }
 
     // how to set the vaule in the script, which will sit under Start()
-    // damage = DifficultyManager.instance.enemyDamage; 
+    // for example: damage = DifficultyManager.instance.enemyBatDamage; 
 }
