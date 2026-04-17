@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 224016126}
   - component: {fileID: 224016125}
   m_Layer: 7
-  m_Name: Platform 4
+  m_Name: Platform 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 325586136}
   - component: {fileID: 325586134}
   m_Layer: 7
-  m_Name: Platform 7 (slope)
+  m_Name: Platform 13 (slope)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 390130065}
   - component: {fileID: 390130064}
   m_Layer: 7
-  m_Name: Ground 3
+  m_Name: Ground 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 402113913}
   - component: {fileID: 402113912}
   m_Layer: 6
-  m_Name: Ground 2 (wall) (1)
+  m_Name: Ground 3 (wall) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 630516340}
   - component: {fileID: 630516339}
   m_Layer: 7
-  m_Name: Platform 3 (2)
+  m_Name: Platform 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,7 +1228,7 @@ GameObject:
   - component: {fileID: 687903732}
   - component: {fileID: 687903731}
   m_Layer: 6
-  m_Name: Ground 2 (wall) (2)
+  m_Name: Ground 4 (wall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1429,7 +1429,7 @@ GameObject:
   - component: {fileID: 730834146}
   - component: {fileID: 730834145}
   m_Layer: 7
-  m_Name: Platform 5 (3)
+  m_Name: Platform 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 824463798}
   - component: {fileID: 824463797}
   m_Layer: 7
-  m_Name: Platform 3 (1)
+  m_Name: Platform 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2402,14 +2402,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 877876378}
-  - {fileID: 390130063}
-  - {fileID: 1585699506}
-  - {fileID: 1292299627}
-  - {fileID: 1518182869}
-  - {fileID: 402113911}
-  - {fileID: 687903730}
   - {fileID: 1927877791}
   - {fileID: 2147411153}
+  - {fileID: 390130063}
+  - {fileID: 1292299627}
+  - {fileID: 1585699506}
+  - {fileID: 687903730}
+  - {fileID: 1518182869}
+  - {fileID: 402113911}
   m_Father: {fileID: 1808270917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239473445
@@ -2426,7 +2426,7 @@ GameObject:
   - component: {fileID: 1239473448}
   - component: {fileID: 1239473447}
   m_Layer: 7
-  m_Name: Platform 6
+  m_Name: Platform 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2595,7 +2595,7 @@ GameObject:
   - component: {fileID: 1292299629}
   - component: {fileID: 1292299628}
   m_Layer: 7
-  m_Name: Ground 2
+  m_Name: Ground 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3060,7 +3060,7 @@ GameObject:
   - component: {fileID: 1382990670}
   - component: {fileID: 1382990669}
   m_Layer: 7
-  m_Name: Platform 5 (5)
+  m_Name: Platform 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3402,7 +3402,7 @@ GameObject:
   - component: {fileID: 1518182871}
   - component: {fileID: 1518182870}
   m_Layer: 6
-  m_Name: Ground 2 (wall)
+  m_Name: Ground 3 (wall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3602,7 +3602,7 @@ GameObject:
   - component: {fileID: 1585699508}
   - component: {fileID: 1585699507}
   m_Layer: 7
-  m_Name: Ground 3 (1)
+  m_Name: Ground 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3742,7 +3742,7 @@ GameObject:
   - component: {fileID: 1596112582}
   - component: {fileID: 1596112581}
   m_Layer: 7
-  m_Name: Platform 5
+  m_Name: Platform 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3960,8 +3960,8 @@ Transform:
   m_GameObject: {fileID: 1699202006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.9454, y: 1.1, z: 0}
-  m_LocalScale: {x: 11.8907, y: 16.644289, z: 1}
+  m_LocalPosition: {x: -13.3343, y: 1.1, z: 0}
+  m_LocalScale: {x: 2.6682732, y: 16.644289, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1403728688}
@@ -4533,7 +4533,7 @@ GameObject:
   - component: {fileID: 1782567806}
   - component: {fileID: 1782567805}
   m_Layer: 7
-  m_Name: Platform 5 (4)
+  m_Name: Platform 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5016,7 +5016,7 @@ GameObject:
   - component: {fileID: 1944785298}
   - component: {fileID: 1944785297}
   m_Layer: 7
-  m_Name: Platform 5 (1)
+  m_Name: Platform 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
