@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DifficultyManager : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class DifficultyManager : MonoBehaviour
     [HideInInspector] public float enemySkeletDamage;
     [HideInInspector] public float enemyGumbaDamage;
     [HideInInspector] public float enemyBatDamage;
+
     public enum Difficulty
     {
         Easy,
@@ -67,17 +67,17 @@ public class DifficultyManager : MonoBehaviour
                 break;
 
             case Difficulty.Normal:
-                enemyHealth = 5f;
+                enemyHealth = 4f;
                 enemyBatDamage = 2f;
                 enemyGumbaDamage = 2f;
                 enemySkeletDamage = 2f;
                 break;
 
             case Difficulty.Hard:
-                enemyHealth = 10f;
-                enemyBatDamage = 5f;
-                enemyGumbaDamage = 5f;
-                enemySkeletDamage = 5f;
+                enemyHealth = 8f;
+                enemyBatDamage = 4f;
+                enemyGumbaDamage = 4f;
+                enemySkeletDamage = 4f;
                 break;
         }
     }

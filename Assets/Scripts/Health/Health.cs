@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
-    [SerializeField] int health = 10;
+    [SerializeField] public int health = 10;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
 
@@ -55,16 +54,5 @@ public class Health : MonoBehaviour
     public int GetHealth()
     {
         return health;
-    }
-
-    // Pontus healthbar 
-    [SerializeField] private GameObject[] hearts;
-
-    void Update()
-    {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            hearts[i].SetActive(i < health);
-        }
     }
 }
