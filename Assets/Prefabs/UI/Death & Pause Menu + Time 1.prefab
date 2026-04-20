@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 1163488560962830570}
   - component: {fileID: 636405155096218054}
   - component: {fileID: 6805044338998437937}
-  - component: {fileID: 3820337814054552934}
+  - component: {fileID: 6668664584186302015}
   m_Layer: 5
   m_Name: Death & Pause Menu + Time 1
   m_TagString: Untagged
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonBehavior
   ControlsMenu: {fileID: 0}
---- !u!114 &3820337814054552934
+--- !u!114 &6668664584186302015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -769,16 +769,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1586873782391441262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcefba1fa505e784c961bc8b5a23e87b, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
-  hearts:
-  - {fileID: 319826812617038539}
-  - {fileID: 2290269261527433303}
-  - {fileID: 966578968774992125}
-  - {fileID: 6806269085145669105}
-  - {fileID: 5425830382213855647}
-  playerHealth: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::TestHealth
+  health: 5
+  heart1: {fileID: 319826812617038539}
+  heart2: {fileID: 2290269261527433303}
+  heart3: {fileID: 966578968774992125}
+  heart4: {fileID: 6806269085145669105}
+  heart5: {fileID: 5425830382213855647}
 --- !u!1 &1890630689622414307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,9 +1588,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6805044338998437937}
         m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
-        m_MethodName: Retry
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2746,7 +2745,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6805044338998437937}
         m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -2915,7 +2914,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6805044338998437937}
         m_TargetAssemblyTypeName: ButtonBehavior, Assembly-CSharp
         m_MethodName: StartMenu
         m_Mode: 1
