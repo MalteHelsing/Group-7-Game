@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
-    [SerializeField] GameObject key;
+    [SerializeField] private GameObject bossDeath;
+    [SerializeField] private GameObject finnishMenu;
+    [SerializeField] private GameObject key;
 
     private float timeElapsed = 0f;
     bool keySpawned = false;
@@ -78,22 +80,16 @@ public class GameManager : MonoBehaviour
         if (!keySpawned && transform.childCount == 0)
         {
             keySpawned = true;
-            SpawnKey();
+            key.SetActive(true);
         }
-    }
-
-    void SpawnKey()
-    {
-        key.SetActive(true);
     }
     #endregion
-
+    #region The Boss is dead
     public void Finish()
     {
-        //if (boss.Healht > 0)
-        {
-            //Hide the boss and open up a menu for completing the game 
-            Time.timeScale = 0;
-        }
+        Time.timeScale = 0;
+        bossDeath.SetActive(false);
+        finnishMenu.SetActive(true);
     }
+    #endregion
 }

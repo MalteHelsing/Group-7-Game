@@ -10,14 +10,24 @@ public class BossMovement : MonoBehaviour
     [SerializeField] float hitWindow2 = 5f;
     [SerializeField] float hitWindow3 = 5f;
 
+    [Header("Telegraph")]
+    [SerializeField] private GameObject telegraphPrefab;
+    [SerializeField] private float telegraphDuration = 0.6f;
+    [SerializeField] private Vector2 telegraphScale = new Vector2(3f, 0.5f);
+
+    [Header("Screen Shake")]
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private float shakeDuration = 0.2f;
+    [SerializeField] private float shakeMagnitude = 0.3f;
+
     [Header("Wave 1")]
-    [SerializeField] private GameObject hand;
+    [SerializeField] private GameObject handWave1;
     [SerializeField] private LineRenderer armLine;
     [SerializeField] private GameObject Wave1Platforms;
     [SerializeField] private Transform[] wave1TargetPos;
     [SerializeField] private int wave1Repetitons = 3;
     [SerializeField] float stopDuration = 1.5f;
-    [SerializeField] float sweepDistance = 10.5f;
+    [SerializeField] float sweepDistance = 30.5f;
 
     [Header("Wave 2")]
     [SerializeField] private Transform leftHand;
@@ -31,6 +41,12 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private float wave2WaitTime = 1.5f;
 
     [Header("Wave 3")]
+    [SerializeField] private GameObject handWave3;
+    [SerializeField] private Transform[] wave3TargetPos;
+    [SerializeField] private int wave3Repetitions = 3;
+    [SerializeField] private float wave3SweepDistance = 30.5f;
+    [SerializeField] private float wave3WaitTime = 0.3f;
+    [SerializeField] private float fakeOutDelay = 1f;
 
     private bool damageWindowActive = false;
     private bool wasHitThisCycle = false;
@@ -39,7 +55,6 @@ public class BossMovement : MonoBehaviour
     private void Start()
     {
         StartCoroutine(BossLoop());
-        hand.SetActive(true);
         Wave1Platforms.SetActive(true);
         Wave2Platforms.SetActive(false);
     }
@@ -77,10 +92,13 @@ public class BossMovement : MonoBehaviour
     #region Wave 1
     IEnumerator Wave1()
     {
-        SetWave1PlatformActive(false);
-        SetWave2PlatformActive(true);
+        SetWave1PlatformActive(true);
+        SetWave2PlatformActive(false);
+
         SetHandActive(true);
+
         wasHitThisCycle = false;
+        
         for (int i = 0; i < wave1Repetitons; i++)
         {
             Transform target = wave1TargetPos[Random.Range(0, wave1TargetPos.Length)];
@@ -90,8 +108,8 @@ public class BossMovement : MonoBehaviour
             Vector2 leftPos = center + Vector2.left * sweepDistance;
             Vector2 rightPos = center + Vector2.right * sweepDistance;
 
-            yield return StartCoroutine(MoveToPosition(hand.transform, leftPos));
-            yield return StartCoroutine(MoveToPosition(hand.transform, rightPos));
+            yield return StartCoroutine(MoveToPosition(handWave1.transform, leftPos));
+            yield return StartCoroutine(MoveToPosition(handWave1.transform, rightPos));
 
             yield return new WaitForSeconds(stopDuration);
         }
@@ -105,7 +123,7 @@ public class BossMovement : MonoBehaviour
             {
                 damageWindowActive = false;
 
-                hand.SetActive(false); 
+                handWave1.SetActive(false); 
 
                 currentState = BossState.Wave2;
                 yield break;
@@ -119,9 +137,9 @@ public class BossMovement : MonoBehaviour
         currentState = BossState.Wave1;
     }
 
-    IEnumerator MoveToPosition(Transform obj, Vector2 target)
+    IEnumerator MoveToPosition(Transform hand, Vector2 target)
     {
-        Vector2 start = obj.position;
+        Vector2 start = hand.position;
 
         float distance = Vector2.Distance(start, target);
         float duration = distance / moveSpeed;
@@ -133,13 +151,13 @@ public class BossMovement : MonoBehaviour
             float t = time / duration;
             t = 1 - Mathf.Pow(1 - t, 3);
 
-            obj.position = Vector2.Lerp(start, target, t);
+            hand.position = Vector2.Lerp(start, target, t);
 
             time += Time.deltaTime;
             yield return null;
         }
 
-        obj.position = target;
+        hand.position = target;
     }
     #endregion
     #region Wave 2
@@ -147,7 +165,9 @@ public class BossMovement : MonoBehaviour
     {
         SetWave1PlatformActive(false);
         SetWave2PlatformActive(true);
+
         SetHandActive(false);
+
         wasHitThisCycle = false;
 
         while (!wasHitThisCycle)
@@ -210,10 +230,143 @@ public class BossMovement : MonoBehaviour
     #region Wave 3
     IEnumerator Wave3()
     {
-        Debug.Log("Wave 3 started!");
-        yield break;
+        SetWave1PlatformActive(false);
+        SetWave2PlatformActive(true);
+
+        SetHandActive(false);
+
+        wasHitThisCycle = false;
+
+        for (int i = 0; i < wave3Repetitions; i++)
+        {
+            Transform target = wave3TargetPos[Random.Range(0, wave3TargetPos.Length)];
+            Vector2 center = target.position;
+
+            Vector2 leftPos = center + Vector2.left * wave3SweepDistance;
+            Vector2 rightPos = center + Vector2.right * wave3SweepDistance;
+
+            Coroutine sweep = StartCoroutine(HandSweep(leftPos, rightPos));
+            Coroutine slams = StartCoroutine(OffsetSlams());
+
+            yield return sweep;
+            yield return slams;
+
+            yield return new WaitForSeconds(wave3WaitTime);
+        }
+
+        damageWindowActive = true;
+        float timer = 0f;
+
+        while (timer < hitWindow3)
+        {
+            if(wasHitThisCycle && timer < fakeOutDelay)
+            {
+                damageWindowActive = false;
+
+                Vector2 punishLeft = handWave1.transform.position + Vector3.left * wave3SweepDistance;
+                Vector2 punishRigth = handWave1.transform.position + Vector3.right * wave3SweepDistance;
+
+                yield return StartCoroutine(HandSweep(punishLeft, punishRigth));
+
+                wasHitThisCycle = false;
+                damageWindowActive = true;
+
+                timer = fakeOutDelay;
+            } 
+
+            if (wasHitThisCycle && timer > fakeOutDelay)
+            {
+                damageWindowActive = false;
+
+                Debug.Log("Boss defeated");
+                yield break;
+            }
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        damageWindowActive = false;
+        currentState = BossState.Wave3;
     }
 
+    IEnumerator HandSweep(Vector2 from, Vector2 to)
+    {
+        yield return StartCoroutine(ShowTelegraph(from));
+
+        handWave1.transform.position = from;
+
+        yield return StartCoroutine(MoveToPosition(handWave1.transform, to));
+
+        StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
+    }
+
+    IEnumerator MoveSingleHand(Transform handTransform, Vector2 target)
+    {
+        while (Vector2.Distance(handTransform.position, target) > 0.05f)
+        {
+            handTransform.position = Vector2.MoveTowards(
+                handTransform.position, target, moveSpeed * Time.deltaTime);
+
+            yield return null;
+        }
+    }
+
+    IEnumerator OffsetSlams()
+    {
+        yield return StartCoroutine(ShowTelegraph(leftPositions[1].position));
+        yield return StartCoroutine(MoveSingleHand(leftHand, leftPositions[1].position));
+        StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
+
+        yield return new WaitForSeconds(0.3f);
+
+        yield return StartCoroutine(ShowTelegraph(rightPositions[1].position));
+        yield return StartCoroutine(MoveSingleHand(rightHand, rightPositions[1].position));
+        StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
+
+        yield return new WaitForSeconds(0.3f);
+
+        yield return StartCoroutine(MoveSingleHand(leftHand, leftPositions[2].position));
+        yield return new WaitForSeconds(0.3f);
+        yield return StartCoroutine(MoveSingleHand(rightHand, rightPositions[2].position));
+    }
+    #endregion
+    #region Visual Affects
+    IEnumerator ShowTelegraph(Vector2 position)
+    {
+        if (telegraphPrefab == null)
+            yield break;
+
+        GameObject tele = Instantiate(telegraphPrefab, position, Quaternion.identity);
+        tele.transform.localScale = telegraphScale;
+
+        yield return new WaitForSeconds(telegraphDuration);
+
+        Destroy(tele);
+    }
+
+    IEnumerator ScreenShake(float duration, float magnitude)
+    {
+        if (cameraTransform == null)
+            yield break;
+
+        Vector3 originalPos = cameraTransform.localPosition;
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            cameraTransform.localPosition = originalPos + new Vector3(x, y, 0);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        cameraTransform.localPosition = originalPos;
+    }
     #endregion
     #region Remove this before making a build!
     private void Update()
@@ -238,7 +391,7 @@ public class BossMovement : MonoBehaviour
 
     void SetHandActive(bool active)
     {
-        hand.SetActive(active);
+        handWave1.SetActive(active);
 
         if (armLine != null)
             armLine.enabled = active;

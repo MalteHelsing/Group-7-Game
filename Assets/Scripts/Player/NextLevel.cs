@@ -5,6 +5,7 @@ public class NextLevel : MonoBehaviour
 {
     [Header("Key")]
     [SerializeField] float KeyPickUpDelay = 0.1f;
+    [SerializeField] private GameObject keyIcon;
 
     public bool HasKey = false;
 
@@ -14,6 +15,7 @@ public class NextLevel : MonoBehaviour
         {
             HasKey = true;
             Destroy(other.gameObject, KeyPickUpDelay);
+            keyIcon.SetActive(true);
         }
         else if (other.CompareTag("Door") && HasKey == true)
         {
