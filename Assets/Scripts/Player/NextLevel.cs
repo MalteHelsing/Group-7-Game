@@ -9,6 +9,11 @@ public class NextLevel : MonoBehaviour
 
     public bool HasKey = false;
 
+    private void Start()
+    {
+        keyIcon.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Key") && HasKey == false)
@@ -20,6 +25,7 @@ public class NextLevel : MonoBehaviour
         else if (other.CompareTag("Door") && HasKey == true)
         {
             HasKey = false;
+            keyIcon.SetActive(false);
             LoadNextScene();
         }
     }

@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: storlek_karaktarer_0
+      name: Key
       rect:
         serializedVersion: 2
         x: 842
@@ -135,8 +135,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Key: -8058420662238687951
       Key_0: -1110849467
-      storlek_karaktarer_0: -8058420662238687951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

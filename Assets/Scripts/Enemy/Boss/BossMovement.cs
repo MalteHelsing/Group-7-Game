@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 public class BossMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 20f;
+    [SerializeField] float moveSpeed1 = 20f;
+    [SerializeField] float moveSpeed2 = 20f;
+    [SerializeField] float moveSpeed3 = 20f;
     [SerializeField] float hitWindow1 = 5f;
     [SerializeField] float hitWindow2 = 5f;
     [SerializeField] float hitWindow3 = 5f;
@@ -51,12 +53,17 @@ public class BossMovement : MonoBehaviour
     private bool damageWindowActive = false;
     private bool wasHitThisCycle = false;
     [SerializeField] private BossState currentState = BossState.Wave1;
+    [SerializeField] private GameObject finnishMenu;
+    [SerializeField] private GameObject head;
+    SpriteRenderer body;
 
     private void Start()
     {
         StartCoroutine(BossLoop());
         Wave1Platforms.SetActive(true);
         Wave2Platforms.SetActive(false);
+
+        body = GetComponent<SpriteRenderer>();
     }
 
     public enum BossState
@@ -142,7 +149,7 @@ public class BossMovement : MonoBehaviour
         Vector2 start = hand.position;
 
         float distance = Vector2.Distance(start, target);
-        float duration = distance / moveSpeed;
+        float duration = distance / moveSpeed1;
 
         float time = 0;
 
@@ -213,13 +220,13 @@ public class BossMovement : MonoBehaviour
             leftHand.position = Vector2.MoveTowards(
                 current: leftHand.position,
                 target: leftTarget,
-                maxDistanceDelta: moveSpeed * Time.deltaTime
+                maxDistanceDelta: moveSpeed2 * Time.deltaTime
             );
 
             rightHand.position = Vector2.MoveTowards(
                 current: rightHand.position,
                 target: rightTarget,
-                maxDistanceDelta: moveSpeed * Time.deltaTime
+                maxDistanceDelta: moveSpeed2 * Time.deltaTime
             );
 
             yield return null;
@@ -277,8 +284,9 @@ public class BossMovement : MonoBehaviour
             if (wasHitThisCycle && timer > fakeOutDelay)
             {
                 damageWindowActive = false;
-
-                Debug.Log("Boss defeated");
+                
+                BossDefeated();
+                
                 yield break;
             }
 
@@ -306,7 +314,7 @@ public class BossMovement : MonoBehaviour
         while (Vector2.Distance(handTransform.position, target) > 0.05f)
         {
             handTransform.position = Vector2.MoveTowards(
-                handTransform.position, target, moveSpeed * Time.deltaTime);
+                handTransform.position, target, moveSpeed3 * Time.deltaTime);
 
             yield return null;
         }
@@ -413,5 +421,13 @@ public class BossMovement : MonoBehaviour
             return;
 
         wasHitThisCycle = true;
+    }
+
+    private void BossDefeated()
+    {
+        Time.timeScale = 0;
+        head.SetActive(false);
+        body.enabled = false;
+        finnishMenu.SetActive(true);
     }
 }
