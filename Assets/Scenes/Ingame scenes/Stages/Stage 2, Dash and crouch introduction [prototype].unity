@@ -524,6 +524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3820337814054552934, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 727668251}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -548,6 +552,11 @@ MonoBehaviour:
 --- !u!1 &205515721 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4469265081703217106, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 205515718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &205515722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1557243325696012768, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
   m_PrefabInstance: {fileID: 205515718}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &225426786
@@ -2296,6 +2305,10 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 205515721}
+    - target: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: deathMenu
+      value: 
+      objectReference: {fileID: 205515721}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -2336,6 +2349,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: keyIcon
+      value: 
+      objectReference: {fileID: 205515722}
     - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: hasSpear
       value: 0
@@ -2353,6 +2370,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+--- !u!114 &727668251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  m_PrefabInstance: {fileID: 727668250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30010dfdc8d6aa64aaaf4ee2ddb25a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
 --- !u!1001 &728647869
 PrefabInstance:
   m_ObjectHideFlags: 0
