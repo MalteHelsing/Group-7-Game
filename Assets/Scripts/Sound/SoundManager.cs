@@ -3,6 +3,7 @@ using UnityEngine;
 public enum SoundType
 {
     Jump,
+    Menu,
     Background
 }
 
