@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] public int health = 10;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
+    [SerializeField] GameObject player;
 
     EnemyDamageDealer enemyDamageDealer;
     PlayerMovement playerMovement;
@@ -16,18 +17,22 @@ public class Health : MonoBehaviour
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerAttack = FindFirstObjectByType<PlayerAttack>();
+        enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
 
         deathMenu.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-         EnemyDamageDealer enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
+        if (player == true)
+        {   
+           enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
 
-        if (enemyDamageDealer != null)
-        {
+           if (enemyDamageDealer != null)
+           { 
             TakeDamage(enemyDamageDealer.GetDamage());
-        }
+           }
+       }  
     }
 
     public void Die()
