@@ -2196,11 +2196,11 @@ PrefabInstance:
       objectReference: {fileID: 209009006}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -10.047
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.36
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5989,8 +5989,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 5660503915627216685}
   pauseScreen: {fileID: 5660503915627216684}
-  bossDeath: {fileID: 988470601}
-  finnishMenu: {fileID: 268116921}
   key: {fileID: 391419281}
 --- !u!4 &7879397698234338822
 Transform:
