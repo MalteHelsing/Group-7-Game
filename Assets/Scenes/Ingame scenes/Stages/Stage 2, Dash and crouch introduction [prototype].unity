@@ -4224,7 +4224,7 @@ GameObject:
   - component: {fileID: 1543711068}
   - component: {fileID: 1543711067}
   m_Layer: 0
-  m_Name: DeepStoneGround_0
+  m_Name: Chute to stage 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5861,6 +5861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 205515720}
   pauseScreen: {fileID: 205515719}
+  bossDeath: {fileID: 0}
+  finnishMenu: {fileID: 0}
   key: {fileID: 848143624}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
