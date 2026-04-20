@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
-    [SerializeField] private GameObject bossDeath;
-    [SerializeField] private GameObject finnishMenu;
     [SerializeField] private GameObject key;
 
     private float timeElapsed = 0f;
@@ -82,14 +80,6 @@ public class GameManager : MonoBehaviour
             keySpawned = true;
             key.SetActive(true);
         }
-    }
-    #endregion
-    #region The Boss is dead
-    public void Finish()
-    {
-        Time.timeScale = 0;
-        bossDeath.SetActive(false);
-        finnishMenu.SetActive(true);
     }
     #endregion
 }

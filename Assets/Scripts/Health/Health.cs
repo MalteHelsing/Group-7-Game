@@ -16,18 +16,19 @@ public class Health : MonoBehaviour
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerAttack = FindFirstObjectByType<PlayerAttack>();
+        enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
 
         deathMenu.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-         EnemyDamageDealer enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
+         enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
 
-        if (enemyDamageDealer != null)
-        {
-            TakeDamage(enemyDamageDealer.GetDamage());
-        }
+         if (enemyDamageDealer != null)
+         { 
+           TakeDamage(enemyDamageDealer.GetDamage());
+         } 
     }
 
     public void Die()
