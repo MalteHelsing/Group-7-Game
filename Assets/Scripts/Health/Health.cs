@@ -11,7 +11,6 @@ public class Health : MonoBehaviour
     PlayerMovement playerMovement;
     PlayerAttack playerAttack;
 
-
     private void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();

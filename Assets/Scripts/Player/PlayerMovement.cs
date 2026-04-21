@@ -12,15 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     private float currentSpeed;
 
-    [Header("Dash")]
-    [SerializeField] private float dashingPower = 24f;
-    [SerializeField] private float dashingTime = 0.2f;
-    [SerializeField] private float dashingCooldown = 1f;
-    [SerializeField] private TrailRenderer trailRenderer;
-    private bool canDash = true;
-    private bool isDashing;
-
-    [Header("Jump Assist")]
+    [Header("Coyote time")]
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
     private float coyoteTimeCounter;
@@ -29,6 +21,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Fall Through")]
     [SerializeField] float fallSpeed = -10f;
     [SerializeField] float platformFallSpeed = -20f;
+
+    [Header("Dash")]
+    [SerializeField] private float dashingPower = 24f;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] private float dashingCooldown = 1f;
+    [SerializeField] private TrailRenderer trailRenderer;
+    private bool canDash = true;
+    private bool isDashing;
 
     bool canControlPlayer = true;
 
@@ -96,6 +96,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void FallThrough()
+    {
+        if (Keyboard.current.sKey.wasPressedThisFrame)
+        {
+            Physics2D.gravity = new Vector3(0, platformFallSpeed, 0);
+        }
+        else if (Keyboard.current.sKey.wasReleasedThisFrame)
+        {
+            Physics2D.gravity = new Vector3(0, fallSpeed, 0);
+        }
+    }
+    #endregion
+    #region Jump & Coyote time
     void Jump()
     {
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
@@ -133,25 +146,16 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
     }
-
-    void FallThrough()
-    {
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-        {
-            Physics2D.gravity = new Vector3(0, platformFallSpeed, 0);
-        }
-        else if (Keyboard.current.sKey.wasReleasedThisFrame)
-        {
-            Physics2D.gravity = new Vector3(0, fallSpeed, 0);
-        }
-    }
-
+    #endregion
+    #region Dash
     private IEnumerator DashCoroutine()
     {
         canDash = false;
         isDashing = true;
+        
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0;
+
         if (Keyboard.current.dKey.isPressed)
         {
             rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
@@ -160,11 +164,14 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(transform.localScale.x * -dashingPower, 0f);
         }
+
         trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         trailRenderer.emitting = false;
+
         rb.gravityScale = originalGravity;
         isDashing = false;
+
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
@@ -179,9 +186,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     #endregion
-
     public void Death()
     {
         canControlPlayer = false;

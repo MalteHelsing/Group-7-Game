@@ -8,5 +8,4 @@ public class DamageDealer : MonoBehaviour
     {
         return damage;
     }
-
 }

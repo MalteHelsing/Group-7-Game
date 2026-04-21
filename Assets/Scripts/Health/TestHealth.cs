@@ -1,21 +1,18 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class TestHealth : MonoBehaviour
 {
-    public int health = 3;
+    [SerializeField] private GameObject heart1;
+    [SerializeField] private GameObject heart2;
+    [SerializeField] private GameObject heart3;
+    [SerializeField] private GameObject heart4;
+    [SerializeField] private GameObject heart5;
 
-    public GameObject heart1;
-    public GameObject heart2;
-    public GameObject heart3;
-    public GameObject heart4;
-    public GameObject heart5;
+    Health playerHealth;
    
     void Update()
     {
-        if (health >= 5)
+        if (playerHealth.health >= 5/5)
         {
             heart1.SetActive(true);
             heart2.SetActive(true);
@@ -23,7 +20,7 @@ public class TestHealth : MonoBehaviour
             heart4.SetActive(true);
             heart5.SetActive(true);
         }
-        else if (health == 4)
+        else if (playerHealth.health == 4/5)
         {
             heart1.SetActive(true);
             heart2.SetActive(true);
@@ -31,7 +28,7 @@ public class TestHealth : MonoBehaviour
             heart4.SetActive(true);
             heart5.SetActive(false);
         }
-        else if (health == 3)
+        else if (playerHealth.health == 3/5)
         {
             heart1.SetActive(true);
             heart2.SetActive(true);
@@ -39,7 +36,7 @@ public class TestHealth : MonoBehaviour
             heart4.SetActive(false);
             heart5.SetActive(false);
         }
-        else if (health == 2)
+        else if (playerHealth.health == 2/5)
         {
             heart1.SetActive(true);
             heart2.SetActive(true);
@@ -47,7 +44,7 @@ public class TestHealth : MonoBehaviour
             heart4.SetActive(false);
             heart5.SetActive(false);
         }
-        else if (health == 1)
+        else if (playerHealth.health == 1/5)
         {
             heart1.SetActive(true);
             heart2.SetActive(false);
@@ -55,7 +52,7 @@ public class TestHealth : MonoBehaviour
             heart4.SetActive(false);
             heart5.SetActive(false);
         }
-        else if (health <= 0)
+        else if (playerHealth.health <= 0/5)
         {
             heart1.SetActive(false);
             heart2.SetActive(false);
@@ -64,6 +61,4 @@ public class TestHealth : MonoBehaviour
             heart5.SetActive(false);
         }
     }
-
-
 }

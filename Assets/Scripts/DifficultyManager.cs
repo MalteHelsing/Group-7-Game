@@ -9,9 +9,7 @@ public class DifficultyManager : MonoBehaviour
     public Difficulty currentDiffculty;
 
     [HideInInspector] public float enemyHealth;
-    [HideInInspector] public float enemySkeletDamage;
-    [HideInInspector] public float enemyGumbaDamage;
-    [HideInInspector] public float enemyBatDamage;
+    [HideInInspector] public float enemyDamage;
 
     public enum Difficulty
     {
@@ -60,28 +58,22 @@ public class DifficultyManager : MonoBehaviour
         switch (currentDiffculty)
         {
             case Difficulty.Easy:
-                enemyHealth = 2f;
-                enemyBatDamage = 1f;
-                enemyGumbaDamage = 1f;
-                enemySkeletDamage = 1f;
+                enemyHealth = 5f;
+                enemyDamage = 1f;
                 break;
 
             case Difficulty.Normal:
-                enemyHealth = 4f;
-                enemyBatDamage = 2f;
-                enemyGumbaDamage = 2f;
-                enemySkeletDamage = 2f;
+                enemyHealth = 10f;
+                enemyDamage = 2f;
                 break;
 
             case Difficulty.Hard:
-                enemyHealth = 8f;
-                enemyBatDamage = 4f;
-                enemyGumbaDamage = 4f;
-                enemySkeletDamage = 4f;
+                enemyHealth = 20f;
+                enemyDamage = 4f;
                 break;
         }
     }
 
     // how to set the vaule in the script, which will sit under Start()
-    // for example: damage = DifficultyManager.instance.enemyBatDamage; 
+    // for example: damage = DifficultyManager.instance.enemyDamage; 
 }

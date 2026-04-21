@@ -79,8 +79,6 @@ public class SkeletonProjectile : MonoBehaviour
 
             waitTime = Mathf.Clamp(waitTime, minimumFireRate, float.MaxValue);
 
-
-
             yield return new WaitForSeconds(waitTime);
         }
     }

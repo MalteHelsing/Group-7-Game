@@ -424,9 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 1018378538}
   pauseScreen: {fileID: 1018378537}
-  bossDeath: {fileID: 0}
   key: {fileID: 0}
-  keyIcon: {fileID: 690062242}
 --- !u!4 &289718070
 Transform:
   m_ObjectHideFlags: 0
@@ -596,11 +594,6 @@ MonoBehaviour:
   regularSmoothing: 0.6
   sKeySmoothing: 0.3
   offset: {x: 0, y: 3, z: -6}
---- !u!1 &690062242 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1557243325696012768, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-  m_PrefabInstance: {fileID: 1018378536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1018378536
 PrefabInstance:
   m_ObjectHideFlags: 0

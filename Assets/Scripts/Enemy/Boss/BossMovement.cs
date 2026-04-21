@@ -22,6 +22,10 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private float shakeDuration = 0.2f;
     [SerializeField] private float shakeMagnitude = 0.3f;
 
+    [Header("Boss defeated")]
+    [SerializeField] private GameObject finnishMenu;
+    [SerializeField] private GameObject head;
+
     [Header("Wave 1")]
     [SerializeField] private GameObject handWave1;
     [SerializeField] private LineRenderer armLine;
@@ -53,8 +57,7 @@ public class BossMovement : MonoBehaviour
     private bool damageWindowActive = false;
     private bool wasHitThisCycle = false;
     [SerializeField] private BossState currentState = BossState.Wave1;
-    [SerializeField] private GameObject finnishMenu;
-    [SerializeField] private GameObject head;
+    
     SpriteRenderer body;
 
     private void Start()
@@ -232,7 +235,6 @@ public class BossMovement : MonoBehaviour
             yield return null;
         }
     }
-
     #endregion
     #region Wave 3
     IEnumerator Wave3()

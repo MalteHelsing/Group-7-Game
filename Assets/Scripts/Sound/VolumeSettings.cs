@@ -7,6 +7,7 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider playerVolumeSlider;
     [SerializeField] private Slider backgroundVolumeSlider;
+    [SerializeField] private Slider menuVolumeSlider;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class VolumeSettings : MonoBehaviour
         {
             SetJumpVolume();
             SetBackgroundVolume();
+            SetMenuVolume();
         }
     }
 
@@ -35,6 +37,13 @@ public class VolumeSettings : MonoBehaviour
         PlayerPrefs.SetFloat("BackgroundVolume", volume);
     }
 
+    public void SetMenuVolume()
+    {
+        float volume = backgroundVolumeSlider.value;
+        audioMixer.SetFloat("Menu", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("MenuVolume", volume);
+    }
+
     private void LoadVolume()
     {
         playerVolumeSlider.value = PlayerPrefs.GetFloat("JumpVolume");
@@ -42,5 +51,6 @@ public class VolumeSettings : MonoBehaviour
 
         SetJumpVolume();
         SetBackgroundVolume();
+        SetMenuVolume();
     }
 }

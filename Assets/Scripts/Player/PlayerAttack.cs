@@ -11,7 +11,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] bool hasSpear = false;
     [SerializeField] float SpearDeActiveDelay = 1.0f;
 
-
     InputAction attackAction;
     Health health;
 

@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class EnemyDamageDealer : MonoBehaviour
 {
-    [SerializeField] int damage = 2;
+    int damage;
 
+    private void Start()
+    {
+        damage = (int)DifficultyManager.instance.enemyDamage;
+    }
     public int GetDamage()
     {
         return damage;
