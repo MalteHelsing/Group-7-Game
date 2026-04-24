@@ -3,9 +3,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
-    [SerializeField] public int health = 10;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
+
+    public int health = 10;
 
     EnemyDamageDealer enemyDamageDealer;
     PlayerMovement playerMovement;
