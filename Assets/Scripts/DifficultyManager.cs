@@ -9,7 +9,11 @@ public class DifficultyManager : MonoBehaviour
     public Difficulty currentDiffculty;
 
     [HideInInspector] public float enemyHealth;
+    [HideInInspector] public float skeletonHealth;
+    [HideInInspector] public float batHealth;
     [HideInInspector] public float enemyDamage;
+    [HideInInspector] public float skeletonDamage;
+    [HideInInspector] public float batDamage;
 
     public enum Difficulty
     {
