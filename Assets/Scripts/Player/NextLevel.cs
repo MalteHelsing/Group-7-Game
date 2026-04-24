@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class NextLevel : MonoBehaviour
     [SerializeField] float KeyPickUpDelay = 0.1f;
     [SerializeField] private GameObject keyIcon;
 
+    [SerializeFeild] float nextLevelWaitTime = 3f;
     public bool HasKey = false;
 
     private void Start()
@@ -26,7 +28,7 @@ public class NextLevel : MonoBehaviour
         {
             HasKey = false;
             keyIcon.SetActive(false);
-            LoadNextScene();
+            StartCoroutine(SceneDelay());
         }
     }
 
@@ -39,5 +41,11 @@ public class NextLevel : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
+    }
+
+    IEnumerator SceneDelay()
+    {
+        yield return new WaitForSeconds(nextLevelWaitTime);
+        LoadNextScene();
     }
 }
