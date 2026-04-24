@@ -1,9 +1,15 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlatformFallThrough : MonoBehaviour
 {
-    void Update()
+    private void Update()
+    {
+        PressFall();
+    }
+
+    IEnumerator PressFall()
     {
         if (Keyboard.current.sKey.wasPressedThisFrame)
         {
@@ -11,6 +17,7 @@ public class PlatformFallThrough : MonoBehaviour
         }
         else if (Keyboard.current.sKey.wasReleasedThisFrame)
         {
+            yield return new WaitForSeconds(1);
             GetComponent<Collider2D>().enabled = true;
         }
     }
