@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1964616187}
+    - target: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: deathMenu
+      value: 
+      objectReference: {fileID: 218836929}
     - target: {fileID: 2707729733599304733, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_Size.y
       value: 2.3812726
@@ -203,6 +207,10 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: keyIcon
+      value: 
+      objectReference: {fileID: 1506797296}
     - target: {fileID: 6653975693692338936, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.515
@@ -230,6 +238,14 @@ PrefabInstance:
     - target: {fileID: 6653975693692338936, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.886
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: hasSpear
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: isActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: spearLooker
@@ -400,6 +416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6805044338998437937, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: ControlsMenu
+      value: 
+      objectReference: {fileID: 1053434415}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -771,6 +791,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1053434415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 584997849551452302, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 218836928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060122939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,11 +1309,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3491951853567492799, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+--- !u!1 &1506797296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1557243325696012768, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 218836928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1518749718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1398,7 @@ SpriteRenderer:
   m_Size: {x: 3.02, y: 1.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1518749720
 Transform:
