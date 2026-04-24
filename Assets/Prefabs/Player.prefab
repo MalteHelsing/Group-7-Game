@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4044943988259190465}
   - component: {fileID: 4518652125115464846}
-  - component: {fileID: 2299590093324957953}
+  - component: {fileID: 4529725397774608767}
   - component: {fileID: 283651817252127084}
   - component: {fileID: 3227669317704760689}
   - component: {fileID: 871496285287441359}
-  - component: {fileID: 8702507599314169858}
   - component: {fileID: 6032365202887254488}
+  - component: {fileID: 4755371424072966570}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!70 &2299590093324957953
+--- !u!70 &4529725397774608767
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,23 +311,6 @@ MonoBehaviour:
   dashingTime: 0.25
   dashingCooldown: 1.25
   trailRenderer: {fileID: 3227669317704760689}
---- !u!114 &8702507599314169858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760012303881788695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64af80ba2161e7b45933a35fba4cd32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  spear: {fileID: 1736887500704558027}
-  PlacedSpear: {fileID: 0}
-  isActive: 0
-  hasSpear: 0
-  SpearDeActiveDelay: 0.8
 --- !u!114 &6032365202887254488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +326,23 @@ MonoBehaviour:
   KeyPickUpDelay: 0.1
   keyIcon: {fileID: 0}
   HasKey: 0
+--- !u!114 &4755371424072966570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760012303881788695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64af80ba2161e7b45933a35fba4cd32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  spear: {fileID: 0}
+  PlacedSpear: {fileID: 0}
+  SpearDeActiveDelay: 1
+  isActive: 1
+  hasSpear: 0
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652158459577894694}
   - component: {fileID: 2532321101631245850}
-  - component: {fileID: 643545779517387720}
+  - component: {fileID: 5796190136410281788}
   m_Layer: 10
   m_Name: PlayerHealthKeeper
   m_TagString: Player
@@ -592,7 +592,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4518652125115464846}
   deathMenu: {fileID: 0}
   health: 10
---- !u!70 &643545779517387720
+--- !u!70 &5796190136410281788
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

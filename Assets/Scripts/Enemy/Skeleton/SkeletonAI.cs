@@ -53,7 +53,7 @@ public class SkeletonAI : MonoBehaviour
 
     //welcome to the underground!
     //how was the fall?
-    //if you want to look around,
+    //if you want to look around.
     //give us a call.
     //
 }
