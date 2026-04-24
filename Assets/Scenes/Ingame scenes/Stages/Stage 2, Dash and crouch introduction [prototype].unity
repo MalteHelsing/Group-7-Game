@@ -3393,6 +3393,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1279230555767197103, guid: 19f6d638b1de5bb41a8368c0d852f004, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139689422040190113, guid: 19f6d638b1de5bb41a8368c0d852f004, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6985701356124098225, guid: 19f6d638b1de5bb41a8368c0d852f004, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -5757,7 +5765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  damage: 2
 --- !u!114 &3089854359413730596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5770,7 +5777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  damage: 2
 --- !u!114 &3089854359416624913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5783,7 +5789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  damage: 2
 --- !u!114 &3089854359627049041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5796,7 +5801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  damage: 2
 --- !u!114 &3089854360150600332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5809,7 +5813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  damage: 2
 --- !u!1 &3491951852948687362
 GameObject:
   m_ObjectHideFlags: 0

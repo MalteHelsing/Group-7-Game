@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlatformFallThrough : MonoBehaviour
 {
+    [SerializeFeild] float fallCoolDown = 0.5f;
+
     private void Update()
     {
-        PressFall();
+        StartCoroutine(PressFall());
     }
 
     IEnumerator PressFall()
@@ -17,8 +20,12 @@ public class PlatformFallThrough : MonoBehaviour
         }
         else if (Keyboard.current.sKey.wasReleasedThisFrame)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(fallCoolDown);
             GetComponent<Collider2D>().enabled = true;
         }
     }
+}
+
+internal class SerializeFeildAttribute : Attribute
+{
 }
