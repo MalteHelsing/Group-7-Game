@@ -8,9 +8,7 @@ public class HealthPowerUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //playerHealth.health * 1.5;
+            //playerHealth.playerHealth * 1.5;
         }
     }
-  
-
 }

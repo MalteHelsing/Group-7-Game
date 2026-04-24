@@ -9,26 +9,17 @@ public class DifficultyManager : MonoBehaviour
     public Difficulty currentDiffculty;
 
     [HideInInspector] public float enemyHealth;
+    [HideInInspector] public float skeletonHealth;
+    [HideInInspector] public float batHealth;
     [HideInInspector] public float enemyDamage;
+    [HideInInspector] public float skeletonDamage;
+    [HideInInspector] public float batDamage;
 
     public enum Difficulty
     {
         Easy,
         Normal,
         Hard
-    }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     private void Start()
@@ -76,4 +67,5 @@ public class DifficultyManager : MonoBehaviour
 
     // how to set the vaule in the script, which will sit under Start()
     // for example: damage = DifficultyManager.instance.enemyDamage; 
+
 }
