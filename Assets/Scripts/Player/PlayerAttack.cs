@@ -56,6 +56,10 @@ public class PlayerAttack : MonoBehaviour
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
             }
+            else
+            {
+                spear.SetActive(isActive == false);
+            }
         }
     }
 
