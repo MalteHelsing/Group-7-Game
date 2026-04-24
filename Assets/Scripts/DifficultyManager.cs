@@ -18,19 +18,6 @@ public class DifficultyManager : MonoBehaviour
         Hard
     }
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void Start()
     {
         if (PlayerPrefs.HasKey("Difficulty"))
@@ -76,4 +63,5 @@ public class DifficultyManager : MonoBehaviour
 
     // how to set the vaule in the script, which will sit under Start()
     // for example: damage = DifficultyManager.instance.enemyDamage; 
+
 }
