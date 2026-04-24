@@ -3,6 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
+    [SerializeField] float maxHealth = 10f;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
 
@@ -19,6 +20,8 @@ public class Health : MonoBehaviour
         enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
 
         deathMenu.SetActive(false);
+
+        currentHealth = maxHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
