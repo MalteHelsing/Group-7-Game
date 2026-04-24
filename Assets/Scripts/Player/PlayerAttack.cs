@@ -7,10 +7,11 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject spear;
     [SerializeField] GameObject PlacedSpear;
+    [SerializeField] float SpearDeActiveDelay = 1.0f;
+    [Header("Bools")]
     [SerializeField] bool isActive = true;
     [SerializeField] bool hasSpear = false;
     [SerializeFeild] bool canAttack = true;
-    [SerializeField] float SpearDeActiveDelay = 1.0f;
 
     InputAction attackAction;
     Health health;
@@ -25,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
     {
         SpearAttack();
         CheckScene();
+        CheckIfAttack();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,18 +50,27 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    void CheckIfAttack()
+    {
+        if (isActive == true)
+        {
+            canAttack = false;
+        }
+        else
+        {
+            canAttack = true;
+        }
+    }
+
     public void SpearAttack()
     {
-        if (attackAction.WasPressedThisFrame() && hasSpear == true)
+        if (attackAction.WasPressedThisFrame() && hasSpear == true && canAttack == true)
         {
-            if (isActive == false && canAttack == true)
+            if (isActive == false)
             {
                 spear.SetActive(!isActive);
                 StartCoroutine(DelayAction(SpearDeActiveDelay));
-            }
-            else
-            {
-                spear.SetActive(isActive == false);
+                canAttack = true;
             }
         }
     }
@@ -67,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator DelayAction(float SpearDeActiveDelay)
     {
         yield return new WaitForSeconds(SpearDeActiveDelay);
+
         spear.SetActive(isActive);
-        canAttack = false;
     }
 }

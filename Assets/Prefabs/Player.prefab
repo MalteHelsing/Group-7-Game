@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4044943988259190465}
   - component: {fileID: 4518652125115464846}
-  - component: {fileID: 4040511937576534169}
+  - component: {fileID: 4529725397774608767}
   - component: {fileID: 283651817252127084}
   - component: {fileID: 3227669317704760689}
   - component: {fileID: 871496285287441359}
-  - component: {fileID: 8702507599314169858}
   - component: {fileID: 6032365202887254488}
+  - component: {fileID: 4755371424072966570}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -101,8 +101,8 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!60 &4040511937576534169
-PolygonCollider2D:
+--- !u!70 &4529725397774608767
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,86 +135,9 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.47, y: 2.46}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.2839348, y: -1.0274513}
-      - {x: 0.23627687, y: -0.84384865}
-      - {x: 0.23728627, y: -0.6517333}
-      - {x: 0.21901917, y: -0.51156205}
-      - {x: 0.1831527, y: -0.4534986}
-      - {x: 0.17566498, y: -0.111806124}
-      - {x: 0.17330855, y: -0.054418065}
-      - {x: 0.17513874, y: -0.014019527}
-      - {x: 0.17238075, y: 0.0046460927}
-      - {x: 0.17276388, y: 0.026265338}
-      - {x: 0.17181033, y: 0.06537029}
-      - {x: 0.16693708, y: 0.09842452}
-      - {x: 0.17023844, y: 0.13788186}
-      - {x: 0.16951026, y: 0.21708773}
-      - {x: 0.16984883, y: 0.38354507}
-      - {x: 0.16681087, y: 0.5873129}
-      - {x: 0.19764307, y: 0.8136891}
-      - {x: 0.15910885, y: 0.9150916}
-      - {x: 0.048980955, y: 1.0312731}
-      - {x: -0.05770839, y: 1.0999035}
-      - {x: -0.23101905, y: 1.1672603}
-      - {x: -0.38356555, y: 1.1619095}
-      - {x: -0.5871361, y: 1.0617802}
-      - {x: -0.6375778, y: 0.96244854}
-      - {x: -0.6406957, y: 0.8355038}
-      - {x: -0.5923492, y: 0.7359384}
-      - {x: -0.5923666, y: 0.67068547}
-      - {x: -0.57816046, y: 0.44927737}
-      - {x: -0.594973, y: 0.40552372}
-      - {x: -0.7008652, y: 0.1687357}
-      - {x: -0.7149242, y: 0.07202693}
-      - {x: -0.70507914, y: -0.014943142}
-      - {x: -0.65339386, y: -0.15755054}
-      - {x: -0.5098515, y: -0.33805642}
-      - {x: -0.42001122, y: -0.25765172}
-      - {x: -0.34397215, y: -0.47116417}
-      - {x: -0.37835285, y: -0.56576884}
-      - {x: -0.38578805, y: -0.70586145}
-      - {x: -0.34907117, y: -0.8239379}
-      - {x: -0.35482845, y: -0.9507242}
-      - {x: -0.30210721, y: -1.0666944}
-      - {x: -0.30608454, y: -1.1640153}
-      - {x: -0.28789234, y: -1.2038829}
-      - {x: 0.43226978, y: -1.2034712}
-      - {x: 0.46119088, y: -1.1811951}
-      - {x: 0.45948797, y: -1.1146195}
-    - - {x: 0.024999999, y: -1.05}
-      - {x: -0.005, y: -1.03}
-      - {x: -0.085, y: -1.02}
-      - {x: -0.085, y: -0.95}
-      - {x: -0.105, y: -0.89}
-      - {x: -0.13499999, y: -0.83}
-      - {x: -0.095, y: -0.65}
-      - {x: 0.005, y: -0.81}
-      - {x: 0.015, y: -0.96}
-      - {x: 0.044999998, y: -1.04}
-      - {x: 0.065, y: -1.0699999}
-      - {x: 0.074999996, y: -1.1}
-      - {x: 0.074999996, y: -1.09}
-    - - {x: -0.525, y: 0.04}
-      - {x: -0.545, y: 0.089999996}
-      - {x: -0.545, y: 0.04}
-      - {x: -0.5447329, y: 0.00033582957}
-      - {x: -0.5442001, y: -0.050809514}
-      - {x: -0.515, y: -0.07}
-      - {x: -0.505, y: -0.08}
-      - {x: -0.49499997, y: -0.07}
-  m_UseDelaunayMesh: 1
+  m_Offset: {x: -0.13, y: 0}
+  m_Size: {x: 1, y: 2.5}
+  m_Direction: 0
 --- !u!50 &283651817252127084
 Rigidbody2D:
   serializedVersion: 5
@@ -375,36 +298,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
   crouchSpeed: 1
-  jumpHeight: 10
+  jumpHeight: 12.5
   jumpDistance: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashingPower: 24
-  dashingTime: 0.25
-  dashingCooldown: 0.69
-  trailRenderer: {fileID: 3227669317704760689}
   coyoteTime: 0.1
   jumpBufferTime: 0.1
   fallSpeed: -10
   platformFallSpeed: -20
---- !u!114 &8702507599314169858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760012303881788695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64af80ba2161e7b45933a35fba4cd32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  spear: {fileID: 1736887500704558027}
-  PlacedSpear: {fileID: 0}
-  isActive: 0
-  hasSpear: 0
-  SpearDeActiveDelay: 0.8
+  dashingPower: 24
+  dashingTime: 0.25
+  dashingCooldown: 1.25
+  trailRenderer: {fileID: 3227669317704760689}
 --- !u!114 &6032365202887254488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +326,23 @@ MonoBehaviour:
   KeyPickUpDelay: 0.1
   keyIcon: {fileID: 0}
   HasKey: 0
+--- !u!114 &4755371424072966570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760012303881788695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64af80ba2161e7b45933a35fba4cd32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  spear: {fileID: 0}
+  PlacedSpear: {fileID: 0}
+  SpearDeActiveDelay: 1
+  isActive: 1
+  hasSpear: 0
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652158459577894694}
   - component: {fileID: 2532321101631245850}
-  - component: {fileID: 7593933098792413910}
+  - component: {fileID: 5796190136410281788}
   m_Layer: 10
   m_Name: PlayerHealthKeeper
   m_TagString: Player
@@ -665,12 +588,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   currentHealth: 10
-  health: 10
+  maxHealth: 10
   spriteRenderer: {fileID: 4518652125115464846}
   deathMenu: {fileID: 0}
-  player: {fileID: 0}
---- !u!60 &7593933098792413910
-PolygonCollider2D:
+  health: 10
+--- !u!70 &5796190136410281788
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -699,31 +622,13 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.25641987, y: 1.1775224}
-      - {x: -0.6157365, y: 0.979655}
-      - {x: -0.64957577, y: -0.070681244}
-      - {x: -0.38236162, y: -0.29066768}
-      - {x: -0.27219117, y: -1.1344742}
-      - {x: -0.032255515, y: -1.2133725}
-      - {x: 0.37081492, y: -1.1739234}
-      - {x: 0.09303427, y: 0.890894}
-  m_UseDelaunayMesh: 1
+  m_Offset: {x: -0.13, y: 0}
+  m_Size: {x: 1, y: 2.5}
+  m_Direction: 0
 --- !u!1 &5308510615412129281
 GameObject:
   m_ObjectHideFlags: 0
