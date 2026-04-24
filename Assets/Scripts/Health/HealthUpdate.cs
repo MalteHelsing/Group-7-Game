@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using static DifficultyManager;
 
 public class HealthUpdate : MonoBehaviour
@@ -11,19 +12,20 @@ public class HealthUpdate : MonoBehaviour
 
     private void Start()
     {
-        
+        currentHealth = PlayerPrefs.GetString("Health", currentHealth);
     }
 
     void Update()
     {
         if (difficultyManager.currentDiffculty == Difficulty.Easy)
         {
-            playerHealth.currentHealth = playerHealth.maxHealth;
+            currentHealth = playerHealth.maxHealth;
         }
 
         if (difficultyManager.currentDiffculty == Difficulty.Normal)
         {
-            playerHealth.currentHealth * 1.5f = newHealth; 
+            newHealth = currentHealth * 1.5f;
+            PlayerPrefs.SetFloat("newHealth", newHealth);
         }
     }
 }
