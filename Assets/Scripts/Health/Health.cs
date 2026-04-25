@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
 
         currentHealth = maxHealth;
     }
-
+    #region Damage
     private void OnTriggerEnter2D(Collider2D other)
     {
          enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
@@ -54,7 +54,12 @@ public class Health : MonoBehaviour
             Die();
         }
     }
+    #endregion
 
+    public void SetHealth()
+    {
+        currentHealth = GameManager.instance.healthUpdate;
+    }
     public int GetHealth()
     {
         return health;

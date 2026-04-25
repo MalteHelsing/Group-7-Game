@@ -22,6 +22,19 @@ public class DifficultyManager : MonoBehaviour
         Hard
     }
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("Difficulty"))
