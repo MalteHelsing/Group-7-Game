@@ -5,8 +5,8 @@ public class DifficultyManager : MonoBehaviour
 {
     public static DifficultyManager instance;
 
-    public TMP_Dropdown dropdown;
-    public Difficulty currentDiffculty;
+    [SerializeFeild] public TMP_Dropdown dropdown;
+    [HideInInspector]public Difficulty currentDiffculty;
 
     [HideInInspector] public float enemyHealth;
     [HideInInspector] public float skeletonHealth;

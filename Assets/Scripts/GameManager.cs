@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject key;
+    [SerializeFeild] public GameObject powerup;
     [SerializeFeild] private float gainHealthBack = 1.5f;
     [HideInInspector] public float healthUpdate;
     
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
         TimeCounter();
         Menu();
         NextLevel();
+        HealthPowerup();
     }
 
     #region UI
@@ -133,6 +135,21 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.5f);
         playerHealth.SetHealth();
+    }
+    #endregion
+    #region Health Powerup
+    void HealthPowerup()
+    {
+        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        {
+            powerup.SetActive(true);
+            Debug.Log("True");
+        }
+        else if (difficultyManager.currentDiffculty == Difficulty.Normal || difficultyManager.currentDiffculty == Difficulty.Easy)
+        {
+            powerup.SetActive(false);
+            Debug.Log("false");
+        }
     }
     #endregion
 }

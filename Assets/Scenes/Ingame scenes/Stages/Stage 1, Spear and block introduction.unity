@@ -499,18 +499,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
   m_PrefabInstance: {fileID: 1362090716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &312247256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312247252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e9b1069ddb8c29449ec8a785c081d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthPowerUp
 --- !u!1 &325586132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1112,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &511453923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1736887500704558027, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  m_PrefabInstance: {fileID: 994740080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &630516337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4755371424072966570, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: spear
+      value: 
+      objectReference: {fileID: 511453923}
+    - target: {fileID: 4755371424072966570, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: PlacedSpear
+      value: 
+      objectReference: {fileID: 1758662837}
     - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: keyIcon
       value: 
@@ -3412,14 +3413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Powerup
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3850160251675362777, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 312247256}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
 --- !u!1 &1382990667
 GameObject:
@@ -5951,7 +5948,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6668664584186302015, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5987,6 +5985,7 @@ MonoBehaviour:
   timeText: {fileID: 5660503915627216685}
   pauseScreen: {fileID: 5660503915627216684}
   key: {fileID: 391419281}
+  powerup: {fileID: 312247252}
   healthUpdate: 0
 --- !u!4 &7879397698234338822
 Transform:
