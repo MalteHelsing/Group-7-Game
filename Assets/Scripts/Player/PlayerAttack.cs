@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,14 +8,15 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject spear;
     [SerializeField] GameObject PlacedSpear;
-    [SerializeField] float SpearDeActiveDelay = 1.0f;
+    [SerializeField] float spearDeActiveDelay = 1.0f;
+    [SerializeField] float attackDelay = 1.0f;
 
     [Header("Bools")]
     [SerializeField] bool isActive = true;
     [SerializeField] bool hasSpear = false;
+    private bool canAttack = true;
 
     InputAction attackAction;
-    SpearLooker spearLooker;
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
@@ -24,7 +26,6 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         CheckScene();
-        MoveSpear();
         SpearAttack();
     }
 
@@ -51,32 +52,27 @@ public class PlayerAttack : MonoBehaviour
 
     public void SpearAttack()
     {
-        if (attackAction.WasPressedThisFrame() && hasSpear == true)
+        if (attackAction.IsPressed() && hasSpear == true && canAttack == true && isActive == false)
         {
-            if (isActive == false)
-            {
-                spear.SetActive(!isActive);
-                StartCoroutine(DelayAction(SpearDeActiveDelay));
-            }
+            Attack();
         }
     }
 
-    IEnumerator DelayAction(float SpearDeActiveDelay)
+    IEnumerator DelayAction(float spearDeActiveDelay)
     {
-        yield return new WaitForSeconds(SpearDeActiveDelay);
+
+        yield return new WaitForSeconds(spearDeActiveDelay);
         spear.SetActive(isActive);
     }
 
-    void MoveSpear()
+    void Attack()
     {
-        if (isActive)
-        {
-            spearLooker.MoveMouse();
-        }
-    }
+        
 
-    void CanAttack()
-    {
+        spear.SetActive(!isActive);
+        canAttack = false;
+        StartCoroutine(DelayAction(spearDeActiveDelay));
 
+        canAttack = true;
     }
 }
