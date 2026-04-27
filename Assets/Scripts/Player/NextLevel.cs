@@ -11,6 +11,8 @@ public class NextLevel : MonoBehaviour
     [SerializeFeild] float nextLevelWaitTime = 3f;
     public bool HasKey = false;
 
+    GameManager gameManager;
+
     private void Start()
     {
         keyIcon.SetActive(false);
@@ -29,6 +31,7 @@ public class NextLevel : MonoBehaviour
             HasKey = false;
             keyIcon.SetActive(false);
             StartCoroutine(SceneDelay());
+            gameManager.SetHealth();
         }
     }
 

@@ -1,29 +1,50 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static DifficultyManager;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     [SerializeField] TextMeshProUGUI timeText;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject key;
-
+    [SerializeFeild] public GameObject powerup;
+    [SerializeFeild] private float gainHealthBack = 1.5f;
+    [HideInInspector] public float healthUpdate;
+    
     private float timeElapsed = 0f;
     bool keySpawned = false;
+
+    DifficultyManager difficultyManager;
+    Health playerHealth;
 
     InputAction pauseMenu;
 
     private void Awake()
     {
         pauseScreen.SetActive(false);
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
     {
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
         key.SetActive(false);
+
     }
     
     void Update()
@@ -31,6 +52,7 @@ public class GameManager : MonoBehaviour
         TimeCounter();
         Menu();
         NextLevel();
+        HealthPowerup();
     }
 
     #region UI
@@ -79,6 +101,54 @@ public class GameManager : MonoBehaviour
         {
             keySpawned = true;
             key.SetActive(true);
+        }
+    }
+    #endregion
+    #region Save Player Health
+    void HealthUpdate()
+    {
+        if (difficultyManager.currentDiffculty == Difficulty.Easy)
+        {
+            healthUpdate = playerHealth.maxHealth;
+        }
+
+        if (difficultyManager.currentDiffculty == Difficulty.Normal)
+        {
+            healthUpdate = playerHealth.currentHealth * gainHealthBack;
+        }
+
+        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        {
+            healthUpdate = playerHealth.currentHealth;
+        }
+    }
+
+    public void SetHealth()
+    {
+        StartCoroutine(ChangeHealth());
+    }
+
+    IEnumerator ChangeHealth()
+    {
+        healthUpdate = playerHealth.currentHealth;
+        HealthUpdate();
+
+        yield return new WaitForSeconds(2.5f);
+        playerHealth.SetHealth();
+    }
+    #endregion
+    #region Health Powerup
+    void HealthPowerup()
+    {
+        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        {
+            powerup.SetActive(true);
+            Debug.Log("True");
+        }
+        else if (difficultyManager.currentDiffculty == Difficulty.Normal || difficultyManager.currentDiffculty == Difficulty.Easy)
+        {
+            powerup.SetActive(false);
+            Debug.Log("false");
         }
     }
     #endregion

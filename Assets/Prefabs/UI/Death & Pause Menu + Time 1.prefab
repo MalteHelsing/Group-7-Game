@@ -772,7 +772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestHealth
-  health: 5
   heart1: {fileID: 319826812617038539}
   heart2: {fileID: 2290269261527433303}
   heart3: {fileID: 966578968774992125}

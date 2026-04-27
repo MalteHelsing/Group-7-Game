@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class HealthPowerUp : MonoBehaviour
 {
-    Health playerHealth;
+    [SerializeFeild] public float powerupValue = 10f;
 
+    Health playerHealth;
+    GameManager gameManager;
+
+    private void Start()
+    {
+        
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //playerHealth.playerHealth * 1.5;
+            playerHealth.currentHealth = playerHealth.currentHealth + powerupValue;
+            Destroy(gameManager.powerup);
         }
     }
 }
