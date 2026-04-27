@@ -12,7 +12,7 @@ public class TestHealth : MonoBehaviour
    
     void Update()
     {
-        if (playerHealth.health >= 100)
+        if (playerHealth.health == 100)
         {
             heart1.SetActive(true);
             heart2.SetActive(true);
@@ -52,7 +52,7 @@ public class TestHealth : MonoBehaviour
             heart4.SetActive(false);
             heart5.SetActive(false);
         }
-        else if (playerHealth.health <= 0/5)
+        else if (playerHealth.health == 0)
         {
             heart1.SetActive(false);
             heart2.SetActive(false);
