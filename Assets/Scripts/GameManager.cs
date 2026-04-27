@@ -138,18 +138,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Health Powerup
-    void HealthPowerup()
-    {
-        if (difficultyManager.currentDiffculty == Difficulty.Hard)
-        {
-            powerup.SetActive(true);
-            Debug.Log("True");
-        }
-        else if (difficultyManager.currentDiffculty == Difficulty.Normal || difficultyManager.currentDiffculty == Difficulty.Easy)
-        {
-            powerup.SetActive(false);
-            Debug.Log("false");
-        }
-    }
+    
     #endregion
 }
