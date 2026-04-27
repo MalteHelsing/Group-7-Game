@@ -2271,6 +2271,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1279230555767197103, guid: 19f6d638b1de5bb41a8368c0d852f004, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: e83d57b47c939e9458b2c522b439d54d, type: 3}
     - target: {fileID: 6985701356124098225, guid: 19f6d638b1de5bb41a8368c0d852f004, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -10375,7 +10379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   spear: {fileID: 1736887500458285087}
   PlacedSpear: {fileID: 0}
-  SpearDeActiveDelay: 1
+  spearDeActiveDelay: 1
+  attackDelay: 1
   isActive: 1
   hasSpear: 0
 --- !u!4 &4869809576892199309
@@ -11137,7 +11142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
