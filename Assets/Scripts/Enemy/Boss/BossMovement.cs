@@ -272,8 +272,8 @@ public class BossMovement : MonoBehaviour
             {
                 damageWindowActive = false;
 
-                Vector2 punishLeft = handWave1.transform.position + Vector3.left * wave3SweepDistance;
-                Vector2 punishRigth = handWave1.transform.position + Vector3.right * wave3SweepDistance;
+                Vector2 punishLeft = handWave3.transform.position + Vector3.left * wave3SweepDistance;
+                Vector2 punishRigth = handWave3.transform.position + Vector3.right * wave3SweepDistance;
 
                 yield return StartCoroutine(HandSweep(punishLeft, punishRigth));
 
@@ -302,13 +302,13 @@ public class BossMovement : MonoBehaviour
 
     IEnumerator HandSweep(Vector2 from, Vector2 to)
     {
-        yield return StartCoroutine(ShowTelegraph(from));
+        //yield return StartCoroutine(ShowTelegraph(from));
 
-        handWave1.transform.position = from;
+        handWave3.transform.position = from;
 
-        yield return StartCoroutine(MoveToPosition(handWave1.transform, to));
+        yield return StartCoroutine(MoveToPosition(handWave3.transform, to));
 
-        StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
+        //StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
     }
 
     IEnumerator MoveSingleHand(Transform handTransform, Vector2 target)
@@ -324,13 +324,13 @@ public class BossMovement : MonoBehaviour
 
     IEnumerator OffsetSlams()
     {
-        yield return StartCoroutine(ShowTelegraph(leftPositions[1].position));
+        //yield return StartCoroutine(ShowTelegraph(leftPositions[1].position));
         yield return StartCoroutine(MoveSingleHand(leftHand, leftPositions[1].position));
         StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
 
         yield return new WaitForSeconds(0.3f);
 
-        yield return StartCoroutine(ShowTelegraph(rightPositions[1].position));
+        //yield return StartCoroutine(ShowTelegraph(rightPositions[1].position));
         yield return StartCoroutine(MoveSingleHand(rightHand, rightPositions[1].position));
         StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
 
