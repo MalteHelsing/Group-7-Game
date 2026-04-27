@@ -457,7 +457,7 @@ Transform:
   m_GameObject: {fileID: 225426786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.59, y: 10.31, z: 0}
+  m_LocalPosition: {x: 15, y: 9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1028,7 +1028,7 @@ Transform:
   m_GameObject: {fileID: 353297206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5, y: 5.92, z: 0}
+  m_LocalPosition: {x: 15, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2016,10 +2016,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4755371424072966570, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: spear
-      value: 
-      objectReference: {fileID: 727668251}
     - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: keyIcon
       value: 
@@ -2029,11 +2025,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
---- !u!1 &727668251 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1736887500704558027, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  m_PrefabInstance: {fileID: 727668250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &740186737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2398,7 @@ Transform:
   m_GameObject: {fileID: 1007719450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.89, y: 14.53, z: 0}
+  m_LocalPosition: {x: 8.89, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2705,7 +2696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.86
+      value: 14.78
       objectReference: {fileID: 0}
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3066,8 +3057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   targetToFollow: {fileID: 841052865}
-  regularSmoothing: 0.6
-  sKeySmoothing: 0.3
+  regularSmoothing: 0.4
+  sKeySmoothing: 0.25
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1254549102
 GameObject:
@@ -3943,7 +3934,7 @@ Transform:
   m_GameObject: {fileID: 1666250170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.64, y: 11.65, z: 0}
+  m_LocalPosition: {x: 4, y: 11.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4428,7 +4419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 744, y: 356}
+  m_AnchoredPosition: {x: 673, y: 377}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959260189
@@ -4451,7 +4442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Left-Shift for crouch Q for dash
+  m_text: 'Left shift or Q for dash C for crouch
 
 '
   m_isRightToLeft: 0
@@ -4519,7 +4510,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -74.67444, y: -203.28134, z: -62.229248, w: 0}
+  m_margin: {x: -99.56616, y: -203.28134, z: -62.229248, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4560,7 +4551,7 @@ Transform:
   m_GameObject: {fileID: 1969115188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.543, y: -8, z: 0}
+  m_LocalPosition: {x: -17.543, y: -18.95, z: 0}
   m_LocalScale: {x: 4.961162, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9541,6 +9532,8 @@ MonoBehaviour:
   timeText: {fileID: 161910282920340209}
   pauseScreen: {fileID: 8597052092888743831}
   key: {fileID: 848143624}
+  powerup: {fileID: 0}
+  healthUpdate: 0
 --- !u!114 &7928445561417634758
 MonoBehaviour:
   m_ObjectHideFlags: 0

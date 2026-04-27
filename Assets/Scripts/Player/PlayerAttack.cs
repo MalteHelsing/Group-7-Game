@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,15 +8,16 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject spear;
     [SerializeField] GameObject PlacedSpear;
-    [SerializeField] float SpearDeActiveDelay = 1.0f;
+    [SerializeField] float spearDeActiveDelay = 1.0f;
+    [SerializeField] float attackDelay = 0f;
+    [SerializeFeild] float attackCooldown = 1f;
+
     [Header("Bools")]
     [SerializeField] bool isActive = true;
     [SerializeField] bool hasSpear = false;
-    [SerializeFeild] bool canAttack = true;
+    private bool canAttack = true;
 
     InputAction attackAction;
-    Health health;
-
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
@@ -24,9 +26,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        SpearAttack();
         CheckScene();
-        CheckIfAttack();
+        SpearAttack();
+
+        if (attackDelay > 0)
+        {
+            attackDelay -= Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,35 +56,25 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void CheckIfAttack()
-    {
-        if (isActive == true)
-        {
-            canAttack = false;
-        }
-        else
-        {
-            canAttack = true;
-        }
-    }
-
     public void SpearAttack()
     {
-        if (attackAction.WasPressedThisFrame() && hasSpear == true && canAttack == true)
+        if (attackAction.IsPressed() && hasSpear == true && canAttack == true && isActive == false && attackDelay <= 0)
         {
-            if (isActive == false)
-            {
-                spear.SetActive(!isActive);
-                StartCoroutine(DelayAction(SpearDeActiveDelay));
-                canAttack = true;
-            }
+            Attack();
+            attackDelay = attackCooldown;
         }
     }
 
-    IEnumerator DelayAction(float SpearDeActiveDelay)
+    IEnumerator DelayAction(float spearDeActiveDelay)
     {
-        yield return new WaitForSeconds(SpearDeActiveDelay);
 
+        yield return new WaitForSeconds(spearDeActiveDelay);
         spear.SetActive(isActive);
+    }
+
+    void Attack()
+    {
+        spear.SetActive(!isActive);
+        StartCoroutine(DelayAction(spearDeActiveDelay));
     }
 }

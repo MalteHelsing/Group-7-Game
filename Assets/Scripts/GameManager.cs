@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using static DifficultyManager;
 
 public class GameManager : MonoBehaviour
@@ -14,11 +15,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject key;
     [SerializeFeild] public GameObject powerup;
+    [SerializeFeild] public Sprite[] changeDoor;  
     [SerializeFeild] private float gainHealthBack = 1.5f;
     [HideInInspector] public float healthUpdate;
     
     private float timeElapsed = 0f;
     bool keySpawned = false;
+
+    public SpriteRenderer door;
 
     DifficultyManager difficultyManager;
     Health playerHealth;
@@ -43,8 +47,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
-        key.SetActive(false);
-
+        if (SceneManager.GetActiveScene().buildIndex < 5)
+        {
+            key.SetActive(false);
+            powerup.SetActive(false);
+            door.sprite = changeDoor[0];
+        }
     }
     
     void Update()
@@ -97,10 +105,14 @@ public class GameManager : MonoBehaviour
     #region Next Level
     private void NextLevel()
     {
-        if (!keySpawned && transform.childCount == 0)
+        if(SceneManager.GetActiveScene().buildIndex < 5)
         {
-            keySpawned = true;
-            key.SetActive(true);
+            if (!keySpawned && transform.childCount == 0)
+            {
+                keySpawned = true;
+                key.SetActive(true);
+                door.sprite = changeDoor[1];
+            }
         }
     }
     #endregion
@@ -144,11 +156,6 @@ public class GameManager : MonoBehaviour
         {
             powerup.SetActive(true);
             Debug.Log("True");
-        }
-        else if (difficultyManager.currentDiffculty == Difficulty.Normal || difficultyManager.currentDiffculty == Difficulty.Easy)
-        {
-            powerup.SetActive(false);
-            Debug.Log("false");
         }
     }
     #endregion

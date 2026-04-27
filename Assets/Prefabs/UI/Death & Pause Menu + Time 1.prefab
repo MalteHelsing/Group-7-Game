@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 1163488560962830570}
   - component: {fileID: 636405155096218054}
   - component: {fileID: 6805044338998437937}
-  - component: {fileID: 6668664584186302015}
+  - component: {fileID: 5360903289176397725}
   m_Layer: 5
   m_Name: Death & Pause Menu + Time 1
   m_TagString: Untagged
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonBehavior
   ControlsMenu: {fileID: 0}
---- !u!114 &6668664584186302015
+--- !u!114 &5360903289176397725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
