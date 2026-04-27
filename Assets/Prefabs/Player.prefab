@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3227669317704760689}
   - component: {fileID: 871496285287441359}
   - component: {fileID: 6032365202887254488}
-  - component: {fileID: 4755371424072966570}
+  - component: {fileID: 2628866230662143448}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -326,7 +326,7 @@ MonoBehaviour:
   KeyPickUpDelay: 0.1
   keyIcon: {fileID: 0}
   HasKey: 0
---- !u!114 &4755371424072966570
+--- !u!114 &2628866230662143448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,9 +340,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   spear: {fileID: 1736887500704558027}
   PlacedSpear: {fileID: 0}
-  SpearDeActiveDelay: 1
-  isActive: 1
-  hasSpear: 0
+  spearDeActiveDelay: 1
+  attackDelay: 1
+  isActive: 0
+  hasSpear: 1
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0
