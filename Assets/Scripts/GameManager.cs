@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         TimeCounter();
         Menu();
         NextLevel();
-        HealthPowerup();
+        //HealthPowerup();
     }
 
     #region UI

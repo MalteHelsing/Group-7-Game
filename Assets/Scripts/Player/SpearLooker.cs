@@ -9,7 +9,13 @@ public class SpearLooker : MonoBehaviour
     {
         mainCam = Camera.main;
     }
-    public void Update()
+
+    private void Update()
+    {
+        MoveMouse();
+    }
+
+    public void MoveMouse()
     {
         if (Mouse.current.leftButton.isPressed)
         {
@@ -20,5 +26,5 @@ public class SpearLooker : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, 0, rotZ);
         }
-    }  
+    }
 }

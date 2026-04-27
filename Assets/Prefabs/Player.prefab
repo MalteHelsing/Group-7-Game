@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64af80ba2161e7b45933a35fba4cd32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  spear: {fileID: 0}
+  spear: {fileID: 1736887500704558027}
   PlacedSpear: {fileID: 0}
   SpearDeActiveDelay: 1
   isActive: 1
