@@ -4428,7 +4428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 744, y: 356}
+  m_AnchoredPosition: {x: 673, y: 377}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959260189
@@ -4451,7 +4451,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Left-Shift for crouch Q for dash
+  m_text: 'Left shift or Q for dash C for crouch
 
 '
   m_isRightToLeft: 0
@@ -4519,7 +4519,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -74.67444, y: -203.28134, z: -62.229248, w: 0}
+  m_margin: {x: -99.56616, y: -203.28134, z: -62.229248, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9541,6 +9541,8 @@ MonoBehaviour:
   timeText: {fileID: 161910282920340209}
   pauseScreen: {fileID: 8597052092888743831}
   key: {fileID: 848143624}
+  powerup: {fileID: 0}
+  healthUpdate: 0
 --- !u!114 &7928445561417634758
 MonoBehaviour:
   m_ObjectHideFlags: 0
