@@ -7,8 +7,9 @@ public class NextLevel : MonoBehaviour
     [Header("Key")]
     [SerializeField] float KeyPickUpDelay = 0.1f;
     [SerializeField] private GameObject keyIcon;
+    [Header("Next level wait time")]
+    [SerializeFeild] float nextLevelWaitTime = 1.5f;
 
-    [SerializeFeild] float nextLevelWaitTime = 3f;
     public bool HasKey = false;
 
     GameManager gameManager;
