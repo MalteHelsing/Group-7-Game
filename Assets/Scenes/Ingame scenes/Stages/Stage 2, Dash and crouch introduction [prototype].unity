@@ -2016,10 +2016,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4755371424072966570, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: spear
-      value: 
-      objectReference: {fileID: 727668251}
     - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: keyIcon
       value: 
@@ -2029,11 +2025,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
---- !u!1 &727668251 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1736887500704558027, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  m_PrefabInstance: {fileID: 727668250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &740186737
 GameObject:
   m_ObjectHideFlags: 0

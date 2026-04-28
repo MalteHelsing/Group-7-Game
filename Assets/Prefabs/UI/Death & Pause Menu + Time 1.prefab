@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 1163488560962830570}
   - component: {fileID: 636405155096218054}
   - component: {fileID: 6805044338998437937}
+  - component: {fileID: 5360903289176397725}
   m_Layer: 5
   m_Name: Death & Pause Menu + Time 1
   m_TagString: Untagged
@@ -759,6 +760,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonBehavior
   ControlsMenu: {fileID: 0}
+--- !u!114 &5360903289176397725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586873782391441262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b5d93040b542249b4c2a1ef766f387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHealth
+  heart1: {fileID: 319826812617038539}
+  heart2: {fileID: 2290269261527433303}
+  heart3: {fileID: 966578968774992125}
+  heart4: {fileID: 6806269085145669105}
+  heart5: {fileID: 5425830382213855647}
 --- !u!1 &1890630689622414307
 GameObject:
   m_ObjectHideFlags: 0

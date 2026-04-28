@@ -1,15 +1,10 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class CameraFollow : MonoBehaviour
+public class CameraBounds : MonoBehaviour
 {
     [SerializeField] Transform targetToFollow;
-    [SerializeField] float regularSmoothing = 0.6f;
-    [SerializeField] float sKeySmoothing = 0.3f;
+    [SerializeField] float smoothing = 0.6f;
     [SerializeField] Vector3 offset = Vector3.zero;
-    
-
-    float smoothing = 0.6f;
 
     Vector3 velocity = Vector3.zero;
     Vector3 targetPosition;
@@ -17,11 +12,6 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         FindTargetPosition();
-    }
-
-    private void Update()
-    {
-        FollowFaster();
     }
 
     void LateUpdate()
@@ -42,17 +32,4 @@ public class CameraFollow : MonoBehaviour
             targetToFollow.position.y,
             transform.position.z) + offset;
     }
-
-    void FollowFaster()
-    {
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-        {
-            smoothing = sKeySmoothing;
-        }
-        else if (Keyboard.current.sKey.wasReleasedThisFrame)
-        {
-            smoothing = regularSmoothing;
-        }
-    }
-
 }
