@@ -425,6 +425,10 @@ MonoBehaviour:
   timeText: {fileID: 1018378538}
   pauseScreen: {fileID: 1018378537}
   key: {fileID: 0}
+  powerup: {fileID: 0}
+  changeDoor: []
+  healthUpdate: 0
+  door: {fileID: 0}
 --- !u!4 &289718070
 Transform:
   m_ObjectHideFlags: 0
@@ -681,6 +685,10 @@ PrefabInstance:
     - target: {fileID: 974958264085528078, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name

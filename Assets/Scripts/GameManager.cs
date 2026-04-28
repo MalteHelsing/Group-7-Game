@@ -46,7 +46,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        playerHealth = FindFirstObjectByType<Health>();
+        difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
+        
         if (SceneManager.GetActiveScene().buildIndex < 5)
         {
             key.SetActive(false);
