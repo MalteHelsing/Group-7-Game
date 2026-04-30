@@ -3,8 +3,25 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float currentHealth = 10f;
+    [SerializeFeild] public bool isGummba;
+    [SerializeFeild] public bool isSkeleton;
+    [SerializeFeild] public bool isBat;
 
-    DamageDealer damageDealer;
+    private void Start()
+    {
+        if (isGummba == true)
+        {
+            currentHealth = DifficultyManager.instance.enemyHealth;
+        }
+        if (isSkeleton == true)
+        {
+            currentHealth = DifficultyManager.instance.skeletonHealth;
+        }
+        if (isBat == true)
+        {
+            currentHealth = DifficultyManager.instance.batHealth;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,6 +45,7 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            Debug.Log("Dead");
         }
     }
 

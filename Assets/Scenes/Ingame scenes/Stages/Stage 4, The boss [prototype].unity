@@ -316,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 125867103}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22, y: 8.25, z: 0}
+  m_LocalPosition: {x: -31.05, y: 8.25, z: 0}
   m_LocalScale: {x: 2, y: 11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9692,7 +9692,7 @@ Transform:
   m_GameObject: {fileID: 1116932476576175832}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.01, y: 7.65, z: 0}
+  m_LocalPosition: {x: -32, y: 7.65, z: 0}
   m_LocalScale: {x: 2, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9841,7 +9841,7 @@ Transform:
   m_GameObject: {fileID: 7609979712195368615}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.7, z: 0}
+  m_LocalPosition: {x: 0, y: 7.9, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10670,8 +10670,8 @@ Transform:
   m_GameObject: {fileID: 5725458027878363865}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.000000014901161, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3000002, z: 0}
-  m_LocalScale: {x: 7, y: 6, z: 1}
+  m_LocalPosition: {x: 0, y: -2.9134, z: 0}
+  m_LocalScale: {x: 7, y: 6.3863997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2140849446587698710}
@@ -10688,7 +10688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0912639da971781468ec71f930e26c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossMovement
-  moveSpeed1: 20
+  moveSpeed1: 25
   moveSpeed2: 20
   moveSpeed3: 20
   hitWindow1: 5
@@ -10726,14 +10726,15 @@ MonoBehaviour:
   - {fileID: 1366275591}
   Wave2Platforms: {fileID: 2069664764}
   wave2Repetitions: 3
-  wave2WaitTime: 1.5
+  wave2WaitTime: 1
+  wave2RepetTime: 0.1
   handWave3: {fileID: 125867103}
   wave3TargetPos:
   - {fileID: 1208281546}
   - {fileID: 1519141954}
   wave3Repetitions: 3
   wave3SweepDistance: 30.5
-  wave3WaitTime: 0.3
+  wave3Delay: 0.3
   fakeOutDelay: 1
   currentState: 0
 --- !u!114 &5908249955270600614
