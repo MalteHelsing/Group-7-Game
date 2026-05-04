@@ -9,14 +9,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("UI")]
     [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] private GameObject key;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
-    [SerializeField] private GameObject key;
-    [SerializeFeild] public GameObject powerup;
-    [SerializeFeild] public Sprite[] changeDoor;  
-    [SerializeFeild] private float gainHealthBack = 1.5f;
+    [SerializeField] public GameObject powerup;
+    [SerializeField] public Sprite[] changeDoor;  
+    [SerializeField] private float gainHealthBack = 1.5f;
     [HideInInspector] public float healthUpdate;
     
     private float timeElapsed = 0f;
@@ -33,26 +34,23 @@ public class GameManager : MonoBehaviour
     {
         pauseScreen.SetActive(false);
 
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Start()
     {
+        playerHealth = FindFirstObjectByType<Health>();
+        difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
-        if (SceneManager.GetActiveScene().buildIndex < 5)
-        {
-            key.SetActive(false);
-            powerup.SetActive(false);
-            door.sprite = changeDoor[0];
-        }
     }
     
     void Update()
@@ -61,6 +59,23 @@ public class GameManager : MonoBehaviour
         Menu();
         NextLevel();
         HealthPowerup();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        timeText = FindFirstObjectByType<TextMeshProUGUI>();
+
+        playerHealth = FindFirstObjectByType<Health>();
+        difficultyManager = FindFirstObjectByType<DifficultyManager>();
+
+        keySpawned = false;
+
+        if (scene.buildIndex < 5)
+        {
+            key.SetActive(false);
+            powerup.SetActive(false);
+            door.sprite = changeDoor[0];
+        }
     }
 
     #region UI
@@ -107,7 +122,7 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex < 5)
         {
-            if (!keySpawned && transform.childCount == 0)
+            if (!keySpawned && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 keySpawned = true;
                 key.SetActive(true);

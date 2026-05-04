@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 02b3c68dee8d62545975bde03ca0cb06
+guid: 1b4abc244287b204eb1109d9d4ad32aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2424553518018739129
-    second: boss_0
+      213: -6136079375251732219
+    second: sloot maskin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss
+      name: Sloot Maskin
       rect:
         serializedVersion: 2
-        x: 479
-        y: 350
-        width: 1130
-        height: 728
+        x: 986
+        y: 370
+        width: 252
+        height: 341
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 744c193db614a5ed0800000000000000
-      internalID: -2424553518018739129
+      spriteID: 509058c815448daa0800000000000000
+      internalID: -6136079375251732219
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b98732fdf29f0d46aca6fd9e60ffd96
+    spriteID: f8670893cbe6f874ba0d7415fbee1ff9
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boss: -2424553518018739129
+      Sloot Maskin: -6136079375251732219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
