@@ -45,13 +45,14 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private GameObject Wave2Platforms;
     [SerializeField] private int wave2Repetitions = 3;
     [SerializeField] private float wave2WaitTime = 1.5f;
+    [SerializeField] private float wave2RepetTime = 1.5f;
 
     [Header("Wave 3")]
     [SerializeField] private GameObject handWave3;
     [SerializeField] private Transform[] wave3TargetPos;
     [SerializeField] private int wave3Repetitions = 3;
     [SerializeField] private float wave3SweepDistance = 30.5f;
-    [SerializeField] private float wave3WaitTime = 0.3f;
+    [SerializeField] private float wave3Delay = 0.3f;
     [SerializeField] private float fakeOutDelay = 1f;
 
     private bool damageWindowActive = false;
@@ -188,7 +189,7 @@ public class BossMovement : MonoBehaviour
                 yield return new WaitForSeconds(wave2WaitTime);
 
                 yield return StartCoroutine(MoveHands(leftPositions[2].position, rightPositions[2].position));
-                yield return new WaitForSeconds(wave2WaitTime);
+                yield return new WaitForSeconds(wave2RepetTime);
 
                 yield return StartCoroutine(MoveHands(leftPositions[3].position, rightPositions[3].position));
                 yield return new WaitForSeconds(wave2WaitTime);
@@ -254,13 +255,10 @@ public class BossMovement : MonoBehaviour
             Vector2 leftPos = center + Vector2.left * wave3SweepDistance;
             Vector2 rightPos = center + Vector2.right * wave3SweepDistance;
 
-            Coroutine sweep = StartCoroutine(HandSweep(leftPos, rightPos));
-            Coroutine slams = StartCoroutine(OffsetSlams());
+            yield return StartCoroutine(HandSweep(leftPos, rightPos));
+            yield return StartCoroutine(OffsetSlams());
 
-            yield return sweep;
-            yield return slams;
-
-            yield return new WaitForSeconds(wave3WaitTime);
+            yield return new WaitForSeconds(1f);
         }
 
         damageWindowActive = true;
@@ -308,7 +306,7 @@ public class BossMovement : MonoBehaviour
 
         yield return StartCoroutine(MoveToPosition(handWave3.transform, to));
 
-        //StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
+        StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
     }
 
     IEnumerator MoveSingleHand(Transform handTransform, Vector2 target)
@@ -324,21 +322,29 @@ public class BossMovement : MonoBehaviour
 
     IEnumerator OffsetSlams()
     {
-        //yield return StartCoroutine(ShowTelegraph(leftPositions[1].position));
-        yield return StartCoroutine(MoveSingleHand(leftHand, leftPositions[1].position));
+        Coroutine left = StartCoroutine(MoveSingleHand(leftHand, leftPositions[1].position));
+
+        yield return new WaitForSeconds(wave3Delay);
+
+        Coroutine right = StartCoroutine(MoveSingleHand(rightHand, rightPositions[1].position));
+
+        yield return left;
+        yield return right;
+
         StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
-        //yield return StartCoroutine(ShowTelegraph(rightPositions[1].position));
-        yield return StartCoroutine(MoveSingleHand(rightHand, rightPositions[1].position));
+        left = StartCoroutine(MoveSingleHand(leftHand, leftPositions[2].position));
+
+        yield return new WaitForSeconds(wave3Delay);
+
+        right = StartCoroutine(MoveSingleHand(rightHand, rightPositions[2].position));
+
+        yield return left;
+        yield return right;
+
         StartCoroutine(ScreenShake(shakeDuration, shakeMagnitude));
-
-        yield return new WaitForSeconds(0.3f);
-
-        yield return StartCoroutine(MoveSingleHand(leftHand, leftPositions[2].position));
-        yield return new WaitForSeconds(0.3f);
-        yield return StartCoroutine(MoveSingleHand(rightHand, rightPositions[2].position));
     }
     #endregion
     #region Visual Affects
