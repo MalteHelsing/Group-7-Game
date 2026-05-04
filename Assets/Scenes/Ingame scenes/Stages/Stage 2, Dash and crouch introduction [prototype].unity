@@ -7603,6 +7603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
+  isGummba: 0
+  isSkeleton: 0
+  isBat: 0
 --- !u!114 &4387905767225682083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7616,6 +7619,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
+  isGummba: 0
+  isSkeleton: 0
+  isBat: 0
 --- !u!114 &4387905767226446486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7629,6 +7635,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
+  isGummba: 0
+  isSkeleton: 0
+  isBat: 0
 --- !u!114 &4387905767565700875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7642,6 +7651,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
+  isGummba: 0
+  isSkeleton: 0
+  isBat: 0
 --- !u!114 &4387905768559508679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7655,6 +7667,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
+  isGummba: 0
+  isSkeleton: 0
+  isBat: 0
 --- !u!1 &4468963052796992972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9542,10 +9557,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 161910282920340209}
-  pauseScreen: {fileID: 8597052092888743831}
   key: {fileID: 848143624}
+  pauseScreen: {fileID: 8597052092888743831}
   powerup: {fileID: 0}
   changeDoor: []
+  gainHealthBack: 1.5
   healthUpdate: 0
   door: {fileID: 0}
 --- !u!114 &7928445561417634758
@@ -9892,11 +9908,11 @@ SceneRoots:
   - {fileID: 1227980204}
   - {fileID: 727668250}
   - {fileID: 1653031242}
+  - {fileID: 1159629781}
   - {fileID: 392897885}
   - {fileID: 974958264017606088}
+  - {fileID: 1274457899}
   - {fileID: 809527612}
   - {fileID: 1330776387}
   - {fileID: 6256097096137553667}
-  - {fileID: 1159629781}
-  - {fileID: 1274457899}
   - {fileID: 1543711068}
