@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DifficultyManager : MonoBehaviour
 {
     public static DifficultyManager instance;
 
     [SerializeFeild] public TMP_Dropdown dropdown;
-    [HideInInspector]public Difficulty currentDiffculty;
+    [SerializeFeild] public Difficulty currentDiffculty;
 
     [HideInInspector] public float enemyHealth;
     [HideInInspector] public float skeletonHealth;
@@ -37,13 +38,16 @@ public class DifficultyManager : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("Difficulty"))
+        if(SceneManager.GetActiveScene().buildIndex == 1)
         {
-            int savedIndex = PlayerPrefs.GetInt("Difficulty");
-            currentDiffculty = (Difficulty)savedIndex;
-            dropdown.value = savedIndex;
+            if (PlayerPrefs.HasKey("Difficulty"))
+            {
+                int savedIndex = PlayerPrefs.GetInt("Difficulty");
+                currentDiffculty = (Difficulty)savedIndex;
+                dropdown.value = savedIndex;
+            }
         }
-
+        
         ApplyDiffculty();
     }
 
@@ -63,17 +67,29 @@ public class DifficultyManager : MonoBehaviour
         {
             case Difficulty.Easy:
                 enemyHealth = 5f;
-                enemyDamage = 1f;
+                enemyDamage = 2f;
+                skeletonHealth = 2f;
+                skeletonDamage = 5f;
+                batHealth = 2f;
+                batDamage = 2f;
                 break;
 
             case Difficulty.Normal:
                 enemyHealth = 10f;
                 enemyDamage = 2f;
+                skeletonHealth = 5f;
+                skeletonDamage = 10f;
+                batHealth = 4f;
+                batDamage = 4f;
                 break;
 
             case Difficulty.Hard:
                 enemyHealth = 20f;
                 enemyDamage = 4f;
+                skeletonHealth = 10f;
+                skeletonDamage = 20f;
+                batHealth = 8f;
+                batDamage = 8f;
                 break;
         }
     }

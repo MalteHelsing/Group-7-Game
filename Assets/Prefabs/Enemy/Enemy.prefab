@@ -4936,6 +4936,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   currentHealth: 10
+  isGummba: 1
+  isSkeleton: 0
+  isBat: 0
 --- !u!60 &1553242804401363205
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5064,7 +5067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  damage: 2
 --- !u!1 &3825194335217446513
 GameObject:
   m_ObjectHideFlags: 0

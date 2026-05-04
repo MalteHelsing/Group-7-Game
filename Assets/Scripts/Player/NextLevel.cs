@@ -49,6 +49,7 @@ public class NextLevel : MonoBehaviour
 
     IEnumerator SceneDelay()
     {
+        
         yield return new WaitForSeconds(nextLevelWaitTime);
         LoadNextScene();
     }

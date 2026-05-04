@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2447285677993431372}
   - component: {fileID: 7654140221739138256}
   - component: {fileID: 8453223080776181699}
-  - component: {fileID: 5559018471424575553}
+  - component: {fileID: -6712181516906062886}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -230,14 +230,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkeletonProjectile
   projectilePrefab: {fileID: 8858527653907250281, guid: bba0b18ee45e9a54b86533eed22b78cc, type: 3}
-  projectileSpeed: 10
+  leftSpeed: 10
+  rightSpeed: 10
   projectileLifetime: 5
   baseFireRate: 0.2
   useAI: 1
   minimumFireRate: 2
   fireRateVariance: 0
   isFiring: 0
---- !u!114 &5559018471424575553
+--- !u!114 &-6712181516906062886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,8 +247,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7242244665568236673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30010dfdc8d6aa64aaaf4ee2ddb25a85, type: 3}
+  m_Script: {fileID: 11500000, guid: 58318683cae0ded479552076af7a0f02, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  currentHealth: 25
-  health: 25
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  currentHealth: 10
+  isGummba: 0
+  isSkeleton: 1
+  isBat: 0

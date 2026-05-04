@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3579161026901277612}
   - component: {fileID: 483522222298196965}
   - component: {fileID: -3950586847229086451}
+  - component: {fileID: -8471454055167837393}
   m_Layer: 0
   m_Name: BatProjectilePrefab
   m_TagString: Enemy
@@ -133,3 +134,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileDestroy
   enemyProjectilePrefabDelay: 1
+--- !u!114 &-8471454055167837393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575191587924576709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer

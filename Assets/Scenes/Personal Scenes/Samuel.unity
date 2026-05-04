@@ -423,8 +423,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 1018378538}
-  pauseScreen: {fileID: 1018378537}
   key: {fileID: 0}
+  pauseScreen: {fileID: 1018378537}
+  powerup: {fileID: 0}
+  changeDoor: []
+  gainHealthBack: 1.5
+  healthUpdate: 0
+  door: {fileID: 0}
 --- !u!4 &289718070
 Transform:
   m_ObjectHideFlags: 0
@@ -594,6 +599,55 @@ MonoBehaviour:
   regularSmoothing: 0.6
   sKeySmoothing: 0.3
   offset: {x: 0, y: 3, z: -6}
+--- !u!1 &546489767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546489769}
+  - component: {fileID: 546489768}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546489768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546489767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32ca6a7f379fe64db0b42fd2dbc73f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GamblingMachine
+  symbols:
+  - sprites: {fileID: 0}
+    value: 0
+  speed: 0.1
+  target: 1
+--- !u!4 &546489769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546489767}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29.1039, y: 7.08612, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1018378536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,6 +736,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
@@ -717,3 +775,4 @@ SceneRoots:
   - {fileID: 212446773}
   - {fileID: 151581998}
   - {fileID: 289718070}
+  - {fileID: 546489769}
