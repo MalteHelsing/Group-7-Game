@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GamblingMachine : MonoBehaviour
 {
@@ -9,38 +11,54 @@ public class GamblingMachine : MonoBehaviour
         public int value;
     }
 
-    [SerializeFeild] public SlotSymbol[] symbols;
+    [Header("SlotValue")]
+    [SerializeField] public SlotSymbol[] symbols;
     [SerializeField] private float speed = 0.1f;
     [SerializeField] private float target = 1f;
 
-    Sprite[] sprites;
-    private SpriteRenderer rend;
-    private int spriteIndex;
+    [Header("Animation")]
+    [SerializeField] Sprite[] sprites;
+    [SerializeField] Image[] slot;
 
+    [HideInInspector] private Sprite slotSymbol1;
+    [HideInInspector] private Sprite slotSymbol2;
+    [HideInInspector] private Sprite slotSymbol3;
+    
+    private int spriteSlot;
+    private bool isOn = false;
 
     private void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
-        rend.sprite = sprites[100];
-        InvokeRepeating(nameof(AnimateSprite), 0.15f, speed);
-        Spin();
+        slot[0] = GetComponent<Image>();
+        slot[1] = GetComponent<Image>();
+        slot[2] = GetComponent<Image>();
     }
 
-    private void AnimateSprite()
+    public void StartSpinning()
     {
-        spriteIndex++;
+        StartCoroutine(Something());
+    }
 
-        if (spriteIndex >= sprites.Length)
+    private void AnimateSlot()
+    {
+        spriteSlot++;
+
+        if (spriteSlot >= sprites.Length)
         {
-            spriteIndex = 0;
+            spriteSlot = 0;
         }
 
-        rend.sprite = sprites[spriteIndex];
+        slot[0].sprite = sprites[spriteSlot];
+        slot[1].sprite = sprites[spriteSlot];
+        slot[2].sprite = sprites[spriteSlot];
     }
 
     private void FixedUpdate()
     {
-        speed += (target - speed) * 0.1f;
+        if (isOn == true)
+        {
+            speed += (target - speed) * 0.1f;
+        }
     }
 
     void Spin()
@@ -49,6 +67,31 @@ public class GamblingMachine : MonoBehaviour
         SlotSymbol s2 = symbols[Random.Range(0, symbols.Length)];
         SlotSymbol s3 = symbols[Random.Range(0, symbols.Length)];
 
-        int totalValue = s1.value + s2.value + s3.value;
+        int v = s1.value + s2.value + s3.value;
+        int totalValue = v;
+
+        slotSymbol1 = s1.sprites;
+    }
+
+    IEnumerator Something()
+    {
+        if (speed <= 1f)
+        {
+            isOn = true;
+            InvokeRepeating(nameof(AnimateSlot), 0.15f, speed);
+        }
+
+        yield return new WaitForSeconds(1f);
+        Spin();
+
+        if (speed >= 1f)
+        {
+            isOn = false;
+            CancelInvoke(nameof(AnimateSlot));
+        }
+
+        slot[0].sprite = slotSymbol1;
+        slot[1].sprite = slotSymbol2;
+        slot[2].sprite = slotSymbol3;
     }
 }

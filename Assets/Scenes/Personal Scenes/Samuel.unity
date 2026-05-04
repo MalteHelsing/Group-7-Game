@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 546489769}
   - component: {fileID: 546489768}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Gambilng Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,10 +629,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamblingMachine
   symbols:
-  - sprites: {fileID: 0}
-    value: 0
+  - sprites: {fileID: -3204970635726831865, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 1
+  - sprites: {fileID: 2772920197833770750, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 2
+  - sprites: {fileID: -3851859884506429160, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 3
+  - sprites: {fileID: -1925883457515284356, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 4
+  - sprites: {fileID: -574424115894795592, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 5
+  - sprites: {fileID: -5500325910660290272, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 6
+  - sprites: {fileID: 5841791779998999052, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 7
+  - sprites: {fileID: -2149884339218450984, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 8
+  - sprites: {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    value: 9
   speed: 0.1
   target: 1
+  sprites:
+  - {fileID: -3204970635726831865, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: 2772920197833770750, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: -3851859884506429160, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: -1925883457515284356, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: -574424115894795592, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: -5500325910660290272, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: 5841791779998999052, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: -2149884339218450984, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  slot:
+  - {fileID: 1018378541}
+  - {fileID: 1018378540}
+  - {fileID: 1018378539}
 --- !u!4 &546489769
 Transform:
   m_ObjectHideFlags: 0
@@ -736,13 +766,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499128391189608616, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -765,6 +795,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1018378539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2362409721276517514, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 1018378536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1018378540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6648436580188303648, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 1018378536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1018378541 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8354383428977901809, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 1018378536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
