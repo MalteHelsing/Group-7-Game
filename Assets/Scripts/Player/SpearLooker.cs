@@ -4,7 +4,6 @@ public class SpearLooker : MonoBehaviour
 {
     public Camera mainCam;
     public Vector3 mousePos;
-
     public void Start()
     {
         mainCam = Camera.main;

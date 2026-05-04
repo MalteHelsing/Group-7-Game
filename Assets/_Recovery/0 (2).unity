@@ -1972,26 +1972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1736887500704558027, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 4469265081901112340}
-    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: hasSpear
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: isActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: canAttack
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.3
@@ -3076,67 +3060,6 @@ MonoBehaviour:
   regularSmoothing: 0.4
   sKeySmoothing: 0.25
   offset: {x: 0, y: 0, z: 0}
---- !u!1001 &1252438475
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6256097096137553667}
-    m_Modifications:
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.18749
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.88849
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_Name
-      value: Health Powerup
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
 --- !u!1 &1254549102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,16 +4076,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1880255744 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-  m_PrefabInstance: {fileID: 1252438475}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1880255748 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-  m_PrefabInstance: {fileID: 1252438475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1892367472
 GameObject:
   m_ObjectHideFlags: 0
@@ -8522,8 +8435,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1880255748}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6458603314247748858
@@ -9620,7 +9532,7 @@ MonoBehaviour:
   timeText: {fileID: 161910282920340209}
   pauseScreen: {fileID: 8597052092888743831}
   key: {fileID: 848143624}
-  powerup: {fileID: 1880255744}
+  powerup: {fileID: 0}
   changeDoor: []
   healthUpdate: 0
   door: {fileID: 0}
