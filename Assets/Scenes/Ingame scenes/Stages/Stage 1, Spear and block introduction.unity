@@ -1986,7 +1986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 30.93
       objectReference: {fileID: 0}
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2023,6 +2023,10 @@ PrefabInstance:
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059311988898422990, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3756,7 +3760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496676394}
   m_Layer: 0
-  m_Name: Enemys On Screen
+  m_Name: Enemies On Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5942,14 +5946,14 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1320367620}
+  - {fileID: 994740080}
+  - {fileID: 1496676394}
   - {fileID: 1808270917}
   - {fileID: 1625698322}
-  - {fileID: 994740080}
+  - {fileID: 985150381}
+  - {fileID: 1362090716}
   - {fileID: 5660503915627216683}
   - {fileID: 403834625}
   - {fileID: 711711636}
   - {fileID: 7879397698234338822}
   - {fileID: 2064069102}
-  - {fileID: 1362090716}
-  - {fileID: 985150381}
-  - {fileID: 1496676394}
