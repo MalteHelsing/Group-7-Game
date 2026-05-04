@@ -7513,7 +7513,7 @@ GameObject:
   - component: {fileID: 7879397699263309941}
   - component: {fileID: 6204271018861664714}
   m_Layer: 0
-  m_Name: GameManager (enemies are here)
+  m_Name: GameManager (enemies are in here)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7663,10 +7663,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 5351272049003422809}
-  pauseScreen: {fileID: 5351272049003422808}
   key: {fileID: 2015156014}
+  pauseScreen: {fileID: 5351272049003422808}
   powerup: {fileID: 0}
   changeDoor: []
+  gainHealthBack: 1.5
   healthUpdate: 0
   door: {fileID: 0}
 --- !u!4 &7879397699263309941
