@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] private GameObject key;
 
+    [SerializeField] TextMeshProUGUI gamblingMachineText;
+    [SerializeField] public GameObject gamblingMachine;
+
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] public GameObject powerup;
@@ -51,6 +54,8 @@ public class GameManager : MonoBehaviour
         playerHealth = FindFirstObjectByType<Health>();
         difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
+
+        gamblingMachine.SetActive(false);
     }
     
     void Update()
@@ -75,9 +80,10 @@ public class GameManager : MonoBehaviour
             key.SetActive(false);
             powerup.SetActive(false);
             door.sprite = changeDoor[0];
+            gamblingMachineText.enabled = false;
+            gamblingMachine.SetActive(true);
         }
     }
-
     #region UI
     void TimeCounter()
     {
@@ -127,6 +133,8 @@ public class GameManager : MonoBehaviour
                 keySpawned = true;
                 key.SetActive(true);
                 door.sprite = changeDoor[1];
+                gamblingMachineText.enabled = true;
+                gamblingMachine.SetActive(true);
             }
         }
     }

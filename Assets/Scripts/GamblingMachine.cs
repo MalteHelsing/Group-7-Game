@@ -11,7 +11,7 @@ public class GamblingMachine : MonoBehaviour
         public int value;
     }
 
-    [Header("SlotValue")]
+    [Header("Slot Value")]
     [SerializeField] public SlotSymbol[] symbols;
     [SerializeField] private float speed = 0.1f;
     [SerializeField] private float target = 1f;
@@ -19,10 +19,7 @@ public class GamblingMachine : MonoBehaviour
     [Header("Animation")]
     [SerializeField] Sprite[] sprites;
     [SerializeField] Image[] slot;
-
-    [HideInInspector] private Sprite slotSymbol1;
-    [HideInInspector] private Sprite slotSymbol2;
-    [HideInInspector] private Sprite slotSymbol3;
+    [HideInInspector] Sprite[] slotSymbol;
     
     private int spriteSlot;
     private bool isOn = false;
@@ -33,7 +30,7 @@ public class GamblingMachine : MonoBehaviour
         slot[1] = GetComponent<Image>();
         slot[2] = GetComponent<Image>();
     }
-
+    #region Animation
     public void StartSpinning()
     {
         StartCoroutine(Something());
@@ -67,10 +64,11 @@ public class GamblingMachine : MonoBehaviour
         SlotSymbol s2 = symbols[Random.Range(0, symbols.Length)];
         SlotSymbol s3 = symbols[Random.Range(0, symbols.Length)];
 
-        int v = s1.value + s2.value + s3.value;
-        int totalValue = v;
+        int totalValue = s1.value + s2.value + s3.value;
 
-        slotSymbol1 = s1.sprites;
+        slotSymbol[0] = s1.sprites;
+        slotSymbol[1] = s2.sprites;
+        slotSymbol[2] = s3.sprites;
     }
 
     IEnumerator Something()
@@ -90,8 +88,15 @@ public class GamblingMachine : MonoBehaviour
             CancelInvoke(nameof(AnimateSlot));
         }
 
-        slot[0].sprite = slotSymbol1;
-        slot[1].sprite = slotSymbol2;
-        slot[2].sprite = slotSymbol3;
+        slot[0].sprite = slotSymbol[0];
+        slot[1].sprite = slotSymbol[1];
+        slot[2].sprite = slotSymbol[2];
     }
+    #endregion
+    #region Status Affects
+    void StatusAffect()
+    {
+        
+    }
+    #endregion
 }

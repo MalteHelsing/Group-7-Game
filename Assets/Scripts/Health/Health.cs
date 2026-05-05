@@ -48,6 +48,9 @@ public class Health : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        FindFirstObjectByType<HealthBar>().UpdateHealthUI();
 
         if (currentHealth <= 0)
         {
@@ -59,9 +62,5 @@ public class Health : MonoBehaviour
     public void SetHealth()
     {
         currentHealth = GameManager.instance.healthUpdate;
-    }
-    public int GetHealth()
-    {
-        return health;
     }
 }

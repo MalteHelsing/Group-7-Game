@@ -48,4 +48,29 @@ public class ButtonBehavior : MonoBehaviour
         ControlsMenu.SetActive(staus);
     }
     #endregion
+    #region Gambling Machine
+    [SerializeField] private GameObject gamblingMachineMenu;
+
+    private GamblingMachine gamblingMachine;
+
+    public void GamblingMachineMenuOn()
+    {
+        gamblingMachineMenu.SetActive(true);
+    }
+
+    public void GamblingMachineMenuOff()
+    {
+        gamblingMachineMenu.SetActive(false);
+    }
+
+    public void GamblingMachineMenu(bool staus)
+    {
+        gamblingMachineMenu.SetActive(staus);
+    }
+
+    public void GamblingMachineOn()
+    {
+        gamblingMachine.StartSpinning();
+    }
+    #endregion
 }

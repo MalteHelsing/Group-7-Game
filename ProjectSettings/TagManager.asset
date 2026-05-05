@@ -8,6 +8,7 @@ TagManager:
   - Spear
   - Key
   - Door
+  - Gambling Machine
   layers:
   - Default
   - TransparentFX
