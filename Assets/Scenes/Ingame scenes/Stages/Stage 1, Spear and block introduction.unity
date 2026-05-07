@@ -2131,11 +2131,11 @@ PrefabInstance:
       objectReference: {fileID: 209009006}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.047
+      value: -10.03
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.36
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2181,6 +2181,14 @@ PrefabInstance:
       propertyPath: keyIcon
       value: 
       objectReference: {fileID: 726230025}
+    - target: {fileID: 7659354677299631193, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1468678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659354677299631193, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010105133
+      objectReference: {fileID: 0}
     - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: PlacedSpear
       value: 

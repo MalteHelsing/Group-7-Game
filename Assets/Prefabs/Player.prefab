@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 871496285287441359}
   - component: {fileID: 6032365202887254488}
   - component: {fileID: 2628866230662143448}
+  - component: {fileID: 8094721513168602945}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -147,10 +148,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.51884604, y: -1.0940182}
-      - {x: 0.49606252, y: -1.2179234}
-      - {x: 0.045378625, y: -1.2173086}
-      - {x: -0.43282112, y: -1.1820868}
+    - - {x: 0.3007865, y: -0.990386}
+      - {x: 0.48742604, y: -1.0624752}
+      - {x: 0.48689455, y: -1.2140702}
+      - {x: -0.42233166, y: -1.2132932}
       - {x: -0.47287738, y: -0.8756038}
       - {x: -0.5406785, y: -0.74054426}
       - {x: -0.63497937, y: -0.2076596}
@@ -164,7 +165,6 @@ PolygonCollider2D:
       - {x: 0.37524462, y: 0.14255595}
       - {x: 0.30977196, y: 0.107718825}
       - {x: 0.1847663, y: -0.34960485}
-      - {x: 0.30010393, y: -1.0117573}
   m_UseDelaunayMesh: 1
 --- !u!50 &283651817252127084
 Rigidbody2D:
@@ -373,6 +373,18 @@ MonoBehaviour:
   isActive: 0
   hasSpear: 1
   canAttack: 0
+--- !u!114 &8094721513168602945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760012303881788695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd875c82cda73ae4091e678fdb0768ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactions
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0

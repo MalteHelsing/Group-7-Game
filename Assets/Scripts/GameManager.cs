@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public GameObject gamblingMachineText;
     [SerializeField] public GameObject gamblingMachine;
-    [SerializeField] public GameObject gamblingMachineMenu;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
@@ -56,8 +55,8 @@ public class GameManager : MonoBehaviour
         difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
 
-        gamblingMachine.SetActive(false);
-        gamblingMachineText.SetActive(false);
+        gamblingMachine.SetActive(true);
+        gamblingMachineText.SetActive(true);
 
         if (difficultyManager.currentDiffculty == Difficulty.Hard)
         {
@@ -187,13 +186,5 @@ public class GameManager : MonoBehaviour
         powerup.SetActive(true);
         Debug.Log("True");
     }
-    #endregion
-    #region Gambling Machine
-    public void GamblingMachineOn()
-    {
-        gamblingMachineMenu.SetActive(true);
-
-    }
-
     #endregion
 }

@@ -55,17 +55,26 @@ public class ButtonBehavior : MonoBehaviour
 
     public void GamblingMachineMenuOn()
     {
-        gamblingMachineMenu.SetActive(true);
+        GamblingMachineMenu(true);
     }
 
     public void GamblingMachineMenuOff()
     {
-        gamblingMachineMenu.SetActive(false);
+        GamblingMachineMenu(false);
     }
 
     public void GamblingMachineMenu(bool staus)
     {
         gamblingMachineMenu.SetActive(staus);
+
+        if (staus)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void GamblingMachineOn()
