@@ -18,7 +18,7 @@ public class Test : MonoBehaviour
         {
             if (interactAction.WasPressedThisFrame())
             {
-                gameManager.gamblingMachine.SetActive(true);
+                gameManager.GamblingMachineOn();
             }
         }
     }

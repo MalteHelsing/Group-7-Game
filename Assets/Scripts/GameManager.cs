@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] private GameObject key;
 
-    [SerializeField] TextMeshProUGUI gamblingMachineText;
+    [SerializeField] public GameObject gamblingMachineText;
     [SerializeField] public GameObject gamblingMachine;
+    [SerializeField] public GameObject gamblingMachineMenu;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
@@ -56,6 +57,15 @@ public class GameManager : MonoBehaviour
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
 
         gamblingMachine.SetActive(false);
+        gamblingMachineText.SetActive(false);
+
+        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        {
+            HealthPowerup();
+        }
+
+        //this below is temprary until i figure out how to get the currect difficulty from the "PlayerPrefs.GetInt("Difficulty", index)"
+        PlayerPrefs.GetInt("Difficulty");
     }
     
     void Update()
@@ -63,7 +73,6 @@ public class GameManager : MonoBehaviour
         TimeCounter();
         Menu();
         NextLevel();
-        HealthPowerup();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -80,7 +89,7 @@ public class GameManager : MonoBehaviour
             key.SetActive(false);
             powerup.SetActive(false);
             door.sprite = changeDoor[0];
-            gamblingMachineText.enabled = false;
+            gamblingMachineText.SetActive(true);
             gamblingMachine.SetActive(true);
         }
     }
@@ -133,7 +142,7 @@ public class GameManager : MonoBehaviour
                 keySpawned = true;
                 key.SetActive(true);
                 door.sprite = changeDoor[1];
-                gamblingMachineText.enabled = true;
+                gamblingMachineText.SetActive(true);
                 gamblingMachine.SetActive(true);
             }
         }
@@ -175,11 +184,16 @@ public class GameManager : MonoBehaviour
     #region Health Powerup
     void HealthPowerup()
     {
-        if (difficultyManager.currentDiffculty == Difficulty.Hard)
-        {
-            powerup.SetActive(true);
-            Debug.Log("True");
-        }
+        powerup.SetActive(true);
+        Debug.Log("True");
     }
+    #endregion
+    #region Gambling Machine
+    public void GamblingMachineOn()
+    {
+        gamblingMachineMenu.SetActive(true);
+
+    }
+
     #endregion
 }

@@ -11,9 +11,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float spearDeActiveDelay = 1.0f;
 
     [Header("Bools")]
-    [SerializeField] bool isActive = false;
-    [SerializeField] bool hasSpear;
-    [SerializeField] bool canAttack = false;
+    public bool isActive = false;
+    public bool hasSpear = false;
+    public bool canAttack = true;
 
 
     InputAction attackAction;
@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        int layerIndex = LayerMask.NameToLayer("Spear");
+        int layerIndex = LayerMask.NameToLayer("PlacedSpear");
 
         if (other.gameObject.layer == layerIndex)
         {
