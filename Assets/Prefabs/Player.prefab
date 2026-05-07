@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 871496285287441359}
   - component: {fileID: 6032365202887254488}
   - component: {fileID: 2628866230662143448}
-  - component: {fileID: 8094721513168602945}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -373,18 +372,6 @@ MonoBehaviour:
   isActive: 0
   hasSpear: 1
   canAttack: 0
---- !u!114 &8094721513168602945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760012303881788695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd875c82cda73ae4091e678fdb0768ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactions
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0

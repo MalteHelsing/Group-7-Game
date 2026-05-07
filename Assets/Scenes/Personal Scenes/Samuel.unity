@@ -447,6 +447,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &300393273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7250490309304123927, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 1018378536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &394408773
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +595,17 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &811116924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  m_PrefabInstance: {fileID: 6829753607579562858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30010dfdc8d6aa64aaaf4ee2ddb25a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
 --- !u!1 &984181508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3154718118529563845, guid: 697e430d830233844963aeee13ca2a42, type: 3}
@@ -677,14 +699,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+    - target: {fileID: 1020929431673967527, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Name
+      value: PowerUp Icon
       objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4892405141835490271, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_TagString
+      value: Gambling Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125275745917421838, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125275745917421838, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125275745917421838, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125275745917421838, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125275745917421838, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636221283643542292, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 811116924}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -815,6 +865,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
   m_PrefabInstance: {fileID: 1643048825}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1724799196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1020929431673967527, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+  m_PrefabInstance: {fileID: 1018378536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1858325564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1557243325696012768, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
@@ -936,7 +991,8 @@ PrefabInstance:
       propertyPath: keyIcon
       value: 
       objectReference: {fileID: 1858325564}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8094721513168602945, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -994,6 +1050,30 @@ PrefabInstance:
       value: Gambilng Machine
       objectReference: {fileID: 0}
     - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: poweupText
+      value: 
+      objectReference: {fileID: 300393273}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewardIcon
+      value: 
+      objectReference: {fileID: 1724799196}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewardText
+      value: 
+      objectReference: {fileID: 300393273}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: powerupIcon
+      value: 
+      objectReference: {fileID: 1724799196}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: powerup.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
       propertyPath: 'slot.Array.data[0]'
       value: 
       objectReference: {fileID: 1018378541}
@@ -1005,6 +1085,62 @@ PrefabInstance:
       propertyPath: 'slot.Array.data[2]'
       value: 
       objectReference: {fileID: 1018378539}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: powerup.Array.data[0].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: powerup.Array.data[0].maxValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: powerup.Array.data[0].minValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[0].maxValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[0].minValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[1].maxValue
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[1].minValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: powerup.Array.data[0].description
+      value: h
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[0].powerUp.amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[1].powerUp.amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[0].powerUp.description
+      value: You got a hole faster now
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[0].powerUp.powerUpName
+      value: Speed 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[1].powerUp.description
+      value: You got a hole faster now x2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: rewards.Array.data[1].powerUp.powerUpName
+      value: Speed 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
