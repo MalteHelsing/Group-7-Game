@@ -17,7 +17,6 @@ public class PlayerAttack : MonoBehaviour
 
 
     InputAction attackAction;
-
     public void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
@@ -57,6 +56,7 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(DelayAction(spearDeActiveDelay));
             canAttack = false;
             spear.SetActive(!isActive);
+
         }
     }
 
