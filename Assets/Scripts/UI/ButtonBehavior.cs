@@ -3,6 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
+    bool ison;
+
+    private void Start()
+    {
+        gamblingMachine = FindFirstObjectByType<GamblingMachine>();
+        ison = false;
+    }
+
     #region Buttons
     public void PlayGame()
     {
@@ -46,6 +54,44 @@ public class ButtonBehavior : MonoBehaviour
     public void PausGame(bool staus)
     {
         ControlsMenu.SetActive(staus);
+    }
+    #endregion
+    #region Gambling Machine
+    [SerializeField] private GameObject gamblingMachineMenu;
+
+    GamblingMachine gamblingMachine;
+
+    public void GamblingMachineMenuOn()
+    {
+        GamblingMachineMenu(true);
+    }
+
+    public void GamblingMachineMenuOff()
+    {
+        GamblingMachineMenu(false);
+    }
+
+    public void GamblingMachineMenu(bool staus)
+    {
+        gamblingMachineMenu.SetActive(staus);
+
+        if (staus)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void GamblingMachineOn()
+    {
+        if (ison == false)
+        {
+            StartCoroutine(gamblingMachine.StartSpinning());
+            ison = true;
+        }
     }
     #endregion
 }
