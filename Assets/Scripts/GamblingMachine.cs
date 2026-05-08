@@ -1,10 +1,8 @@
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using static GamblingMachine;
 
 public class GamblingMachine : MonoBehaviour
 {
@@ -183,7 +181,7 @@ public class GamblingMachine : MonoBehaviour
     {
         rewardIcon.SetActive(true);
 
-        rewardIcon.GetComponent<Image>().sprite = powerup.powerupIcon.GetComponent<Image>().sprite;
+        rewardIcon.GetComponent<Image>().sprite = powerup.powerupIcon;
 
         rewardText.text = powerup.powerUpName + "\n" + powerup.description;
     }

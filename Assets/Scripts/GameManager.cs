@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        timeText = FindFirstObjectByType<TextMeshProUGUI>();
+        timeText = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
 
         playerHealth = FindFirstObjectByType<Health>();
         difficultyManager = FindFirstObjectByType<DifficultyManager>();
