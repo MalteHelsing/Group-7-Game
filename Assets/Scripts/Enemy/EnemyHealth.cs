@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isGummba == true)
         {
-            currentHealth = DifficultyManager.instance.enemyHealth;
+            currentHealth = DifficultyManager.instance.gombaHealth;
         }
         if (isSkeleton == true)
         {

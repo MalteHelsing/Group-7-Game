@@ -5013,7 +5013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387905767843405854, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: isGummba
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: player
