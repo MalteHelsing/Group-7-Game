@@ -11,6 +11,7 @@ TagManager:
   - Gambling Machine
   - PlacedSpear
   - TimeText
+  - Ground
   layers:
   - Default
   - TransparentFX
