@@ -370,8 +370,8 @@ MonoBehaviour:
   PlacedSpear: {fileID: 0}
   spearDeActiveDelay: 1
   isActive: 0
-  hasSpear: 1
-  canAttack: 0
+  hasSpear: 0
+  canAttack: 1
 --- !u!1 &1395276653438855483
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ Transform:
   m_GameObject: {fileID: 1395276653438855483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.086807966, w: 0.9962251}
-  m_LocalPosition: {x: -0.78, y: -0.7, z: -0.01}
+  m_LocalPosition: {x: -0.02, y: -0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -419,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpearLooker
   mainCam: {fileID: 0}
   mousePos: {x: 0, y: 0, z: 0}
+  spearAttackDelay: 1
 --- !u!1 &1736887500704558027
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +656,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.099312305, y: -0.013128698}
+  m_Offset: {x: -0.099312305, y: 0.010105133}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -665,7 +666,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.62775993, y: 2.1933355}
+  m_Size: {x: 0.62775993, y: 2.1468678}
   m_EdgeRadius: 0
 --- !u!1 &5308510615412129281
 GameObject:

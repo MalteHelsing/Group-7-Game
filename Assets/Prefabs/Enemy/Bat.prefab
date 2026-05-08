@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5615952487827905999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1636368535034869108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6087288821931232652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 1528176088349821113}
   - component: {fileID: 9193337439616179530}
   - component: {fileID: -655319915399578152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434823624186106600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -336,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 6042061633988300611}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.39, y: -6.62, z: 0}
+  m_LocalPosition: {x: 6.33, y: -6.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -351,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3886594364511627388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint4
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -367,7 +367,7 @@ Transform:
   m_GameObject: {fileID: 6156444321354154247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.31, y: -2.81, z: 0}
+  m_LocalPosition: {x: 8.22, y: -2.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5096271992242049934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}

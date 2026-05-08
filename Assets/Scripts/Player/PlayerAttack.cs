@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
 
 
     InputAction attackAction;
+
     public void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
