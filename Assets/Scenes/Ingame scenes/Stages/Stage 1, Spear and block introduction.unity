@@ -2133,6 +2133,10 @@ PrefabInstance:
       propertyPath: canAttack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: spearDeActiveDelay
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.03
