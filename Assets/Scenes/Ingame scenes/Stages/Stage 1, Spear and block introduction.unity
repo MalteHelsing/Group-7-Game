@@ -2189,6 +2189,10 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1320367619}
+    - target: {fileID: 5872242277024066847, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: spearAttackDelay
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: keyIcon
       value: 
