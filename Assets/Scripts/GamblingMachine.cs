@@ -9,7 +9,9 @@ public class GamblingMachine : MonoBehaviour
     public enum PowerUpType
     {
         Speed,
-        Health
+        Health,
+        Slowness,
+        Dash
     }
 
     [System.Serializable]
@@ -25,11 +27,11 @@ public class GamblingMachine : MonoBehaviour
         public int minValue;
         public int maxValue;
 
-        public Powerup powerUp;
+        public PowerUp powerUp;
     }
 
     [System.Serializable]
-    public class Powerup
+    public class PowerUp
     {
         public string powerUpName;
 
@@ -42,7 +44,19 @@ public class GamblingMachine : MonoBehaviour
         public Sprite powerupIcon;
     }
 
-    [Header("Slot Value & Powerup Value")]
+    [System.Serializable]
+    public class SpecialPowerUP
+    {
+        public string SpecialpowerUpName;
+
+        public float amount;
+
+        public string description;
+
+        public Sprite powerupIcon;
+    }
+
+    [Header("Slot Value & PowerUp Value")]
     [SerializeField] SlotSymbol[] symbols;
     [SerializeField] private RewardTier[] rewards;
     [SerializeField] private float speed = 0.1f;
@@ -53,7 +67,7 @@ public class GamblingMachine : MonoBehaviour
     [HideInInspector] Sprite[] slotSymbol;
     private int[] spriteSlot = new int[3];
 
-    [Header("Powerup Icon")]
+    [Header("PowerUp Icon")]
     [SerializeField] private GameObject rewardIcon;
     [SerializeField] private TMP_Text rewardText;
     private SlotSymbol[] finalResults = new SlotSymbol[3];
@@ -163,7 +177,7 @@ public class GamblingMachine : MonoBehaviour
         return null;
     }
 
-    void ApplyPowerUp(Powerup powerup)
+    void ApplyPowerUp(PowerUp powerup)
     {
         switch (powerup.type)
         {
@@ -177,7 +191,7 @@ public class GamblingMachine : MonoBehaviour
         }
     }
 
-    void ShowPopup(Powerup powerup)
+    void ShowPopup(PowerUp powerup)
     {
         rewardIcon.SetActive(true);
 

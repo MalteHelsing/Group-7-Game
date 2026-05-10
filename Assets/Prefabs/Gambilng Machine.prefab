@@ -171,8 +171,28 @@ MonoBehaviour:
     value: 8
   - sprites: {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 9
-  speed: 0.1
-  target: 1
+  rewards:
+  - minValue: 1
+    maxValue: 3
+    powerUp:
+      powerUpName: Speed 1
+      type: 0
+      amount: 5
+      description: You got a hole faster now
+      powerupIcon: {fileID: 0}
+  - minValue: 4
+    maxValue: 99
+    powerUp:
+      powerUpName: Speed 2
+      type: 0
+      amount: 10
+      description: You got a hole faster now x2
+      powerupIcon: {fileID: 0}
+  speed: 0.01
+  slot:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   sprites:
   - {fileID: -3204970635726831865, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
   - {fileID: 2772920197833770750, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
@@ -183,10 +203,8 @@ MonoBehaviour:
   - {fileID: 5841791779998999052, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
   - {fileID: -2149884339218450984, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
   - {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
-  slot:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  rewardIcon: {fileID: 0}
+  rewardText: {fileID: 0}
 --- !u!1 &7452405477336495584
 GameObject:
   m_ObjectHideFlags: 0

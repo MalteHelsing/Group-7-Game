@@ -716,17 +716,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4499128391189608616, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8636221283643542292, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: playerHealth
@@ -908,10 +900,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyManager
   dropdown: {fileID: 0}
   currentDiffculty: 0
-  enemyHealth: 0
+  gombaHealth: 0
   skeletonHealth: 0
   batHealth: 0
-  enemyDamage: 0
+  gombaDamage: 0
   skeletonDamage: 0
   batDamage: 0
 --- !u!4 &2046390053
@@ -938,16 +930,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 128910960482458491, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 760012303881788695, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: jumpDistance
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: deathMenu
@@ -997,8 +985,7 @@ PrefabInstance:
       propertyPath: keyIcon
       value: 
       objectReference: {fileID: 1858325564}
-    m_RemovedComponents:
-    - {fileID: 8094721513168602945, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1056,9 +1043,9 @@ PrefabInstance:
       value: Gambilng Machine
       objectReference: {fileID: 0}
     - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: poweupText
-      value: 
-      objectReference: {fileID: 300393273}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
       propertyPath: rewardIcon
       value: 
@@ -1067,18 +1054,6 @@ PrefabInstance:
       propertyPath: rewardText
       value: 
       objectReference: {fileID: 300393273}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: powerupIcon
-      value: 
-      objectReference: {fileID: 1724799196}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: powerup.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
       propertyPath: 'slot.Array.data[0]'
       value: 
@@ -1091,62 +1066,6 @@ PrefabInstance:
       propertyPath: 'slot.Array.data[2]'
       value: 
       objectReference: {fileID: 1018378539}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: powerup.Array.data[0].amount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: powerup.Array.data[0].maxValue
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: powerup.Array.data[0].minValue
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[0].maxValue
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[0].minValue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[1].maxValue
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[1].minValue
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: powerup.Array.data[0].description
-      value: h
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[0].powerUp.amount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[1].powerUp.amount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[0].powerUp.description
-      value: You got a hole faster now
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[0].powerUp.powerUpName
-      value: Speed 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[1].powerUp.description
-      value: You got a hole faster now x2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448057007096578321, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-      propertyPath: rewards.Array.data[1].powerUp.powerUpName
-      value: Speed 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

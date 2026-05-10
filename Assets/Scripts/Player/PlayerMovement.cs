@@ -29,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TrailRenderer trailRenderer;
     private bool canDash = true;
     private bool isDashing;
-    private bool isGround = false;
 
     bool canControlPlayer = true;
 
