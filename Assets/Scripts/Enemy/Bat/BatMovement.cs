@@ -8,13 +8,12 @@ public class Batmovement : MonoBehaviour
     [SerializeField] float socialDistance = 5f;
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float agroRange = 5f;
+    BatAtatck batAttack;
 
     private void Start()
     {
-        
+        batAttack = GetComponent<BatAtatck>();
     }
-
-
 
     private void Update()
     {
@@ -25,13 +24,17 @@ public class Batmovement : MonoBehaviour
             // Start chasing player
             ChasePlayer();
         }
-        
-        transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-
-        if (distToPlayer < socialDistance)
+       
+        if (batAttack.canAttack == true)
         {
-            transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+            
+            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
 
+            if (distToPlayer < socialDistance)
+            {
+                transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+            }
+            
         }
     }
 
