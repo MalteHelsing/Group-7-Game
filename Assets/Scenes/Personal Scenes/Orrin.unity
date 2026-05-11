@@ -507,6 +507,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1620034309}
+    - target: {fileID: 1528176088349821113, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528176088349821113, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
+      propertyPath: socialDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3042541955957239363, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -517,11 +525,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6089406426539844044, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5175686
+      value: -6.44
       objectReference: {fileID: 0}
     - target: {fileID: 6089406426539844044, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.0059457
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 6089406426539844044, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_LocalPosition.z
@@ -561,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 1620034309}
     - target: {fileID: 9193337439616179530, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: iGAYRange
-      value: 15
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9193337439616179530, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: attackWayPoints.Array.size
