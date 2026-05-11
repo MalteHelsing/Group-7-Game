@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
-    bool ison;
+    bool isOn;
 
     private void Start()
     {
         gamblingMachine = FindFirstObjectByType<GamblingMachine>();
-        ison = false;
+        isOn = false;
     }
 
     #region Buttons
@@ -87,11 +87,23 @@ public class ButtonBehavior : MonoBehaviour
 
     public void GamblingMachineOn()
     {
-        if (ison == false)
+        if (isOn == false)
         {
             StartCoroutine(gamblingMachine.StartSpinning());
-            ison = true;
+            isOn = true;
         }
+    }
+    #endregion
+    #region Change Player Design
+    ChangePlayer changePlayer;
+    private void GoLeft()
+    {
+        changePlayer.UpdatePlayerDesign(-1);
+    }
+
+    private void GoRigth()
+    {
+        changePlayer.UpdatePlayerDesign(+1);
     }
     #endregion
 }

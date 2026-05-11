@@ -95,6 +95,6 @@ public class DifficultyManager : MonoBehaviour
     }
 
     // how to set the vaule in the script, which will sit under Start()
-    // for example: damage = DifficultyManager.instance.enemyDamage; 
+    // for example: damage = DifficultyManager.instance.gombaDamage; 
 
 }
