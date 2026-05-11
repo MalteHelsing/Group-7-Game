@@ -5696,10 +5696,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyManager
   dropdown: {fileID: 0}
   currentDiffculty: 0
-  enemyHealth: 0
+  gombaHealth: 0
   skeletonHealth: 0
   batHealth: 0
-  enemyDamage: 0
+  gombaDamage: 0
   skeletonDamage: 0
   batDamage: 0
 --- !u!1 &2147411152
