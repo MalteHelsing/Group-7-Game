@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] private GameObject key;
 
+    [SerializeField] public GameObject gamblingMachineText;
+    [SerializeField] public GameObject gamblingMachine;
+
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] public GameObject powerup;
@@ -51,6 +54,17 @@ public class GameManager : MonoBehaviour
         playerHealth = FindFirstObjectByType<Health>();
         difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
+
+        gamblingMachine.SetActive(true);
+        gamblingMachineText.SetActive(true);
+
+        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        {
+            HealthPowerup();
+        }
+
+        //this below is temprary until i figure out how to get the currect difficulty from the "PlayerPrefs.GetInt("Difficulty", index)"
+        PlayerPrefs.GetInt("Difficulty");
     }
     
     void Update()
@@ -58,12 +72,11 @@ public class GameManager : MonoBehaviour
         TimeCounter();
         Menu();
         NextLevel();
-        HealthPowerup();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        timeText = FindFirstObjectByType<TextMeshProUGUI>();
+        timeText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
 
         playerHealth = FindFirstObjectByType<Health>();
         difficultyManager = FindFirstObjectByType<DifficultyManager>();
@@ -75,9 +88,10 @@ public class GameManager : MonoBehaviour
             key.SetActive(false);
             powerup.SetActive(false);
             door.sprite = changeDoor[0];
+            gamblingMachineText.SetActive(true);
+            gamblingMachine.SetActive(true);
         }
     }
-
     #region UI
     void TimeCounter()
     {
@@ -127,6 +141,8 @@ public class GameManager : MonoBehaviour
                 keySpawned = true;
                 key.SetActive(true);
                 door.sprite = changeDoor[1];
+                gamblingMachineText.SetActive(true);
+                gamblingMachine.SetActive(true);
             }
         }
     }
@@ -167,11 +183,8 @@ public class GameManager : MonoBehaviour
     #region Health Powerup
     void HealthPowerup()
     {
-        if (difficultyManager.currentDiffculty == Difficulty.Hard)
-        {
-            powerup.SetActive(true);
-            Debug.Log("True");
-        }
+        powerup.SetActive(true);
+        Debug.Log("True");
     }
     #endregion
 }

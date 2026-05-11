@@ -6,15 +6,15 @@ public class DifficultyManager : MonoBehaviour
 {
     public static DifficultyManager instance;
 
-    [SerializeFeild] public TMP_Dropdown dropdown;
-    [SerializeFeild] public Difficulty currentDiffculty;
+    public TMP_Dropdown dropdown;
+    public Difficulty currentDiffculty;
 
-    [HideInInspector] public float enemyHealth;
+    [HideInInspector] public float gombaHealth;
     [HideInInspector] public float skeletonHealth;
     [HideInInspector] public float batHealth;
-    [HideInInspector] public float enemyDamage;
-    [HideInInspector] public float skeletonDamage;
-    [HideInInspector] public float batDamage;
+    [HideInInspector] public int gombaDamage;
+    [HideInInspector] public int skeletonDamage;
+    [HideInInspector] public int batDamage;
 
     public enum Difficulty
     {
@@ -66,30 +66,30 @@ public class DifficultyManager : MonoBehaviour
         switch (currentDiffculty)
         {
             case Difficulty.Easy:
-                enemyHealth = 5f;
-                enemyDamage = 2f;
+                gombaHealth = 5f;
+                gombaDamage = 2;
                 skeletonHealth = 2f;
-                skeletonDamage = 5f;
+                skeletonDamage = 5;
                 batHealth = 2f;
-                batDamage = 2f;
+                batDamage = 2;
                 break;
 
             case Difficulty.Normal:
-                enemyHealth = 10f;
-                enemyDamage = 2f;
+                gombaHealth = 10f;
+                gombaDamage = 2;
                 skeletonHealth = 5f;
-                skeletonDamage = 10f;
+                skeletonDamage = 10;
                 batHealth = 4f;
-                batDamage = 4f;
+                batDamage = 4;
                 break;
 
             case Difficulty.Hard:
-                enemyHealth = 20f;
-                enemyDamage = 4f;
+                gombaHealth = 20f;
+                gombaDamage = 4;
                 skeletonHealth = 10f;
-                skeletonDamage = 20f;
+                skeletonDamage = 20;
                 batHealth = 8f;
-                batDamage = 8f;
+                batDamage = 8;
                 break;
         }
     }

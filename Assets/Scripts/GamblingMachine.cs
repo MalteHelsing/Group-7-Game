@@ -1,7 +1,19 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GamblingMachine : MonoBehaviour
 {
+    public enum PowerUpType
+    {
+        Speed,
+        Health,
+        Slowness,
+        Dash
+    }
+
     [System.Serializable]
     public class SlotSymbol
     {
@@ -9,46 +21,210 @@ public class GamblingMachine : MonoBehaviour
         public int value;
     }
 
-    [SerializeFeild] public SlotSymbol[] symbols;
+    [System.Serializable]
+    public class RewardTier
+    {
+        public int minValue;
+        public int maxValue;
+
+        public PowerUp powerUp;
+    }
+
+    [System.Serializable]
+    public class PowerUp
+    {
+        public string powerUpName;
+
+        public PowerUpType type;
+        
+        public float amount;
+
+        public string description;
+        
+        public Sprite powerupIcon;
+    }
+
+    [System.Serializable]
+    public class SpecialPowerUP
+    {
+        public string SpecialpowerUpName;
+
+        public float amount;
+
+        public string description;
+
+        public Sprite powerupIcon;
+    }
+
+    [Header("Slot Value & PowerUp Value")]
+    [SerializeField] SlotSymbol[] symbols;
+    [SerializeField] private RewardTier[] rewards;
     [SerializeField] private float speed = 0.1f;
-    [SerializeField] private float target = 1f;
 
-    Sprite[] sprites;
-    private SpriteRenderer rend;
-    private int spriteIndex;
+    [Header("Animation")]
+    [SerializeField] Image[] slot;
+    [SerializeField] Sprite[] sprites;
+    [HideInInspector] Sprite[] slotSymbol;
+    private int[] spriteSlot = new int[3];
 
+    [Header("PowerUp Icon")]
+    [SerializeField] private GameObject rewardIcon;
+    [SerializeField] private TMP_Text rewardText;
+    private SlotSymbol[] finalResults = new SlotSymbol[3];
+
+    ButtonBehavior buttonBehavior;
+    PlayerMovement player;
+    Health playerHealth;
+
+    InputAction interactAction;
 
     private void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
-        rend.sprite = sprites[100];
-        InvokeRepeating(nameof(AnimateSprite), 0.15f, speed);
+        interactAction = InputSystem.actions.FindAction("Interact");
+
+        buttonBehavior = FindFirstObjectByType<ButtonBehavior>();
+
+        slotSymbol = new Sprite[3];
+    }
+
+    private void Update()
+    {
+        OpenGamblingMachine();
+    }
+    #region Animation
+    public IEnumerator StartSpinning()
+    {
+        StartCoroutine(SpinAnimation(0, 1f));
+        StartCoroutine(SpinAnimation(1, 1.5f));
+        StartCoroutine(SpinAnimation(2, 2f));
+
+        yield return new WaitForSeconds(2.1f);
+
         Spin();
     }
 
-    private void AnimateSprite()
+    private void AnimateSlot(int slotIndex)
     {
-        spriteIndex++;
+        spriteSlot[slotIndex]++;
 
-        if (spriteIndex >= sprites.Length)
+        if (spriteSlot[slotIndex] >= sprites.Length)
         {
-            spriteIndex = 0;
+            spriteSlot[slotIndex] = 0;
         }
 
-        rend.sprite = sprites[spriteIndex];
+        slot[slotIndex].sprite = sprites[spriteSlot[slotIndex]];
     }
 
-    private void FixedUpdate()
+    IEnumerator SpinAnimation(int slotIndex, float duration)
     {
-        speed += (target - speed) * 0.1f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            AnimateSlot(slotIndex);
+
+            timer += Time.deltaTime;
+
+            yield return new WaitForSeconds(speed);
+        }
+
+        SlotSymbol result = symbols[Random.Range(0, symbols.Length)];
+
+        finalResults[slotIndex] = result;
+
+        slot[slotIndex].sprite = result.sprites;
     }
 
     void Spin()
     {
-        SlotSymbol s1 = symbols[Random.Range(0, symbols.Length)];
-        SlotSymbol s2 = symbols[Random.Range(0, symbols.Length)];
-        SlotSymbol s3 = symbols[Random.Range(0, symbols.Length)];
+        if (finalResults[0] == null || finalResults[1] == null || finalResults[2] == null)
+        {
+            return;
+        }
+
+        SlotSymbol s1 = finalResults[0];
+        SlotSymbol s2 = finalResults[1];
+        SlotSymbol s3 = finalResults[2];
 
         int totalValue = s1.value + s2.value + s3.value;
+
+        RewardTier reward = GetRewardTier(totalValue);
+
+        if (reward != null && reward.powerUp != null)
+        {
+            ApplyPowerUp(reward.powerUp);
+
+            ShowPopup(reward.powerUp);
+        }
+
+        slotSymbol[0] = s1.sprites;
+        slotSymbol[1] = s2.sprites;
+        slotSymbol[2] = s3.sprites;
     }
+    #endregion
+    #region Status Affects
+    RewardTier GetRewardTier(int totalValue)
+    {
+        foreach (RewardTier tiers in rewards)
+        {
+            if(totalValue >= tiers.minValue &&
+            totalValue <= tiers.maxValue)
+            {
+                return tiers;
+            }
+        }
+
+        return null;
+    }
+
+    void ApplyPowerUp(PowerUp powerup)
+    {
+        switch (powerup.type)
+        {
+            case PowerUpType.Speed:
+                //player.currentspeed += powerup.amount;
+                break;
+
+            case PowerUpType.Health:
+                //playerHealth.currenthealth += (int)powerup.amount;
+                break;
+        }
+    }
+
+    void ShowPopup(PowerUp powerup)
+    {
+        rewardIcon.SetActive(true);
+
+        rewardIcon.GetComponent<Image>().sprite = powerup.powerupIcon;
+
+        rewardText.text = powerup.powerUpName + "\n" + powerup.description;
+    }
+    #endregion
+    #region Interaction
+    [HideInInspector] bool playerIsNear;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsNear = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerIsNear = false;
+        }
+    }
+
+    void OpenGamblingMachine()
+    {
+        if (playerIsNear && interactAction.IsPressed())
+        {
+            buttonBehavior.GamblingMachineMenuOn();
+        }
+    }
+    #endregion
 }

@@ -5,9 +5,19 @@ public class CameraBounds : MonoBehaviour
     [SerializeField] Transform targetToFollow;
     [SerializeField] float smoothing = 0.6f;
     [SerializeField] Vector3 offset = Vector3.zero;
+    [SerializeField] private GameObject[] bounderies;
+
+    [Header("CameraBounds")]
+    [SerializeField] float leftBoundPadding;
+    [SerializeField] float rightBoundPadding;
+    [SerializeField] float upBoundPadding;
+    [SerializeField] float downBoundPadding;
 
     Vector3 velocity = Vector3.zero;
     Vector3 targetPosition;
+
+    Vector2 leftBounds;
+    Vector2 rigthtBounds;
 
     void Start()
     {
@@ -31,5 +41,13 @@ public class CameraBounds : MonoBehaviour
             targetToFollow.position.x,
             targetToFollow.position.y,
             transform.position.z) + offset;
+    }
+
+    void InitBounds()
+    {
+        Camera mainCamera = Camera.main;
+
+        leftBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
+        rigthtBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
 }

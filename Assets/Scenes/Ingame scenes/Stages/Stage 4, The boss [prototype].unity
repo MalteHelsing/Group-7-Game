@@ -10891,6 +10891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyForDoor
   KeyPickUpDelay: 0.1
   keyIcon: {fileID: 831908156}
+  nextLevelWaitTime: 1.5
   HasKey: 0
 --- !u!4 &6140420589120079337
 Transform:
@@ -10920,10 +10921,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 1670583722}
-  pauseScreen: {fileID: 1876459572}
   key: {fileID: 0}
+  pauseScreen: {fileID: 1876459572}
   powerup: {fileID: 0}
   changeDoor: []
+  gainHealthBack: 1.5
   healthUpdate: 0
   door: {fileID: 0}
 --- !u!114 &6751686951119143157
@@ -16073,9 +16075,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1379006232}
+  - {fileID: 4044943988005012757}
   - {fileID: 1102180193}
   - {fileID: 7129363527596333612}
-  - {fileID: 4044943988005012757}
   - {fileID: 2050793579}
   - {fileID: 250680720}
   - {fileID: 1297550852}

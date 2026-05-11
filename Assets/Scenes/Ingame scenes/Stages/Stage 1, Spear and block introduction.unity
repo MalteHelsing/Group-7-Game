@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &224016126
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -545,6 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!61 &325586136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1164,6 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &630516340
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1539,6 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &730834146
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1710,6 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &824463798
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1972,6 +1977,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &926814163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7452405477336495584, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+  m_PrefabInstance: {fileID: 1503904394952822595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &985150381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1986,7 +1996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 30.93
       objectReference: {fileID: 0}
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2023,6 +2033,10 @@ PrefabInstance:
     - target: {fileID: 2456420073608984876, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059311988898422990, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2115,13 +2129,21 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 209009006}
+    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: canAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: spearDeActiveDelay
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.047
+      value: -10.03
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.36
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2163,14 +2185,38 @@ PrefabInstance:
       propertyPath: PlacedSpear
       value: 
       objectReference: {fileID: 1758662837}
+    - target: {fileID: 5872242277024066847, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1320367619}
+    - target: {fileID: 5872242277024066847, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: spearAttackDelay
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: keyIcon
       value: 
       objectReference: {fileID: 726230025}
+    - target: {fileID: 7659354677299631193, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1468678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659354677299631193, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.010105133
+      objectReference: {fileID: 0}
     - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: PlacedSpear
       value: 
       objectReference: {fileID: 1758662837}
+    - target: {fileID: 8888398751134466483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888398751134466483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2366,6 +2412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1035864860
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -2661,6 +2708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &1210715956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3491951853567492799, guid: 89c37650ded8d6143a13c70331081941, type: 3}
@@ -2753,6 +2801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1239473448
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -3345,6 +3394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1001 &1362090716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3449,6 +3499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1382990670
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -3756,7 +3807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496676394}
   m_Layer: 0
-  m_Name: Enemys On Screen
+  m_Name: Enemies On Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4108,6 +4159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1596112582
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4232,6 +4284,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1618276107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3154718118529563845, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+  m_PrefabInstance: {fileID: 1503904394952822595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1624999320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2273482334347412364, guid: 89c37650ded8d6143a13c70331081941, type: 3}
@@ -4270,6 +4327,17 @@ Transform:
   - {fileID: 1528718125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671167096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+  m_PrefabInstance: {fileID: 994740080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30010dfdc8d6aa64aaaf4ee2ddb25a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
 --- !u!1 &1699202006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,9 +4492,9 @@ GameObject:
   - component: {fileID: 1758662839}
   - component: {fileID: 1758662838}
   - component: {fileID: 1758662840}
-  m_Layer: 11
-  m_Name: Spear
-  m_TagString: Spear
+  m_Layer: 13
+  m_Name: PlacedSpear
+  m_TagString: PlacedSpear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4722,6 +4790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &1782567803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4769,6 +4838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1782567806
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4944,6 +5014,10 @@ PrefabInstance:
     - target: {fileID: 3491951853567492799, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387905767843405854, guid: 89c37650ded8d6143a13c70331081941, type: 3}
+      propertyPath: isGummba
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: player
@@ -5313,6 +5387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1944785298
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -5765,6 +5840,66 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &1503904394952822595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.73958
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.044387
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023939381676028880, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154718118529563845, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      propertyPath: m_Name
+      value: Gambilng Machine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7452405477336495584, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 697e430d830233844963aeee13ca2a42, type: 3}
 --- !u!1 &3073085787547374909
 GameObject:
   m_ObjectHideFlags: 0
@@ -5878,8 +6013,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6668664584186302015, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+    - target: {fileID: 4499128391189608616, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636221283643542292, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1671167096}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5914,6 +6056,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 5660503915627216685}
   key: {fileID: 391419281}
+  gamblingMachineText: {fileID: 926814163}
+  gamblingMachine: {fileID: 1618276107}
   pauseScreen: {fileID: 5660503915627216684}
   powerup: {fileID: 312247252}
   changeDoor:
@@ -5942,14 +6086,15 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1320367620}
+  - {fileID: 994740080}
+  - {fileID: 1496676394}
   - {fileID: 1808270917}
   - {fileID: 1625698322}
-  - {fileID: 994740080}
+  - {fileID: 985150381}
+  - {fileID: 1362090716}
   - {fileID: 5660503915627216683}
   - {fileID: 403834625}
   - {fileID: 711711636}
   - {fileID: 7879397698234338822}
   - {fileID: 2064069102}
-  - {fileID: 1362090716}
-  - {fileID: 985150381}
-  - {fileID: 1496676394}
+  - {fileID: 1503904394952822595}

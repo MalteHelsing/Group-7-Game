@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float currentHealth = 10f;
-    [SerializeFeild] public bool isGummba;
-    [SerializeFeild] public bool isSkeleton;
-    [SerializeFeild] public bool isBat;
+    [SerializeField] private float currentHealth = 10f;
+    public bool isGummba;
+    public bool isSkeleton;
+    public bool isBat;
 
     private void Start()
     {
         if (isGummba == true)
         {
-            currentHealth = DifficultyManager.instance.enemyHealth;
+            currentHealth = DifficultyManager.instance.gombaHealth;
         }
         if (isSkeleton == true)
         {
@@ -29,15 +29,13 @@ public class EnemyHealth : MonoBehaviour
 
         if (damageDealer != null)
         {
-                int layerIndexC = LayerMask.NameToLayer("HitBox");
+            int layerIndexC = LayerMask.NameToLayer("HitBox");
 
-                if (other.gameObject.layer == layerIndexC)
-                {
-                    TakeDamage(damageDealer.GetDamage());
-                }
+            if (other.gameObject.layer == layerIndexC)
+            {
+                TakeDamage(damageDealer.GetDamage());
+            }
         }
-
-        Die();
     }
 
     public void Die()

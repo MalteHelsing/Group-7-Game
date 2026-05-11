@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlatformFallThrough : MonoBehaviour
 {
-    [SerializeFeild] float fallCoolDown = 0.5f;
+    [SerializeField] float fallCoolDown = 0.5f;
 
     private void Update()
     {
@@ -24,8 +24,4 @@ public class PlatformFallThrough : MonoBehaviour
             GetComponent<Collider2D>().enabled = true;
         }
     }
-}
-
-internal class SerializeFeildAttribute : Attribute
-{
 }
