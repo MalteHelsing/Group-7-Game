@@ -8,10 +8,11 @@ public class ButtonBehavior : MonoBehaviour
     private void Start()
     {
         gamblingMachine = FindFirstObjectByType<GamblingMachine>();
+        changePlayer = FindFirstObjectByType<ChangePlayer>();
         isOn = false;
     }
 
-    #region Buttons
+    #region UI Buttons
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(2);
@@ -71,11 +72,11 @@ public class ButtonBehavior : MonoBehaviour
         GamblingMachineMenu(false);
     }
 
-    public void GamblingMachineMenu(bool staus)
+    public void GamblingMachineMenu(bool status)
     {
-        gamblingMachineMenu.SetActive(staus);
+        gamblingMachineMenu.SetActive(status);
 
-        if (staus)
+        if (status)
         {
             Time.timeScale = 0;
         }
@@ -89,7 +90,7 @@ public class ButtonBehavior : MonoBehaviour
     {
         if (isOn == false)
         {
-            StartCoroutine(gamblingMachine.StartSpinning());
+            StartCoroutine(gamblingMachine.SpinRoutine());
             isOn = true;
         }
     }
@@ -101,7 +102,7 @@ public class ButtonBehavior : MonoBehaviour
         changePlayer.UpdatePlayerDesign(-1);
     }
 
-    private void GoRigth()
+    private void GoRight()
     {
         changePlayer.UpdatePlayerDesign(+1);
     }

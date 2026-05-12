@@ -7,7 +7,7 @@ public class DifficultyManager : MonoBehaviour
     public static DifficultyManager instance;
 
     public TMP_Dropdown dropdown;
-    public Difficulty currentDiffculty;
+    public Difficulty currentDifficulty;
 
     [HideInInspector] public float gombaHealth;
     [HideInInspector] public float skeletonHealth;
@@ -43,27 +43,27 @@ public class DifficultyManager : MonoBehaviour
             if (PlayerPrefs.HasKey("Difficulty"))
             {
                 int savedIndex = PlayerPrefs.GetInt("Difficulty");
-                currentDiffculty = (Difficulty)savedIndex;
+                currentDifficulty = (Difficulty)savedIndex;
                 dropdown.value = savedIndex;
             }
         }
         
-        ApplyDiffculty();
+        ApplyDifficulty();
     }
 
     public void SetDifficulty(int index)
     {
-        currentDiffculty = (Difficulty)index;
+        currentDifficulty = (Difficulty)index;
 
         PlayerPrefs.SetInt("Difficulty", index);
         PlayerPrefs.Save();
 
-        ApplyDiffculty();
+        ApplyDifficulty();
     }
 
-    void ApplyDiffculty()
+    void ApplyDifficulty()
     {
-        switch (currentDiffculty)
+        switch (currentDifficulty)
         {
             case Difficulty.Easy:
                 gombaHealth = 5f;

@@ -33,7 +33,7 @@ public class NextLevel : MonoBehaviour
             HasKey = false;
             keyIcon.SetActive(false);
             StartCoroutine(SceneDelay());
-            gameManager.SetHealth();
+            gameManager.ApplyNewHealth();
         }
     }
 

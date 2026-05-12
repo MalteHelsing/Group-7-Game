@@ -153,47 +153,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GamblingMachine
   symbols:
-  - sprites: {fileID: -3204970635726831865, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+  - sprite: {fileID: -3204970635726831865, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 1
-  - sprites: {fileID: 2772920197833770750, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 0
+  - sprite: {fileID: 2772920197833770750, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 2
-  - sprites: {fileID: -3851859884506429160, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 1
+  - sprite: {fileID: -3851859884506429160, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 3
-  - sprites: {fileID: -1925883457515284356, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 2
+  - sprite: {fileID: -1925883457515284356, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 4
-  - sprites: {fileID: -574424115894795592, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 3
+  - sprite: {fileID: -574424115894795592, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 5
-  - sprites: {fileID: -5500325910660290272, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 4
+  - sprite: {fileID: -5500325910660290272, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 6
-  - sprites: {fileID: 5841791779998999052, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 5
+  - sprite: {fileID: 5841791779998999052, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 7
-  - sprites: {fileID: -2149884339218450984, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 6
+  - sprite: {fileID: -2149884339218450984, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 8
-  - sprites: {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
+    specialValue: 7
+  - sprite: {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
     value: 9
+    specialValue: 8
   rewards:
   - minValue: 1
     maxValue: 3
     powerUp:
       powerUpName: Speed 1
       type: 0
-      amount: 5
+      amount: 1.2
       description: You got a hole faster now
-      powerupIcon: {fileID: 0}
+      icon: {fileID: 0}
   - minValue: 4
-    maxValue: 99
+    maxValue: 6
     powerUp:
       powerUpName: Speed 2
       type: 0
-      amount: 10
+      amount: 1.5
       description: You got a hole faster now x2
-      powerupIcon: {fileID: 0}
-  speed: 0.01
-  slot:
+      icon: {fileID: 0}
+  - minValue: 7
+    maxValue: 9
+    powerUp:
+      powerUpName: Health 1
+      type: 1
+      amount: 1.5
+      description: You ate a sallad
+      icon: {fileID: 0}
+  - minValue: 10
+    maxValue: 12
+    powerUp:
+      powerUpName: Health 2
+      type: 1
+      amount: 0.75
+      description: You lost some blood
+      icon: {fileID: 0}
+  - minValue: 13
+    maxValue: 15
+    powerUp:
+      powerUpName: Slowness 1
+      type: 2
+      amount: 0.8
+      description: You hit your knee in the table
+      icon: {fileID: 0}
+  - minValue: 16
+    maxValue: 18
+    powerUp:
+      powerUpName: Slowness 2
+      type: 2
+      amount: 0.5
+      description: You lost your leg.
+      icon: {fileID: 0}
+  - minValue: 19
+    maxValue: 21
+    powerUp:
+      powerUpName: Dash 1
+      type: 4
+      amount: 1.25
+      description: You drank a energy drink
+      icon: {fileID: 0}
+  - minValue: 22
+    maxValue: 24
+    powerUp:
+      powerUpName: Dash 2
+      type: 3
+      amount: 2
+      description: You got longer legs
+      icon: {fileID: 0}
+  slotImages:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  sprites:
+  spinSprites:
   - {fileID: -3204970635726831865, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
   - {fileID: 2772920197833770750, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
   - {fileID: -3851859884506429160, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
@@ -205,6 +261,11 @@ MonoBehaviour:
   - {fileID: -8603074486172259262, guid: e18fa586b6d8ae24bb56c4a7712f8e27, type: 3}
   rewardIcon: {fileID: 0}
   rewardText: {fileID: 0}
+  spinFrameDelay: 0.1
+  spinDurations:
+  - 1
+  - 1.5
+  - 2
 --- !u!1 &7452405477336495584
 GameObject:
   m_ObjectHideFlags: 0
