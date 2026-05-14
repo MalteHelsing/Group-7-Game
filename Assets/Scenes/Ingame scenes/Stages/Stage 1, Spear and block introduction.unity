@@ -5693,7 +5693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyManager
   dropdown: {fileID: 0}
-  currentDiffculty: 0
+  currentDifficulty: 0
   gombaHealth: 0
   skeletonHealth: 0
   batHealth: 0
@@ -5898,6 +5898,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+--- !u!1 &1503904394952822596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3154718118529563845, guid: 697e430d830233844963aeee13ca2a42, type: 3}
+  m_PrefabInstance: {fileID: 1503904394952822595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3073085787547374909
 GameObject:
   m_ObjectHideFlags: 0
@@ -6003,21 +6008,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4499128391189608616, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8636221283643542292, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: playerHealth
@@ -6058,8 +6051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 5660503915627216685}
   key: {fileID: 391419281}
-  gamblingMachineText: {fileID: 0}
-  gamblingMachine: {fileID: 0}
+  gamblingMachine: {fileID: 1503904394952822596}
   pauseScreen: {fileID: 5660503915627216684}
   powerup: {fileID: 312247252}
   changeDoor:
@@ -6067,6 +6059,8 @@ MonoBehaviour:
   - {fileID: -4008155563193174751, guid: b9ed9b024c333634da0a9726df605652, type: 3}
   gainHealthBack: 1.5
   healthUpdate: 0
+  gamePlayLevelCount: 5
+  enemiesAlive: 0
   door: {fileID: 985150382}
 --- !u!4 &7879397698234338822
 Transform:

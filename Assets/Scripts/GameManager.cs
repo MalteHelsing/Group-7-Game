@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
 
-        gamblingMachine.SetActive(true);
+        gamblingMachine.SetActive(false);
 
         if (difficultyManager.currentDifficulty == Difficulty.Hard)
         {
