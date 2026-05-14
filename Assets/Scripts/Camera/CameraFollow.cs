@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +8,21 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float regularSmoothing = 0.6f;
     [SerializeField] float sKeySmoothing = 0.3f;
     [SerializeField] Vector3 offset = Vector3.zero;
-    //[SerializeField] Transform leftBound
-    //[SerializeField] Transform rightBound 
+    [SerializeField] Transform leftBound;
+    [SerializeField] Transform rightBound;
+    [SerializeField] Transform mainCamera;
 
-
+    void Boundery()
+    {
+        if (leftBound.position.x < mainCamera.position.x -14f && rightBound.position.x > mainCamera.position.x +14f)
+        {
+            regularSmoothing = regularSmoothing * 0f;
+        }
+        else
+        {
+            regularSmoothing = regularSmoothing * 1f;
+        }
+    }
 
     float smoothing = 0.6f;
 
@@ -25,6 +37,7 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         FollowFaster();
+        Boundery();
     }
 
     void LateUpdate()
