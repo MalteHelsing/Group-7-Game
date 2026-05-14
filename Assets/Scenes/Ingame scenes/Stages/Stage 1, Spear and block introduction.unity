@@ -3591,6 +3591,9 @@ MonoBehaviour:
   regularSmoothing: 0.6
   sKeySmoothing: 0.3
   offset: {x: 0, y: 0, z: 0}
+  leftBound: {fileID: 802716896}
+  rightBound: {fileID: 1028228606}
+  mainCamera: {fileID: 1320367620}
 --- !u!1 &1332251228
 GameObject:
   m_ObjectHideFlags: 0
