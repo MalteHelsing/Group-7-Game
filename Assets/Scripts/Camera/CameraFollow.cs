@@ -7,7 +7,10 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] float regularSmoothing = 0.6f;
     [SerializeField] float sKeySmoothing = 0.3f;
     [SerializeField] Vector3 offset = Vector3.zero;
-    
+    //[SerializeField] Transform leftBound
+    //[SerializeField] Transform rightBound 
+
+
 
     float smoothing = 0.6f;
 

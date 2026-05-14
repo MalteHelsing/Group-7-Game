@@ -12,6 +12,8 @@ TagManager:
   - PlacedSpear
   - TimeText
   - Ground
+  - Boundery
+  - CameraBounds
   layers:
   - Default
   - TransparentFX
@@ -30,8 +32,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - CameraBounds
+  - Boundary
   - 
   - 
   - 
