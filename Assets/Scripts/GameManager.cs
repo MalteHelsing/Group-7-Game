@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] private GameObject key;
-
-    [SerializeField] public GameObject gamblingMachineText;
     [SerializeField] public GameObject gamblingMachine;
 
     [Header("Pause")]
@@ -22,8 +20,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Sprite[] changeDoor;  
     [SerializeField] private float gainHealthBack = 1.5f;
     [HideInInspector] public float healthUpdate;
-    
+    [SerializeField] private float gamePlayLevelCount = 5;
+
     private float timeElapsed = 0f;
+    public int enemiesAlive;
     bool keySpawned = false;
 
     public SpriteRenderer door;
@@ -56,9 +56,8 @@ public class GameManager : MonoBehaviour
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
 
         gamblingMachine.SetActive(true);
-        gamblingMachineText.SetActive(true);
 
-        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        if (difficultyManager.currentDifficulty == Difficulty.Hard)
         {
             HealthPowerup();
         }
@@ -76,7 +75,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (timeText  != null)
+        if (timeText != null)
         {
             return;
         }
@@ -87,14 +86,18 @@ public class GameManager : MonoBehaviour
 
         keySpawned = false;
 
-        if (scene.buildIndex < 5)
+        if (scene.buildIndex < gamePlayLevelCount)
         {
             key.SetActive(false);
             powerup.SetActive(false);
             door.sprite = changeDoor[0];
-            gamblingMachineText.SetActive(true);
             gamblingMachine.SetActive(true);
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     #region UI
     void TimeCounter()
@@ -111,20 +114,20 @@ public class GameManager : MonoBehaviour
         {
             if (pauseScreen.activeInHierarchy)
             {
-                PausGame(false);
+                PauseGame(false);
             }
             else
             {
-                PausGame(true);
+                PauseGame(true);
             }
         }
     }
 
-    public void PausGame(bool staus)
+    public void PauseGame(bool status)
     {
-        pauseScreen.SetActive(staus);
+        pauseScreen.SetActive(status);
 
-        if (staus)
+        if (status)
         {
             Time.timeScale = 0;
         }
@@ -138,39 +141,38 @@ public class GameManager : MonoBehaviour
     #region Next Level
     private void NextLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex < 5)
+        if(SceneManager.GetActiveScene().buildIndex < gamePlayLevelCount)
         {
-            if (!keySpawned && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            if (!keySpawned && enemiesAlive <= 0)
             {
                 keySpawned = true;
                 key.SetActive(true);
                 door.sprite = changeDoor[1];
-                gamblingMachineText.SetActive(true);
                 gamblingMachine.SetActive(true);
             }
         }
     }
     #endregion
     #region Save Player Health
-    void HealthUpdate()
+    void NextLevelHealth()
     {
-        if (difficultyManager.currentDiffculty == Difficulty.Easy)
+        if (difficultyManager.currentDifficulty == Difficulty.Easy)
         {
             healthUpdate = playerHealth.maxHealth;
         }
 
-        if (difficultyManager.currentDiffculty == Difficulty.Normal)
+        if (difficultyManager.currentDifficulty == Difficulty.Normal)
         {
-            healthUpdate = playerHealth.currentHealth * gainHealthBack;
+            healthUpdate = Mathf.Min(playerHealth.currentHealth * gainHealthBack, healthUpdate);
         }
 
-        if (difficultyManager.currentDiffculty == Difficulty.Hard)
+        if (difficultyManager.currentDifficulty == Difficulty.Hard)
         {
             healthUpdate = playerHealth.currentHealth;
         }
     }
 
-    public void SetHealth()
+    public void ApplyNewHealth()
     {
         StartCoroutine(ChangeHealth());
     }
@@ -178,9 +180,9 @@ public class GameManager : MonoBehaviour
     IEnumerator ChangeHealth()
     {
         healthUpdate = playerHealth.currentHealth;
-        HealthUpdate();
+        NextLevelHealth();
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSecondsRealtime(2.5f);
         playerHealth.SetHealth();
     }
     #endregion

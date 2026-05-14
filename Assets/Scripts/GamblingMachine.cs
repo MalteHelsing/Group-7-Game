@@ -6,19 +6,30 @@ using UnityEngine.UI;
 
 public class GamblingMachine : MonoBehaviour
 {
+    #region Enum
     public enum PowerUpType
     {
         Speed,
         Health,
         Slowness,
-        Dash
+        DashLength,
+        DashSpeed
     }
 
+    public enum SpecialPowerUpType
+    {
+        Group1,
+        Group2,
+        Group3
+    }
+    #endregion
+    #region Data Class
     [System.Serializable]
     public class SlotSymbol
     {
-        public Sprite sprites;
+        public Sprite sprite;
         public int value;
+        public SpecialPowerUpType specialValue;
     }
 
     [System.Serializable]
@@ -26,7 +37,6 @@ public class GamblingMachine : MonoBehaviour
     {
         public int minValue;
         public int maxValue;
-
         public PowerUp powerUp;
     }
 
@@ -34,55 +44,64 @@ public class GamblingMachine : MonoBehaviour
     public class PowerUp
     {
         public string powerUpName;
-
         public PowerUpType type;
-        
         public float amount;
-
         public string description;
-        
-        public Sprite powerupIcon;
+        public Sprite icon;
     }
 
     [System.Serializable]
-    public class SpecialPowerUP
+    public class SpecialPowerUp
     {
-        public string SpecialpowerUpName;
-
-        public float amount;
-
+        public string name;
+        public float value;
         public string description;
-
-        public Sprite powerupIcon;
+        public Sprite icon;
     }
-
-    [Header("Slot Value & PowerUp Value")]
-    [SerializeField] SlotSymbol[] symbols;
+    #endregion
+    #region Inspector
+    [Header("Slot Machine Data")]
+    [SerializeField] private SlotSymbol[] symbols;
     [SerializeField] private RewardTier[] rewards;
-    [SerializeField] private float speed = 0.1f;
+    [SerializeField] private SpecialPowerUp[] specialPowerUps;
 
-    [Header("Animation")]
-    [SerializeField] Image[] slot;
-    [SerializeField] Sprite[] sprites;
+    [Header("Slot Visuals")]
+    [SerializeField] private Image[] slotImages;
+    [SerializeField] private Sprite[] spinSprites;
     [HideInInspector] Sprite[] slotSymbol;
-    private int[] spriteSlot = new int[3];
 
-    [Header("PowerUp Icon")]
-    [SerializeField] private GameObject rewardIcon;
+    [Header("Reward UI")]
+    [SerializeField] private Image rewardIcon;
     [SerializeField] private TMP_Text rewardText;
+
+    [Header("Spin Settings")]
+    [SerializeField] private float speed = 0.1f;
+    [SerializeField] private float[] spinDurations = { 1.5f, 2f, 2.5f };
+    #endregion
+    #region State
+    private bool playerIsNear;
+    private int[] spriteSlot = new int[3];
     private SlotSymbol[] finalResults = new SlotSymbol[3];
+   
+    private InputAction interactAction;
 
-    ButtonBehavior buttonBehavior;
-    PlayerMovement player;
-    Health playerHealth;
-
-    InputAction interactAction;
-
+    private ButtonBehavior buttonBehavior;
+    private PlayerMovement player;
+    private Health playerHealth;
+    #endregion
+    #region Unity
     private void Start()
     {
+        for (int i = 0; i < finalResults.Length; i++)
+        {
+            finalResults[i] = null;
+        }
+
         interactAction = InputSystem.actions.FindAction("Interact");
 
         buttonBehavior = FindFirstObjectByType<ButtonBehavior>();
+        player = FindFirstObjectByType<PlayerMovement>();
+        playerHealth = FindFirstObjectByType<Health>();
 
         slotSymbol = new Sprite[3];
     }
@@ -91,14 +110,15 @@ public class GamblingMachine : MonoBehaviour
     {
         OpenGamblingMachine();
     }
+    #endregion
     #region Animation
-    public IEnumerator StartSpinning()
+    public IEnumerator SpinRoutine()
     {
-        StartCoroutine(SpinAnimation(0, 1f));
-        StartCoroutine(SpinAnimation(1, 1.5f));
-        StartCoroutine(SpinAnimation(2, 2f));
+        StartCoroutine(SpinAnimation(0, spinDurations[0]));
+        StartCoroutine(SpinAnimation(1, spinDurations[1]));
+        StartCoroutine(SpinAnimation(2, spinDurations[2]));
 
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSecondsRealtime(Mathf.Max(spinDurations));
 
         Spin();
     }
@@ -107,12 +127,12 @@ public class GamblingMachine : MonoBehaviour
     {
         spriteSlot[slotIndex]++;
 
-        if (spriteSlot[slotIndex] >= sprites.Length)
+        if (spriteSlot[slotIndex] >= spinSprites.Length)
         {
             spriteSlot[slotIndex] = 0;
         }
 
-        slot[slotIndex].sprite = sprites[spriteSlot[slotIndex]];
+        slotImages[slotIndex].sprite = spinSprites[spriteSlot[slotIndex]];
     }
 
     IEnumerator SpinAnimation(int slotIndex, float duration)
@@ -123,16 +143,16 @@ public class GamblingMachine : MonoBehaviour
         {
             AnimateSlot(slotIndex);
 
-            timer += Time.deltaTime;
+            yield return new WaitForSecondsRealtime(speed);
 
-            yield return new WaitForSeconds(speed);
+            timer += speed;
         }
 
         SlotSymbol result = symbols[Random.Range(0, symbols.Length)];
 
         finalResults[slotIndex] = result;
 
-        slot[slotIndex].sprite = result.sprites;
+        slotImages[slotIndex].sprite = result.sprite;
     }
 
     void Spin()
@@ -146,6 +166,14 @@ public class GamblingMachine : MonoBehaviour
         SlotSymbol s2 = finalResults[1];
         SlotSymbol s3 = finalResults[2];
 
+        bool isSpecialMatch = s1.specialValue == s2.specialValue && s2.specialValue == s3.specialValue;
+
+        if (isSpecialMatch)
+        {
+            ActivateSpecialReward(s1.specialValue);
+            return;
+        }
+
         int totalValue = s1.value + s2.value + s3.value;
 
         RewardTier reward = GetRewardTier(totalValue);
@@ -157,9 +185,9 @@ public class GamblingMachine : MonoBehaviour
             ShowPopup(reward.powerUp);
         }
 
-        slotSymbol[0] = s1.sprites;
-        slotSymbol[1] = s2.sprites;
-        slotSymbol[2] = s3.sprites;
+        slotSymbol[0] = s1.sprite;
+        slotSymbol[1] = s2.sprite;
+        slotSymbol[2] = s3.sprite;
     }
     #endregion
     #region Status Affects
@@ -167,8 +195,7 @@ public class GamblingMachine : MonoBehaviour
     {
         foreach (RewardTier tiers in rewards)
         {
-            if(totalValue >= tiers.minValue &&
-            totalValue <= tiers.maxValue)
+            if (totalValue >= tiers.minValue && totalValue <= tiers.maxValue)
             {
                 return tiers;
             }
@@ -177,31 +204,93 @@ public class GamblingMachine : MonoBehaviour
         return null;
     }
 
-    void ApplyPowerUp(PowerUp powerup)
+    private void ApplyPowerUp(PowerUp powerUp)
     {
-        switch (powerup.type)
+        switch (powerUp.type)
         {
             case PowerUpType.Speed:
-                //player.currentspeed += powerup.amount;
+                // player.speed *= powerUp.amount;
                 break;
 
             case PowerUpType.Health:
-                //playerHealth.currenthealth += (int)powerup.amount;
+                // playerHealth.currentHealth += powerUp.amount;
+                break;
+
+            case PowerUpType.DashSpeed:
+                // player.dashSpeed *= powerUp.amount;
+                break;
+
+            case PowerUpType.DashLength:
+                //player.dashLength += powerUp.amount;
+                break;
+
+            case PowerUpType.Slowness:
+                // apply debuff
                 break;
         }
     }
 
     void ShowPopup(PowerUp powerup)
     {
-        rewardIcon.SetActive(true);
+        rewardIcon.enabled = true;
 
-        rewardIcon.GetComponent<Image>().sprite = powerup.powerupIcon;
+        rewardIcon.sprite = powerup.icon;
 
         rewardText.text = powerup.powerUpName + "\n" + powerup.description;
     }
+
+    void ActivateSpecialReward(SpecialPowerUpType group)
+    {
+        int index = (int)group;
+
+        if (specialPowerUps == null || index >= specialPowerUps.Length)
+            return;
+
+        SpecialPowerUp reward = specialPowerUps[index];
+
+        ApplySpecialReward(reward);
+
+        ExecuteSpecialGroupEffect(group);
+    }
+
+    void ApplySpecialReward(SpecialPowerUp reward)
+    {
+        rewardIcon.sprite = reward.icon;
+        rewardText.text = reward.name + "\n" + reward.description;
+    }
+
+    void ExecuteSpecialGroupEffect(SpecialPowerUpType group)
+    {
+        switch (group)
+        {
+            case SpecialPowerUpType.Group1:
+                ActivateGroup1();
+                return;
+
+            case SpecialPowerUpType.Group2:
+                ActivateGroup2();
+                return;
+
+            case SpecialPowerUpType.Group3:
+                ActivateGroup3();
+                return;
+        }
+    }
+
+    void ActivateGroup1()
+    {
+        Debug.Log("Group 1");
+    }
+    void ActivateGroup2()
+    {
+        Debug.Log("Group 2");
+    }
+    void ActivateGroup3()
+    {
+        Debug.Log("Group 3");
+    }
     #endregion
     #region Interaction
-    [HideInInspector] bool playerIsNear;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -221,7 +310,7 @@ public class GamblingMachine : MonoBehaviour
 
     void OpenGamblingMachine()
     {
-        if (playerIsNear && interactAction.IsPressed())
+        if (playerIsNear && interactAction != null && interactAction.WasPressedThisFrame())
         {
             buttonBehavior.GamblingMachineMenuOn();
         }

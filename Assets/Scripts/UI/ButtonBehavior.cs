@@ -8,7 +8,6 @@ public class ButtonBehavior : MonoBehaviour
     private void Start()
     {
         gamblingMachine = FindFirstObjectByType<GamblingMachine>();
-        changePlayer = FindFirstObjectByType<ChangePlayer>();
         isOn = false;
     }
 
@@ -93,18 +92,6 @@ public class ButtonBehavior : MonoBehaviour
             StartCoroutine(gamblingMachine.SpinRoutine());
             isOn = true;
         }
-    }
-    #endregion
-    #region Change Player Design
-    ChangePlayer changePlayer;
-    private void GoLeft()
-    {
-        changePlayer.UpdatePlayerDesign(-1);
-    }
-
-    private void GoRight()
-    {
-        changePlayer.UpdatePlayerDesign(+1);
     }
     #endregion
 }
