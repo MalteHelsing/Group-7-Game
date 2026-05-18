@@ -64,6 +64,6 @@ public class SkeletonAI : MonoBehaviour
     //you're just lazy and apathetic!
     //call me what you want, i got thick skin!
     //another bad joke and im finished with him!
-    //we are monsters, the awfulest kind!
+    //we are monsters, the awfullest kind!
     //to mess with us takes a lot of spine.
 }
