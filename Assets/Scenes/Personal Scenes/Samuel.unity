@@ -367,11 +367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 1018378538}
   key: {fileID: 0}
-  gamblingMachine: {fileID: 1033335585}
   pauseScreen: {fileID: 1018378537}
-  powerup: {fileID: 1643048826}
+  powerup: {fileID: 0}
   changeDoor: []
-  gainHealthBack: 1.5
   healthUpdate: 0
   gamePlayLevelCount: 5
   enemiesAlive: 0
@@ -813,11 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!1 &1033335585 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3154718118529563845, guid: 697e430d830233844963aeee13ca2a42, type: 3}
-  m_PrefabInstance: {fileID: 388935681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1268663463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
@@ -827,72 +820,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4469265081703217106, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
   m_PrefabInstance: {fileID: 1018378536}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1643048825
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 260041584573476288, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_Name
-      value: Health Powerup
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
---- !u!1 &1643048826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4470422809620115107, guid: 267fd3b2b54098442b7b495847712a15, type: 3}
-  m_PrefabInstance: {fileID: 1643048825}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1724799198 stripped
 MonoBehaviour:
@@ -1041,6 +968,5 @@ SceneRoots:
   - {fileID: 216418410}
   - {fileID: 6829753607579562858}
   - {fileID: 388935681}
-  - {fileID: 1643048825}
   - {fileID: 289718070}
   - {fileID: 2046390053}
