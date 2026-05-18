@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using static DifficultyManager;
 
 public class GameManager : MonoBehaviour
 {
@@ -52,18 +51,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerHealth = FindFirstObjectByType<Health>();
-        difficultyManager = FindFirstObjectByType<DifficultyManager>();
         pauseMenu = InputSystem.actions.FindAction("Pause Menu");
 
         gamblingMachine.SetActive(false);
-
-        if (difficultyManager.currentDifficulty == Difficulty.Hard)
-        {
-            HealthPowerup();
-        }
-
-        //this below is temprary until i figure out how to get the currect difficulty from the "PlayerPrefs.GetInt("Difficulty", index)"
-        PlayerPrefs.GetInt("Difficulty");
     }
     
     void Update()
@@ -82,7 +72,6 @@ public class GameManager : MonoBehaviour
         timeText = GameObject.FindWithTag("TimeText").GetComponent<TextMeshProUGUI>();
 
         playerHealth = FindFirstObjectByType<Health>();
-        difficultyManager = FindFirstObjectByType<DifficultyManager>();
 
         keySpawned = false;
 
@@ -154,37 +143,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Save Player Health
-    void NextLevelHealth()
-    {
-        if (difficultyManager.currentDifficulty == Difficulty.Easy)
-        {
-            healthUpdate = playerHealth.maxHealth;
-        }
 
-        if (difficultyManager.currentDifficulty == Difficulty.Normal)
-        {
-            healthUpdate = Mathf.Min(playerHealth.currentHealth * gainHealthBack, healthUpdate);
-        }
-
-        if (difficultyManager.currentDifficulty == Difficulty.Hard)
-        {
-            healthUpdate = playerHealth.currentHealth;
-        }
-    }
-
-    public void ApplyNewHealth()
-    {
-        StartCoroutine(ChangeHealth());
-    }
-
-    IEnumerator ChangeHealth()
-    {
-        healthUpdate = playerHealth.currentHealth;
-        NextLevelHealth();
-
-        yield return new WaitForSecondsRealtime(2.5f);
-        playerHealth.SetHealth();
-    }
     #endregion
     #region Health Powerup
     void HealthPowerup()

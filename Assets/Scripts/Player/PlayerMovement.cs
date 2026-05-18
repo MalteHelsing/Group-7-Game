@@ -195,8 +195,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
-    
-
     public void Death()
     {
         canControlPlayer = false;

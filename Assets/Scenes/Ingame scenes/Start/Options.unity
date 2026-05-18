@@ -614,7 +614,6 @@ GameObject:
   - component: {fileID: 263901734}
   - component: {fileID: 263901733}
   - component: {fileID: 263901737}
-  - component: {fileID: 263901738}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -722,21 +721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonBehavior
   ControlsMenu: {fileID: 638334046}
-  gamblingMachineMenu: {fileID: 0}
---- !u!114 &263901738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263901732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 329ded4b3dac5334f864ff27dad218c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Brightness
-  volume: {fileID: 914396552}
-  slider: {fileID: 0}
 --- !u!1 &380660730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,58 +1976,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &843517137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 843517139}
-  - component: {fileID: 843517138}
-  m_Layer: 0
-  m_Name: DifficultyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &843517138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843517137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb39343ea31364d4aa97fdc6b89c3b5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DifficultyManager
-  dropdown: {fileID: 1127544756}
-  currentDifficulty: 0
-  gombaHealth: 0
-  skeletonHealth: 0
-  batHealth: 0
-  gombaDamage: 0
-  skeletonDamage: 0
-  batDamage: 0
---- !u!4 &843517139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843517137}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856896222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2547,6 @@ GameObject:
   - component: {fileID: 1203620651}
   - component: {fileID: 1203620650}
   - component: {fileID: 1203620654}
-  - component: {fileID: 1203620655}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2741,22 +2672,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1203620655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203620649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828884b123999c64d87d2aedc7a815f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  targetToFollow: {fileID: 0}
-  regularSmoothing: 0.6
-  sKeySmoothing: 0.3
-  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1292219184
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,5 +4374,4 @@ SceneRoots:
   - {fileID: 528368518}
   - {fileID: 1947042828}
   - {fileID: 2024734537}
-  - {fileID: 843517139}
   - {fileID: 914396553}
