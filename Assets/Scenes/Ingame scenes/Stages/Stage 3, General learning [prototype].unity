@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &157948868
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1301,6 +1302,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
   m_PrefabInstance: {fileID: 1526097983}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &331383408 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5983992982277994993, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
+  m_PrefabInstance: {fileID: 2071342266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &334514993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &594950732
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -2706,6 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &794051430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,6 +3235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &927913679
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -3906,6 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1121241042
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4220,6 +4230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1232111886
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4752,6 +4763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &1400492643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,6 +5720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &1597505982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,6 +5892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &1649369181
 GameObject:
   m_ObjectHideFlags: 0
@@ -5926,6 +5940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1649369184
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6536,6 +6551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1853474894
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6850,6 +6866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1890948765
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -7386,6 +7403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!1 &1992907307
 GameObject:
   m_ObjectHideFlags: 0
@@ -7817,6 +7835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &2057011915
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -8259,12 +8278,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 5351272049003422809}
   key: {fileID: 2015156014}
+  gamblingMachine: {fileID: 0}
   pauseScreen: {fileID: 5351272049003422808}
   powerup: {fileID: 0}
   changeDoor: []
-  gainHealthBack: 1.5
   healthUpdate: 0
-  door: {fileID: 0}
+  gamePlayLevelCount: 5
+  enemiesAlive: 0
+  door: {fileID: 331383408}
 --- !u!4 &7879397699263309941
 Transform:
   m_ObjectHideFlags: 0

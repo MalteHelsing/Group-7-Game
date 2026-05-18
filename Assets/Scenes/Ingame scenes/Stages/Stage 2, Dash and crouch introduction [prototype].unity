@@ -5076,6 +5076,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7606527218481673014, guid: f9215d80100345c4d843864a424b6873, type: 3}
   m_PrefabInstance: {fileID: 1296127039}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1716080362 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5983992982277994993, guid: 349f2363559aa2343a50b0a5eda92720, type: 3}
+  m_PrefabInstance: {fileID: 1159629781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751602932
 GameObject:
   m_ObjectHideFlags: 0
@@ -6880,11 +6885,10 @@ MonoBehaviour:
   pauseScreen: {fileID: 1543822530}
   powerup: {fileID: 1880255744}
   changeDoor: []
-  gainHealthBack: 1.5
   healthUpdate: 0
   gamePlayLevelCount: 5
-  enemiesAlive: 0
-  door: {fileID: 0}
+  enemiesAlive: 7
+  door: {fileID: 1716080362}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
