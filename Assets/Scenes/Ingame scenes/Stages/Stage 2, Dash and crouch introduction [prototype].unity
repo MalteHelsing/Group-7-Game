@@ -5765,7 +5765,7 @@ GameObject:
   - component: {fileID: 1989926060}
   - component: {fileID: 1989926059}
   m_Layer: 6
-  m_Name: Square
+  m_Name: Enemy wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6880,7 +6880,6 @@ MonoBehaviour:
   pauseScreen: {fileID: 1543822530}
   powerup: {fileID: 1880255744}
   changeDoor: []
-  gainHealthBack: 1.5
   healthUpdate: 0
   gamePlayLevelCount: 5
   enemiesAlive: 0
