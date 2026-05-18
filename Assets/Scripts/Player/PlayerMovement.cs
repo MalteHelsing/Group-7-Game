@@ -30,16 +30,10 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
 
-    [Header("Camera Bounds")]
-    [SerializeField] float leftBoundPadding;
-    [SerializeField] float rigthBoundPadding;
-    [SerializeField] float upBoundPadding;
-    [SerializeField] float downBoundPadding;
+    [SerializeField] CameraController cameraController;
 
     bool canControlPlayer = true;
 
-    Vector2 minBounds;
-    Vector2 maxBounds;
     Vector2 moveVector;
     Rigidbody2D rb;
     InputAction moveAction;
@@ -55,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         dashAction = InputSystem.actions.FindAction("Dash");
 
         rb = GetComponent<Rigidbody2D>();
+        cameraController = GetComponent<CameraController>();
         currentSpeed = moveSpeed;
     }
 
@@ -195,8 +190,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
     public void Death()
     {
         canControlPlayer = false;
+    }
+
+    public void Alive()
+    {
+        canControlPlayer = true;
     }
 }

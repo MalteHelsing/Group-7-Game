@@ -63,6 +63,11 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        if (key != null)
+        {
+            return;
+        }
+
         timeText = GameObject.FindWithTag("TimeText").GetComponent<TextMeshProUGUI>();
 
         playerHealth = FindFirstObjectByType<Health>();
@@ -125,7 +130,7 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().buildIndex < gamePlayLevelCount)
         {
-            if (!keySpawned && enemiesAlive <= 0)
+            if (!keySpawned && GameObject.FindGameObjectsWithTag("Enemy").Length <= 0)
             {
                 keySpawned = true;
                 key.SetActive(true);

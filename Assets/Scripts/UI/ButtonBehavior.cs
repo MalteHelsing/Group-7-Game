@@ -3,6 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
+    Health health;
+
+    private void Start()
+    {
+        health = FindFirstObjectByType<Health>();
+    }
+
     #region UI Buttons
     public void PlayGame()
     {
@@ -18,6 +25,7 @@ public class ButtonBehavior : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadSceneAsync(currentSceneIndex);
+        health.Alive();
     }
 
     public void StartMenu()

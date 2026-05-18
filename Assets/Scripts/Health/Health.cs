@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public float currentHealth = 10f;
+    [SerializeField] public float health = 10f;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
+    private float currenthealth;
 
     EnemyDamageDealer enemyDamageDealer;
     PlayerMovement playerMovement;
@@ -13,8 +14,13 @@ public class Health : MonoBehaviour
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
+        spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
 
         deathMenu.SetActive(false);
+
+        spriteRenderer.enabled = true;
+
+        currenthealth = health;
     }
     private void Update()
     {
@@ -33,24 +39,32 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        if (currentHealth <= 0)
+        if (currenthealth <= 0)
         {
             playerMovement.Death();
-            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+            spriteRenderer.enabled = false;
             deathMenu.SetActive(true);
         }
     }
 
     void TakeDamage(int enemyDamage)
     {
-        currentHealth -= enemyDamage;
+        currenthealth -= enemyDamage;
 
         FindFirstObjectByType<HealthBar>().UpdateHealthUI();
 
-        if (currentHealth <= 0)
+        if (currenthealth <= 0)
         {
             Die();
         }
+    }
+
+    public void Alive()
+    {
+        playerMovement.Alive();
+        spriteRenderer.enabled = true;
+        deathMenu.SetActive(false);
+        currenthealth = health;
     }
     #endregion
 }
