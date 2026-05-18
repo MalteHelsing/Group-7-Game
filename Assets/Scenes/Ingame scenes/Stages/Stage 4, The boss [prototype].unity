@@ -11231,37 +11231,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1311182612544970108, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7986875185675457115, guid: 7be78859efa431b42a9d42d1d7d5ee99, type: 3}
-    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7518646871911714779, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
