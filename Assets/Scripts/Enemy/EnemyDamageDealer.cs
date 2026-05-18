@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyDamageDealer : MonoBehaviour
 {
-    int damage;
+    [SerializeField] int damage = 5;
 
     public int GetDamage()
     {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3729891178054591521}
   - component: {fileID: 9193337439616179530}
   - component: {fileID: -655319915399578152}
+  - component: {fileID: 4464484872398610799}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Enemy
@@ -201,7 +202,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58318683cae0ded479552076af7a0f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  currentHealth: 10
-  isGummba: 0
-  isSkeleton: 0
-  isBat: 1
+  currentHealth: 5
+--- !u!114 &4464484872398610799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946164499237898886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
+  damage: 3

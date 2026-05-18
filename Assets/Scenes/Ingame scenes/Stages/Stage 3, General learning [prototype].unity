@@ -845,14 +845,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goomba 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6710591965970539783, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710591965970539783, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.32
-      objectReference: {fileID: 0}
     - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: player
       value: 
@@ -3833,6 +3825,10 @@ PrefabInstance:
     - target: {fileID: 3886594364511627388, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4464484872398610799, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
+      propertyPath: damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5946164499237898886, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_Name
@@ -7192,10 +7188,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1213121145}
     m_Modifications:
-    - target: {fileID: 1528176088349821113, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 327816645}
     - target: {fileID: 5946164499237898886, guid: eab7a24e97a7e3843b0cb040cd008777, type: 3}
       propertyPath: m_Name
       value: Bat 1

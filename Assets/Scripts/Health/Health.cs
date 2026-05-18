@@ -11,17 +11,13 @@ public class Health : MonoBehaviour
 
     EnemyDamageDealer enemyDamageDealer;
     PlayerMovement playerMovement;
-    PlayerAttack playerAttack;
 
     private void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        playerAttack = FindFirstObjectByType<PlayerAttack>();
         enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
 
         deathMenu.SetActive(false);
-
-        currentHealth = maxHealth;
     }
     #region Damage
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,19 +32,14 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        if (currentHealth <= 0)
-        {
-            playerMovement.Death();
-            playerAttack.SpearAttack();
-            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
-            deathMenu.SetActive(true);
-        }
+        playerMovement.Death();
+        GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+        deathMenu.SetActive(true);
     }
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         FindFirstObjectByType<HealthBar>().UpdateHealthUI();
 
@@ -58,9 +49,4 @@ public class Health : MonoBehaviour
         }
     }
     #endregion
-
-    public void SetHealth()
-    {
-        currentHealth = GameManager.instance.healthUpdate;
-    }
 }
