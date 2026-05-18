@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] private GameObject key;
-    [SerializeField] public GameObject gamblingMachine;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
