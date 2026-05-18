@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &29051002
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -709,6 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &350108324
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -930,6 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &513848882
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1273,6 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!61 &628035182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1444,6 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!61 &698703153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1615,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!61 &717151678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2244,6 +2250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &951490748
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -2495,6 +2502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!61 &1241223706
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3109,6 +3117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1531204841
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -3231,6 +3240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!61 &1629353782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3499,6 +3509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1670749269
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -3627,11 +3638,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyManager
   dropdown: {fileID: 0}
-  currentDiffculty: 0
-  enemyHealth: 0
+  currentDifficulty: 0
+  gombaHealth: 0
   skeletonHealth: 0
   batHealth: 0
-  enemyDamage: 0
+  gombaDamage: 0
   skeletonDamage: 0
   batDamage: 0
 --- !u!4 &1788416759
@@ -3839,6 +3850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &1943088189
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4190,6 +4202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb0146ebb730054c88438d8d2695250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
+  fallCoolDown: 0.5
 --- !u!251 &2089425380
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4429,6 +4442,10 @@ MonoBehaviour:
   dashingTime: 0.25
   dashingCooldown: 1.25
   trailRenderer: {fileID: 3227669317463461541}
+  leftBoundPadding: 0
+  rigthBoundPadding: 0
+  upBoundPadding: 0
+  downBoundPadding: 0
 --- !u!212 &959395062586573624
 SpriteRenderer:
   serializedVersion: 2
@@ -10432,9 +10449,9 @@ MonoBehaviour:
   spear: {fileID: 1736887500458285087}
   PlacedSpear: {fileID: 0}
   spearDeActiveDelay: 1
-  attackDelay: 1
   isActive: 1
   hasSpear: 0
+  canAttack: 1
 --- !u!4 &4869809576892199309
 Transform:
   m_ObjectHideFlags: 0
@@ -10646,6 +10663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpearLooker
   mainCam: {fileID: 0}
   mousePos: {x: 0, y: 0, z: 0}
+  spearAttackDelay: 1
 --- !u!4 &5873865320530400285
 Transform:
   m_ObjectHideFlags: 0
@@ -10922,11 +10940,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timeText: {fileID: 1670583722}
   key: {fileID: 0}
+  gamblingMachine: {fileID: 0}
   pauseScreen: {fileID: 1876459572}
   powerup: {fileID: 0}
   changeDoor: []
   gainHealthBack: 1.5
   healthUpdate: 0
+  gamePlayLevelCount: 5
+  enemiesAlive: 0
   door: {fileID: 0}
 --- !u!114 &6751686951119143157
 MonoBehaviour:
@@ -11204,6 +11225,30 @@ PrefabInstance:
     - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586873782391441262, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7986875185675457115, guid: 7be78859efa431b42a9d42d1d7d5ee99, type: 3}
+    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461909976498247521, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7518646871911714779, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
