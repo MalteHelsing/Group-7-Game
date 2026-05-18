@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     public SpriteRenderer door;
 
-    DifficultyManager difficultyManager;
     Health playerHealth;
 
     InputAction pauseMenu;
