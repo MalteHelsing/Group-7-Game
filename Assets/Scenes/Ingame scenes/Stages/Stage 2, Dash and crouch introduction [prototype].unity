@@ -2581,6 +2581,10 @@ PrefabInstance:
       propertyPath: keyIcon
       value: 
       objectReference: {fileID: 848143624}
+    - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
+      propertyPath: nextLevelWaitTime
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8888398751134466483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.08
@@ -6708,7 +6712,7 @@ MonoBehaviour:
   - {fileID: -4008155563193174751, guid: b9ed9b024c333634da0a9726df605652, type: 3}
   healthUpdate: 0
   gamePlayLevelCount: 5
-  enemiesAlive: 0
+  enemiesAlive: 6
   door: {fileID: 183364296}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
