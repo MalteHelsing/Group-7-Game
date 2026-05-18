@@ -5067,7 +5067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca6aa6587d2935478fb5faa45e6b67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  isGummba: 0
+  isGummba: 1
   isSkeleton: 0
   isBat: 0
 --- !u!1 &3825194335217446513
