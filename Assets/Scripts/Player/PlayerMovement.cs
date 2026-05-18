@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 2f;
+    [SerializeField] public float moveSpeed = 2f;
     [SerializeField] float crouchSpeed = 1f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float jumpDistance = 2f;
@@ -30,8 +30,16 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
 
+    [Header("Camera Bounds")]
+    [SerializeField] float leftBoundPadding;
+    [SerializeField] float rigthBoundPadding;
+    [SerializeField] float upBoundPadding;
+    [SerializeField] float downBoundPadding;
+
     bool canControlPlayer = true;
 
+    Vector2 minBounds;
+    Vector2 maxBounds;
     Vector2 moveVector;
     Rigidbody2D rb;
     InputAction moveAction;
@@ -187,6 +195,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+    
+
     public void Death()
     {
         canControlPlayer = false;
