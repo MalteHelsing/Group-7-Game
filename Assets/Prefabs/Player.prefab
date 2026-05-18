@@ -338,6 +338,10 @@ MonoBehaviour:
   dashingTime: 0.25
   dashingCooldown: 1.25
   trailRenderer: {fileID: 3227669317704760689}
+  leftBoundPadding: 0
+  rigthBoundPadding: 0
+  upBoundPadding: 0
+  downBoundPadding: 0
 --- !u!114 &6032365202887254488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,9 +372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   spear: {fileID: 1736887500704558027}
   PlacedSpear: {fileID: 0}
-  spearDeActiveDelay: 1
+  spearDeActiveDelay: 0.5
   isActive: 0
-  hasSpear: 0
+  hasSpear: 1
   canAttack: 1
 --- !u!1 &1395276653438855483
 GameObject:
@@ -438,7 +442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4869809577179873881
 Transform:
   m_ObjectHideFlags: 0
