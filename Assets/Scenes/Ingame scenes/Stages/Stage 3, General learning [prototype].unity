@@ -257,11 +257,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!198 &38949959 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8985367609073495909, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-  m_PrefabInstance: {fileID: 1459708843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &54444656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,11 +4319,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!198 &1199965779 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3293140751925704445, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-  m_PrefabInstance: {fileID: 1459708843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213121144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,26 +5152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goomba 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4276314316327897842, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: Hitbox
-      value: 
-      objectReference: {fileID: 1696195666}
     - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 327816645}
-    - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: backWheelParticles
-      value: 
-      objectReference: {fileID: 1199965779}
-    - target: {fileID: 7768167325689307666, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-      propertyPath: frontWheelParticles
-      value: 
-      objectReference: {fileID: 38949959}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6471,11 +6445,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &1696195666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4341760663408516037, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-  m_PrefabInstance: {fileID: 1459708843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1712359812
 GameObject:
   m_ObjectHideFlags: 0

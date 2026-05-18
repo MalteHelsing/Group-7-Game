@@ -3,11 +3,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] public float currentHealth = 10f;
-    [SerializeField] public float maxHealth = 10f;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
-
-    public int health = 10;
 
     EnemyDamageDealer enemyDamageDealer;
     PlayerMovement playerMovement;
@@ -18,6 +15,10 @@ public class Health : MonoBehaviour
         enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
 
         deathMenu.SetActive(false);
+    }
+    private void Update()
+    {
+        Die();
     }
     #region Damage
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,14 +33,17 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        playerMovement.Death();
-        GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
-        deathMenu.SetActive(true);
+        if (currentHealth <= 0)
+        {
+            playerMovement.Death();
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+            deathMenu.SetActive(true);
+        }
     }
 
-    void TakeDamage(int damage)
+    void TakeDamage(int enemyDamage)
     {
-        currentHealth -= damage;
+        currentHealth -= enemyDamage;
 
         FindFirstObjectByType<HealthBar>().UpdateHealthUI();
 
