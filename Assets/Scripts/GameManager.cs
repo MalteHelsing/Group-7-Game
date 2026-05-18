@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,7 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] public GameObject powerup;
     [SerializeField] public Sprite[] changeDoor;  
-    [SerializeField] private float gainHealthBack = 1.5f;
     [HideInInspector] public float healthUpdate;
     [SerializeField] private float gamePlayLevelCount = 5;
 
@@ -135,16 +133,6 @@ public class GameManager : MonoBehaviour
                 door.sprite = changeDoor[1];
             }
         }
-    }
-    #endregion
-    #region Save Player Health
-
-    #endregion
-    #region Health Powerup
-    void HealthPowerup()
-    {
-        powerup.SetActive(true);
-        Debug.Log("True");
     }
     #endregion
 }
