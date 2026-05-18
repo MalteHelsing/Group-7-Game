@@ -1109,11 +1109,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &511453923 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1736887500704558027, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-  m_PrefabInstance: {fileID: 994740080}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &630516337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,34 +2258,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: jumpHeight
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 871496285287441359, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: jumpDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1210715956}
     - target: {fileID: 2532321101631245850, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 209009006}
     - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: canAttack
-      value: 1
+      propertyPath: hasSpear
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: PlacedSpear
       value: 
       objectReference: {fileID: 1758662837}
-    - target: {fileID: 2628866230662143448, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: spearDeActiveDelay
-      value: 0.33
-      objectReference: {fileID: 0}
     - target: {fileID: 4044943988259190465, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.03
@@ -2331,50 +2310,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4755371424072966570, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: spear
-      value: 
-      objectReference: {fileID: 511453923}
-    - target: {fileID: 4755371424072966570, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: PlacedSpear
-      value: 
-      objectReference: {fileID: 1758662837}
     - target: {fileID: 5872242277024066847, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1320367619}
-    - target: {fileID: 5872242277024066847, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: spearAttackDelay
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: HasKey
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6032365202887254488, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
       propertyPath: keyIcon
       value: 
       objectReference: {fileID: 726230025}
-    - target: {fileID: 7659354677299631193, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: m_Size.y
-      value: 2.1468678
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659354677299631193, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.010105133
-      objectReference: {fileID: 0}
-    - target: {fileID: 8702507599314169858, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: PlacedSpear
-      value: 
-      objectReference: {fileID: 1758662837}
-    - target: {fileID: 8888398751134466483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 8888398751134466483, guid: a64f8571b4c02324d8185383bdbabc15, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3019,11 +2962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFallThrough
   fallCoolDown: 0.5
---- !u!1 &1210715956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3491951853567492799, guid: 89c37650ded8d6143a13c70331081941, type: 3}
-  m_PrefabInstance: {fileID: 1789085089}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1212004478
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,7 +5869,7 @@ MonoBehaviour:
   - {fileID: -4008155563193174751, guid: b9ed9b024c333634da0a9726df605652, type: 3}
   healthUpdate: 0
   gamePlayLevelCount: 5
-  enemiesAlive: 0
+  enemiesAlive: 3
   door: {fileID: 985150382}
 --- !u!4 &7879397698234338822
 Transform:
