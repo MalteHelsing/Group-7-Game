@@ -10635,8 +10635,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death & Pause Menu + Time 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4499128391189608616, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785249855422628589, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Size.x
+      value: 2.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785249855422628589, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Size.y
+      value: 3.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785249855422628589, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6136079375251732219, guid: b7df90beff949364caaff1c5a7260eee, type: 3}
+    - target: {fileID: 4785249855422628589, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196283265299146887, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 41898303086420713, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589247ea51bdde241b2b9d9159c4e585, type: 3}
