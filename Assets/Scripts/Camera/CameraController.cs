@@ -18,14 +18,13 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
-
-        camHalfHeight = cam.orthographicSize;
-        camHalfWidth = camHalfHeight * cam.aspect;
     }
 
     private void LateUpdate()
     {
         CameraBound();
+        camHalfHeight = cam.orthographicSize;
+        camHalfWidth = camHalfHeight * cam.aspect;
     }
 
     void CameraBound()
@@ -34,15 +33,15 @@ public class CameraController : MonoBehaviour
 
         newPos += (Vector3)moveVector * moveSpeed * Time.deltaTime;
 
-        newPos.x = Mathf.Clamp(newPos.x, leftBound.position.x + camHalfWidth, rightBound.position.x + camHalfWidth);
+        newPos.x = Mathf.Clamp(newPos.x, leftBound.position.x + camHalfWidth, rightBound.position.x - camHalfWidth);
 
-        newPos.y = Mathf.Clamp(newPos.y, bottomBound.position.y + camHalfHeight, topBound.position.y + camHalfHeight);
+        newPos.y = Mathf.Clamp(newPos.y, bottomBound.position.y + camHalfHeight, topBound.position.y - camHalfHeight);
 
         transform.position = newPos;
     }
 
     public void SetMoveInput(Vector2 input)
     {
-        moveVector = input;
+        moveVector = input.normalized;
     }
 }
