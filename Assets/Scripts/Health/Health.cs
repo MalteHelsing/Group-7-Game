@@ -2,69 +2,63 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public float health = 10f;
+    [SerializeField] public float maxHealth = 100f;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] GameObject deathMenu;
-    private float currenthealth;
-
-    EnemyDamageDealer enemyDamageDealer;
+    public float currentHealth;
+    
     PlayerMovement playerMovement;
+    HealthBar healthBar;
+    bool isDead = false;
 
     private void Start()
     {
+        healthBar = FindFirstObjectByType<HealthBar>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        enemyDamageDealer = FindFirstObjectByType<EnemyDamageDealer>();
-        spriteRenderer = GameObject.Find("Player").GetComponent<SpriteRenderer>();
 
-        deathMenu.SetActive(false);
+        if (deathMenu != null)
+        {
+            deathMenu.SetActive(false);
+        }
 
         spriteRenderer.enabled = true;
 
-        currenthealth = health;
-    }
-    private void Update()
-    {
-        Die();
+        currentHealth = maxHealth;
+
+        Debug.Log(currentHealth);
     }
     #region Damage
     private void OnTriggerEnter2D(Collider2D other)
     {
-         enemyDamageDealer = other.GetComponent<EnemyDamageDealer>();
-
-         if (enemyDamageDealer != null)
+         if (other.TryGetComponent(out EnemyDamageDealer enemyDamageDealer))
          { 
            TakeDamage(enemyDamageDealer.GetDamage());
          } 
     }
 
-    public void Die()
-    {
-        if (currenthealth <= 0)
-        {
-            playerMovement.Death();
-            spriteRenderer.enabled = false;
-            deathMenu.SetActive(true);
-        }
-    }
-
     void TakeDamage(int enemyDamage)
     {
-        currenthealth -= enemyDamage;
+        currentHealth -= enemyDamage;
 
-        FindFirstObjectByType<HealthBar>().UpdateHealthUI();
+        healthBar.UpdateHealthUI();
 
-        if (currenthealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    public void Alive()
+    public void Die()
     {
-        playerMovement.Alive();
-        spriteRenderer.enabled = true;
-        deathMenu.SetActive(false);
-        currenthealth = health;
+        if (isDead) return;
+
+        isDead = true;
+
+        playerMovement.Death();
+        spriteRenderer.enabled = false;
+
+        if (deathMenu != null)
+            deathMenu.SetActive(true);
     }
     #endregion
 }

@@ -1,13 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
-    [Header("Key")]
-    [SerializeField] float KeyPickUpDelay = 0.1f;
-    [SerializeField] private GameObject keyIcon;
-
     [Header("Next level wait time")]
     [SerializeField] float nextLevelWaitTime = 1.5f;
 
@@ -17,7 +14,17 @@ public class NextLevel : MonoBehaviour
 
     private void Start()
     {
-        keyIcon.SetActive(false);
+        gameManager = FindFirstObjectByType<GameManager>();
+    }
+
+    private void Update()
+    {
+#if UNITY_EDITOR
+        if (Keyboard.current.nKey.wasPressedThisFrame)
+        {
+            LoadNextScene();
+        }
+#endif
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,13 +32,12 @@ public class NextLevel : MonoBehaviour
         if (other.CompareTag("Key") && HasKey == false)
         {
             HasKey = true;
-            Destroy(other.gameObject, KeyPickUpDelay);
-            keyIcon.SetActive(true);
+            gameManager.HasKey();
         }
         else if (other.CompareTag("Door") && HasKey == true)
         {
             HasKey = false;
-            keyIcon.SetActive(false);
+            gameManager.keyIconOn = false;
             StartCoroutine(SceneDelay());
         }
     }
