@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -385,8 +386,11 @@ public class BossMovement : MonoBehaviour
     }
     #endregion
     #region Remove this before making a build!
+
     private void Update()
     {
+#if UNITY_EDITOR
+
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
             SetWave(BossState.Wave1);
 
@@ -395,6 +399,7 @@ public class BossMovement : MonoBehaviour
 
         if (Keyboard.current.digit3Key.wasPressedThisFrame)
             SetWave(BossState.Wave3);
+#endif
     }
 
     public void SetWave(BossState newState)
@@ -421,6 +426,16 @@ public class BossMovement : MonoBehaviour
     void SetWave2PlatformActive(bool active)
     {
         Wave2Platforms.SetActive(active);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        int layerIndexC = LayerMask.NameToLayer("HitBox");
+
+        if (other.gameObject.layer == layerIndexC)
+        {
+            TakeHit();
+        }
     }
 
     public void TakeHit()
